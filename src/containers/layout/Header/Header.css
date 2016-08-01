@@ -1,0 +1,16 @@
+:local {
+  .header {
+    background-color: #85144b;
+    font-size: 2rem;
+    padding: 2rem;
+
+    a {
+      color: #fff;
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+  }
+}
