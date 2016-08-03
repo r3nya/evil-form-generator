@@ -4,6 +4,6 @@ import styles from './Header.css';
 
 export const Header = () => (
   <header className={styles.header} role="banner">
-    
+    <Link to="/new">NEW</Link>
   </header>
 );

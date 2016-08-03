@@ -56,7 +56,8 @@ export default function (state = initialState, action) {
   case FETCH_FORMS_SUCCESS:
     return {
       ...state,
-      loading: false
+      loading: false,
+      // data: payload
     };
 
   case FETCH_FORMS_ERROR:
