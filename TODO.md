@@ -70,13 +70,11 @@
     [
       {
         title,
-        choices: [
-          {
-            type,
-            values,
-            require
-          }
-        ]
+        choices: {
+          type,
+          values
+        },
+        require
       }
     ]
   }

@@ -1,0 +1,15 @@
+:local {
+  .bg {
+    width: 26rem;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+
+    & > button {
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+  }
+}

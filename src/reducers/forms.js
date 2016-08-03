@@ -13,30 +13,23 @@ const initialState = {
       questions: [
         {
           title: 'How are you?',
-          choices: [
-            {
-              type: 'radio',
-              value: [
-                'not bad',
-                'lolok',
-                'wtf'
-              ],
-              require: true
-            },
-            {
-              type: 'input',
-              require: false
-            }
-          ]
+          choices: {
+            type: 'radio',
+            value: [
+              'not bad',
+              'lolok',
+              'wtf'
+            ]
+          },
+          require: true
         },
         {
           title: 'Hope you are well',
-          choices: [
-            {
-              type: 'textArea',
-              require: true
-            }
-          ]
+          choices: {
+            type: 'textArea',
+            value: 'hey'
+          },
+          require: true
         }
       ]
     }
