@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 
-export default class Viewer extends Component {
+export default class Browser extends Component {
   static propTypes = {
 
   };
 
   render() {
     return (
-      <div>Viewer</div>
+      <div>Browser</div>
     );
   }
 }

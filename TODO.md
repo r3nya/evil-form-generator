@@ -35,7 +35,7 @@
     * [ ] Paragraph Text Field
   * [ ] Ability to save form on `localStorage`
 
-* [ ] `Viewer` container
+* [ ] `Browser` container
   * [ ] Get data for spec form from `localStorage`
   * [ ] Simple Layout for forms
 

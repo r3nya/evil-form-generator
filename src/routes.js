@@ -5,7 +5,7 @@ import { App } from 'containers/layout';
 
 import AllForms from 'containers/AllForms';
 import NewForm from 'containers/NewForm';
-import Viewer from 'containers/Viewer';
+import Browser from 'containers/Browser';
 
 import { NotFoundPage } from 'containers/NotFoundPage';
 
@@ -16,7 +16,7 @@ export default (
     <Route path="/" component={App}>
       <Route path="all" component={AllForms} />
       <Route path="new" component={NewForm} />
-      <Route path="view/:id" component={Viewer} />
+      <Route path="view/:id" component={Browser} />
     </Route>
 
     <Route path="*" component={NotFoundPage} />
