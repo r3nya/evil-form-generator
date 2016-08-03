@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import QuestionItem from 'components/QuestionItem';
 import styles from './Viewer.css';
 
 export default class Viewer extends Component {
@@ -14,7 +15,10 @@ export default class Viewer extends Component {
         Viewer
         {data.length &&
           data.map((item, id) => (
-            <div key={id}>{item.type}</div>
+            <QuestionItem
+              key={id}
+              {...item}
+            />
           ))
         }
       </div>
