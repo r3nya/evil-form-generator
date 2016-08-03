@@ -1,8 +1,11 @@
 :local {
   .frm {
+    display: flex;
+    justify-content: space-between;
     height: 30px;
     border: 1px solid black;
     line-height: 30px;
     padding: 0 10px;
+    margin-bottom: 0.4rem;
   }
 }

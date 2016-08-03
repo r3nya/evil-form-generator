@@ -8,7 +8,7 @@ export default class Viewer extends Component {
   };
 
   render() {
-    const { data } = this.props;
+    const { data, onDeleteClick } = this.props;
 
     return (
       <div className={styles.bg}>
@@ -17,6 +17,7 @@ export default class Viewer extends Component {
           data.map((item, id) => (
             <QuestionItem
               key={id}
+              onDeleteClick={() => onDeleteClick(item)}
               {...item}
             />
           ))

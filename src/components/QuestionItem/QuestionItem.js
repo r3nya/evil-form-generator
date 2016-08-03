@@ -7,11 +7,12 @@ export default class QuestionItem extends Component {
   };
 
   render() {
-    const { type } = this.props;
+    const { type, onDeleteClick } = this.props;
 
     return (
       <div className={styles.frm}>
         {type}
+        <button onClick={() => onDeleteClick()}>X</button>
       </div>
     );
   }
