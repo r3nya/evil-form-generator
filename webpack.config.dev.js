@@ -10,8 +10,7 @@ module.exports = {
   entry: [
     'webpack-hot-middleware/client',
     './src/index',
-    'normalize.css',
-    'font-awesome/css/font-awesome.min.css'
+    'normalize.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -53,16 +52,8 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.json'],
-    alias: {
-      'api': path.join(__dirname, 'src/api'),
-      'store': path.join(__dirname, 'src/store'),
-      'utils': path.join(__dirname, 'src/utils'),
-      'actions': path.join(__dirname, 'src/actions'),
-      'reducers': path.join(__dirname, 'src/reducers'),
-      'selectors': path.join(__dirname, 'src/selectors'),
-      'constants': path.join(__dirname, 'src/constants'),
-      'containers': path.join(__dirname, 'src/containers'),
-      'components': path.join(__dirname, 'src/components'),
-    }
+    root: [
+       path.resolve(__dirname, 'src')
+    ]
   }
 };
