@@ -12,10 +12,13 @@ const mapDispatchToProps = {
 @connect(newFormSelector, mapDispatchToProps)
 export default class NewForm extends Component {
   static propTypes = {
+    questions: PropTypes.array,
     addQuestion: PropTypes.func.isRequired,
   };
 
   render() {
+    const { addQuestion, questions } = this.props;
+
     return (
       <div className={styles.main}>
 
@@ -23,7 +26,9 @@ export default class NewForm extends Component {
           onBtnClick={addQuestion}
         />
 
-        <Viewer />
+        <Viewer
+          data={questions}
+        />
       </div>
     );
   }

@@ -1,11 +1,9 @@
 import { ADD_QUESTION } from 'constants';
 
-export function addQuestion(title = 'Hello', choices, require = false) {
+export function addQuestion(type = 'input') {
   return dispatch => {
     const question = {
-      title,
-      choices,
-      require
+      type
     };
 
     dispatch({

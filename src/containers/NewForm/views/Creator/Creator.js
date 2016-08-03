@@ -10,8 +10,6 @@ export default class Creator extends Component {
   render() {
     const { onBtnClick } = this.props;
 
-    console.log(this.props)
-
     return (
       <div className={styles.bg}>
         <header>Evil form generator</header>
@@ -25,12 +23,12 @@ export default class Creator extends Component {
             <TabPanel>
               <header>Add Custom Field</header>
               <article className={styles.btns}>
-                <button onClick={onBtnClick('test')}>Single-line text</button>
-                <button>Radio buttom</button>
-                <button>Checkboxes</button>
-                <button>Select</button>
-                <button>File upload</button>
-                <button>Paragraph text</button>
+                <button onClick={() => onBtnClick('input')}>Single-line text</button>
+                <button onClick={() => onBtnClick('radio')}>Radio buttom</button>
+                <button onClick={() => onBtnClick('checkbox')}>Checkboxes</button>
+                <button onClick={() => onBtnClick('select')}>Select</button>
+                <button onClick={() => onBtnClick('file')}>File upload</button>
+                <button onClick={() => onBtnClick('paragraph')}>Paragraph text</button>
               </article>
             </TabPanel>
 
