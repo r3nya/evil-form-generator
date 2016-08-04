@@ -74,7 +74,7 @@
           type,
           values
         },
-        require
+        required
       }
     ]
   }

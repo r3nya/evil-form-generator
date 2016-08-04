@@ -9,6 +9,7 @@ export default class QuestionItem extends Component {
     type: PropTypes.string,
     title: PropTypes.string,
     onEditTitle: PropTypes.func.isRequired,
+    onChangeRequired: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
   };
 
@@ -42,6 +43,9 @@ export default class QuestionItem extends Component {
     const { newTitle } = this.state;
     const { id, onEditTitle } = this.props;
 
+    // todo
+    // use trim() for newTitle
+
     if (newTitle) {
       onEditTitle({ id, newTitle });
       this.setState({
@@ -64,26 +68,42 @@ export default class QuestionItem extends Component {
   };
 
   render() {
-    const { title, /* type, */ onDeleteClick } = this.props;
-    const { titleEditMode, newTitle } = this.state;
+    const { id, title, required, /* type, */onChangeRequired, onDeleteClick } = this.props;
+    const { titleEditMode, newTitle, isChecked } = this.state;
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
         <div className={styles.frm}>
-          {!titleEditMode &&
-            <span onClick={this.editTitle}>{title}</span>
-          }
+          <div className={styles.titleArea}>
+            {!titleEditMode &&
+              <span onClick={this.editTitle}>{title}</span>
+            }
 
-          {titleEditMode &&
-            <Input
-              type="text"
-              value={newTitle}
-              placeholder="Title?"
-              onKeyPress={this.handleKeyPress}
-              onChange={e => this.handleChangeField('newTitle', e.target.value)}
-            />
-          }
-          <button onClick={this.editTitle}>Edit</button>
+            {titleEditMode &&
+              <Input
+                type="text"
+                value={newTitle}
+                placeholder="Title?"
+                onKeyPress={this.handleKeyPress}
+                onChange={e => this.handleChangeField('newTitle', e.target.value)}
+              />
+            }
+
+            {required &&
+              <span className={styles.asterisk}>*</span>
+            }
+            <button onClick={this.editTitle}>Edit</button>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                checked={required}
+                onChange={() => onChangeRequired({ id, required: !required })}
+              />
+              Required?
+            </label>
+          </div>
           <button onClick={() => onDeleteClick()}>X</button>
         </div>
       </ClickOutside>

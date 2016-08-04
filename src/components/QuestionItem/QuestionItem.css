@@ -1,4 +1,8 @@
 :local {
+  .asterisk {
+    color: red;
+  }
+
   .frm {
     display: flex;
     justify-content: space-between;
@@ -7,5 +11,11 @@
     line-height: 30px;
     padding: 0 10px;
     margin-bottom: 0.4rem;
+  }
+
+  .titleArea {
+    min-width: 20rem;
+    display: flex;
+    justify-content: space-between;
   }
 }
