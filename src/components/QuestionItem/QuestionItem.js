@@ -8,6 +8,7 @@ export default class QuestionItem extends Component {
     id: PropTypes.number,
     type: PropTypes.string,
     title: PropTypes.string,
+    required: PropTypes.bool,
     onEditTitle: PropTypes.func.isRequired,
     onChangeRequired: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
