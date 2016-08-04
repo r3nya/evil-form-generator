@@ -8,7 +8,7 @@ export default class Viewer extends Component {
   };
 
   render() {
-    const { data, onDeleteClick } = this.props;
+    const { data, onEditTitle, onDeleteClick } = this.props;
 
     return (
       <div className={styles.bg}>
@@ -17,6 +17,7 @@ export default class Viewer extends Component {
           data.map((item, id) => (
             <QuestionItem
               key={id}
+              onEditTitle={onEditTitle}
               onDeleteClick={() => onDeleteClick(item)}
               {...item}
             />

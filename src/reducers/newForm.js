@@ -1,6 +1,7 @@
 import {
   ADD_QUESTION,
-  DELETE_QUESTION
+  DELETE_QUESTION,
+  EDIT_TITLE_QUESTION
 } from 'constants';
 
 export default function (state = [], action) {
@@ -18,6 +19,12 @@ export default function (state = [], action) {
 
   case DELETE_QUESTION:
     return state.filter(q => q.id !== payload.id);
+
+  case EDIT_TITLE_QUESTION:
+    return state.map(q => (
+      q.id === payload.id ?
+        Object.assign({}, q, { title: payload.newTitle }) : q
+    ));
 
   default:
     return state;

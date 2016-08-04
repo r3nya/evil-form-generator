@@ -1,19 +1,78 @@
 import React, { Component, PropTypes } from 'react';
+import Input from 'components/Input';
+import ClickOutside from 'react-click-outside';
 import styles from './QuestionItem.css';
 
 export default class QuestionItem extends Component {
   static propTypes = {
+    id: PropTypes.number,
     type: PropTypes.string,
+    title: PropTypes.string,
+    onEditTitle: PropTypes.func.isRequired,
+    onDeleteClick: PropTypes.func.isRequired,
+  };
+
+  state = {
+    titleEditMode: false,
+    newTitle: ''
+  };
+
+  handleClickOutside = () => {
+    this.pushNewTitle();
+    this.editClose();
+  };
+
+  editTitle = () => {
+    const { titleEditMode } = this.state;
+    this.setState({
+      titleEditMode: !titleEditMode
+    });
+    this.pushNewTitle();
+  };
+
+  editClose = () => {
+    this.setState({
+      titleEditMode: false
+    });
+  };
+
+  pushNewTitle = () => {
+    const { newTitle } = this.state;
+    const { id, onEditTitle } = this.props;
+
+    if (newTitle) {
+      onEditTitle({ id, newTitle });
+    }
+  }
+
+  handleChangeField = (field, text) => {
+    this.setState({
+      [field]: text
+    });
   };
 
   render() {
-    const { type, onDeleteClick } = this.props;
+    const { title, /* type, */ onDeleteClick } = this.props;
+    const { titleEditMode, newTitle } = this.state;
 
     return (
-      <div className={styles.frm}>
-        {type}
-        <button onClick={() => onDeleteClick()}>X</button>
-      </div>
+      <ClickOutside onClickOutside={this.handleClickOutside}>
+        <div className={styles.frm}>
+          {!titleEditMode &&
+            <span onClick={this.editTitle}>{title}</span>
+          }
+
+          {titleEditMode &&
+            <Input
+              type="text"
+              value={newTitle}
+              onChange={e => this.handleChangeField('newTitle', e.target.value)}
+            />
+          }
+          <button onClick={this.editTitle}>Edit</button>
+          <button onClick={() => onDeleteClick()}>X</button>
+        </div>
+      </ClickOutside>
     );
   }
 }
