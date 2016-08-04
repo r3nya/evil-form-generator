@@ -7,7 +7,7 @@
     "start": "node server.js",
     "clean": "rimraf dist",
     "lint": "eslint src; true",
-    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.prod.js"
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -60,7 +60,8 @@
     "webpack": "^1.13.1",
     "webpack-config-plugin": "^0.5.0",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.10.0",
+    "webpack-merge": "^0.14.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
