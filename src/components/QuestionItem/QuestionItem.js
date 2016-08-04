@@ -24,8 +24,10 @@ export default class QuestionItem extends Component {
 
   editTitle = () => {
     const { titleEditMode } = this.state;
+    const { title } = this.props;
     this.setState({
-      titleEditMode: !titleEditMode
+      titleEditMode: !titleEditMode,
+      newTitle: title
     });
     this.pushNewTitle();
   };
@@ -42,6 +44,9 @@ export default class QuestionItem extends Component {
 
     if (newTitle) {
       onEditTitle({ id, newTitle });
+      this.setState({
+        newTitle: ''
+      });
     }
   }
 
@@ -49,6 +54,13 @@ export default class QuestionItem extends Component {
     this.setState({
       [field]: text
     });
+  };
+
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.pushNewTitle();
+      this.editClose();
+    }
   };
 
   render() {
@@ -66,6 +78,8 @@ export default class QuestionItem extends Component {
             <Input
               type="text"
               value={newTitle}
+              placeholder="Title?"
+              onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newTitle', e.target.value)}
             />
           }
