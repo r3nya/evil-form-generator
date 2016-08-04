@@ -70,7 +70,7 @@ export default class QuestionItem extends Component {
 
   render() {
     const { id, title, required, /* type, */onChangeRequired, onDeleteClick } = this.props;
-    const { titleEditMode, newTitle, isChecked } = this.state;
+    const { titleEditMode, newTitle } = this.state;
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
