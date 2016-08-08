@@ -1,1 +1,1 @@
-export * from './fetchForms';
+export * from './fetchForms'

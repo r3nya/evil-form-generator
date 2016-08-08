@@ -13,7 +13,13 @@
     "comma-dangle": 0,
     "no-shadow": 0,
     "no-else-return": 0,
-    "no-console": ["error", { allow: ["warn", "error"] }]
+    "no-console": ["error", { allow: ["warn", "error"] }],
+    "semi": ["warn", "never"],
+    "no-extra-semi": "error",
+    "semi-spacing": ["warn", {
+      before: false,
+      after: true
+    }],
   },
   "plugins": [
     "babel",
@@ -22,7 +28,7 @@
   "settings": {
     "import/resolver": {
       "webpack": {
-        "config": 'webpack.config.js'
+        "config": "webpack.config.js"
       }
     }
   }

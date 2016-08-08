@@ -2,7 +2,7 @@ import {
   FETCH_FORMS,
   FETCH_FORMS_SUCCESS,
   FETCH_FORMS_ERROR
-} from 'constants';
+} from 'constants'
 
 const initialState = {
   loading: false,
@@ -34,7 +34,7 @@ const initialState = {
       ]
     }
   ]
-};
+}
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
@@ -44,23 +44,23 @@ export default function (state = initialState, action) {
     return {
       ...state,
       loading: true
-    };
+    }
 
   case FETCH_FORMS_SUCCESS:
     return {
       ...state,
       loading: false,
       // data: payload
-    };
+    }
 
   case FETCH_FORMS_ERROR:
     return {
       ...state,
       loading: false,
       error: payload.err
-    };
+    }
 
   default:
-    return state;
+    return state
   }
 }

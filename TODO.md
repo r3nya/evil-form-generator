@@ -26,7 +26,7 @@
     * [ ] Btns
   * [ ] Description tab
     * [ ] TextArea
-  * Items for:
+  * [ ] Items for:
     * [ ] Single-line text field
     * [ ] CheckBoxes
     * [ ] RadioBtns

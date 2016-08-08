@@ -3,10 +3,10 @@ import {
   CHANGE_REQUIRED,
   DELETE_QUESTION,
   EDIT_TITLE_QUESTION
-} from 'constants';
+} from 'constants'
 
 export default function (state = [], action) {
-  const { type, payload } = action;
+  const { type, payload } = action
 
   switch (type) {
   case ADD_QUESTION:
@@ -17,24 +17,24 @@ export default function (state = [], action) {
         required: false,
         ...payload
       }
-    ];
+    ]
 
   case DELETE_QUESTION:
-    return state.filter(q => q.id !== payload.id);
+    return state.filter(q => q.id !== payload.id)
 
   case EDIT_TITLE_QUESTION:
     return state.map(q => (
       q.id === payload.id ?
         Object.assign({}, q, { title: payload.newTitle }) : q
-    ));
+    ))
 
   case CHANGE_REQUIRED:
     return state.map(q => (
       q.id === payload.id ?
         Object.assign({}, q, { required: payload.required }) : q
-    ));
+    ))
 
   default:
-    return state;
+    return state
   }
 }

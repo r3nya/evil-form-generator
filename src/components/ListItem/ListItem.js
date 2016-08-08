@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
 export const ListItem = props => (
   <div>
@@ -7,9 +7,9 @@ export const ListItem = props => (
       {props.id} – {props.description}
     </Link>
   </div>
-);
+)
 
 ListItem.propTypes = {
   id: PropTypes.string.isRequired,
   description: PropTypes.string
-};
+}

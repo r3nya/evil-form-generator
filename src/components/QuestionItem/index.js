@@ -1,1 +1,1 @@
-export default from './QuestionItem';
+export default from './QuestionItem'

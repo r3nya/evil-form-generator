@@ -1,13 +1,13 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router';
+import React from 'react'
+import { Route, Redirect } from 'react-router'
 
-import { App } from 'containers/layout';
+import { App } from 'containers/layout'
 
-import AllForms from 'containers/AllForms';
-import NewForm from 'containers/NewForm';
-import Browser from 'containers/Browser';
+import AllForms from 'containers/AllForms'
+import NewForm from 'containers/NewForm'
+import Browser from 'containers/Browser'
 
-import { NotFoundPage } from 'containers/NotFoundPage';
+import { NotFoundPage } from 'containers/NotFoundPage'
 
 export default (
   <Route>
@@ -21,4 +21,4 @@ export default (
 
     <Route path="*" component={NotFoundPage} />
   </Route>
-);
+)

@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import Input from 'components/Input';
-import ClickOutside from 'react-click-outside';
-import styles from './QuestionItem.css';
+import React, { Component, PropTypes } from 'react'
+import Input from 'components/Input'
+import ClickOutside from 'react-click-outside'
+import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
   static propTypes = {
@@ -12,65 +12,65 @@ export default class QuestionItem extends Component {
     onEditTitle: PropTypes.func.isRequired,
     onChangeRequired: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
-  };
+  }
 
   state = {
     titleEditMode: false,
     newTitle: ''
-  };
+  }
 
   handleClickOutside = () => {
-    this.pushNewTitle();
-    this.editClose();
-  };
+    this.pushNewTitle()
+    this.editClose()
+  }
 
   editTitle = () => {
-    const { titleEditMode } = this.state;
-    const { title } = this.props;
+    const { titleEditMode } = this.state
+    const { title } = this.props
     this.setState({
       titleEditMode: !titleEditMode,
       newTitle: title
-    });
-    this.pushNewTitle();
-  };
+    })
+    this.pushNewTitle()
+  }
 
   editClose = () => {
     this.setState({
       titleEditMode: false
-    });
-  };
+    })
+  }
 
   pushNewTitle = () => {
-    const { newTitle } = this.state;
-    const { id, onEditTitle } = this.props;
+    const { newTitle } = this.state
+    const { id, onEditTitle } = this.props
 
     // todo
     // use trim() for newTitle
 
     if (newTitle) {
-      onEditTitle({ id, newTitle });
+      onEditTitle({ id, newTitle })
       this.setState({
         newTitle: ''
-      });
+      })
     }
   }
 
   handleChangeField = (field, text) => {
     this.setState({
       [field]: text
-    });
+    })
   };
 
   handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      this.pushNewTitle();
-      this.editClose();
+      this.pushNewTitle()
+      this.editClose()
     }
   };
 
   render() {
-    const { id, title, required, /* type, */onChangeRequired, onDeleteClick } = this.props;
-    const { titleEditMode, newTitle } = this.state;
+    const { id, title, required, /* type, */onChangeRequired, onDeleteClick } = this.props
+    const { titleEditMode, newTitle } = this.state
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
@@ -108,6 +108,6 @@ export default class QuestionItem extends Component {
           <button onClick={() => onDeleteClick()}>X</button>
         </div>
       </ClickOutside>
-    );
+    )
   }
 }
