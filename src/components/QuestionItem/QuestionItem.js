@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Input from 'components/Input'
 import ClickOutside from 'react-click-outside'
+import { FieldHelper } from 'components/FieldHelper'
 import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
@@ -69,7 +70,7 @@ export default class QuestionItem extends Component {
   };
 
   render() {
-    const { id, title, required, /* type, */onChangeRequired, onDeleteClick } = this.props
+    const { id, title, required, type, onChangeRequired, onDeleteClick } = this.props
     const { titleEditMode, newTitle } = this.state
 
     return (
@@ -77,7 +78,7 @@ export default class QuestionItem extends Component {
         <div className={styles.frm}>
           <div className={styles.titleArea}>
             {!titleEditMode &&
-              <span onClick={this.editTitle}>{title}</span>
+              <span onClick={this.editTitle}>{title} – {type}</span>
             }
 
             {titleEditMode &&
@@ -95,6 +96,11 @@ export default class QuestionItem extends Component {
             }
             <button onClick={this.editTitle}>Edit</button>
           </div>
+
+          <FieldHelper
+            type={type}
+          />
+
           <div>
             <label>
               <input
