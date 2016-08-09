@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 import {
   Checkboxes,
   FileUpload,
@@ -10,8 +10,6 @@ import {
 
 export const FieldHelper = props => {
   const { type/*, data */} = props
-
-  console.log(type)
 
   return (
     <div>

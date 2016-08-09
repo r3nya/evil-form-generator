@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import styles from './Creator.css';
+import React, { Component, PropTypes } from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import { Button } from 'components/uiToolkit'
+import styles from './Creator.css'
 
 export default class Creator extends Component {
   static propTypes = {
@@ -8,7 +9,7 @@ export default class Creator extends Component {
   };
 
   render() {
-    const { onBtnClick } = this.props;
+    const { onBtnClick } = this.props
 
     return (
       <div className={styles.bg}>
@@ -23,12 +24,47 @@ export default class Creator extends Component {
             <TabPanel>
               <header>Add Custom Field</header>
               <article className={styles.btns}>
-                <button onClick={() => onBtnClick('input')}>Single-line text</button>
-                <button onClick={() => onBtnClick('radio')}>Radio buttom</button>
-                <button onClick={() => onBtnClick('checkbox')}>Checkboxes</button>
-                <button onClick={() => onBtnClick('select')}>Select</button>
-                <button onClick={() => onBtnClick('file')}>File upload</button>
-                <button onClick={() => onBtnClick('paragraph')}>Paragraph text</button>
+                <Button
+                  style="outline"
+                  onClick={() => onBtnClick('input')}
+                >
+                  Single-line text
+                </Button>
+
+                <Button
+                  style="outline"
+                  onClick={() => onBtnClick('radio')}
+                >
+                  Radio buttom
+                </Button>
+
+                <Button
+                  style="outline"
+                  onClick={() => onBtnClick('checkbox')}
+                >
+                  Checkboxes
+                </Button>
+
+                <Button
+                  style="outline"
+                  onClick={() => onBtnClick('select')}
+                >
+                  Select
+                </Button>
+
+                <Button
+                  style="outline"
+                  onClick={() => onBtnClick('file')}
+                >
+                  File upload
+                </Button>
+
+                <Button
+                  style="outline"
+                  onClick={() => onBtnClick('paragraph')}
+                >
+                  Paragraph text
+                </Button>
               </article>
             </TabPanel>
 
@@ -41,6 +77,6 @@ export default class Creator extends Component {
         </main>
 
       </div>
-    );
+    )
   }
 }

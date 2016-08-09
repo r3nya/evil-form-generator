@@ -16,8 +16,6 @@ export const Button = props => {
     [styles.disabled]: disabled
   })
 
-  console.log('bbb', classes)
-
   return (
     <Element
       {...rest}

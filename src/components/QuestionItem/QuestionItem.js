@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Input from 'components/Input'
 import ClickOutside from 'react-click-outside'
 import { FieldHelper } from 'components/FieldHelper'
-import { Button } from 'components/uiToolkit'
+import { Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
 import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
@@ -95,7 +95,12 @@ export default class QuestionItem extends Component {
             {required &&
               <span className={styles.asterisk}>*</span>
             }
-            <button onClick={this.editTitle}>Edit</button>
+            <Button
+              style="outline"
+              onClick={this.editTitle}
+            >
+              <EditIcon />
+            </Button>
           </div>
 
           <FieldHelper
@@ -113,10 +118,12 @@ export default class QuestionItem extends Component {
             </label>
           </div>
           <Button
-            size='small'
-            style='outline'
+            size="small"
+            style="outline"
             onClick={() => onDeleteClick()}
-          >X</Button>
+          >
+            <DeleteIcon />
+          </Button>
         </div>
       </ClickOutside>
     )
