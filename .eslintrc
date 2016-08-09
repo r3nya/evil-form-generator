@@ -20,16 +20,23 @@
       before: false,
       after: true
     }],
+    "import/no-unresolved": [2, {
+      ignore: [
+        '^actions.*',
+        '^components.*',
+        '^constants.*',
+        '^containers.*',
+        '^reducers.*',
+        '^selectors.*',
+        '^store.*'
+      ]
+    }]
   },
   "plugins": [
     "babel",
     "react"
   ],
   "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "webpack.config.js"
-      }
-    }
+    "import/resolver": "webpack"
   }
 }
