@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Input from 'components/Input'
 import ClickOutside from 'react-click-outside'
 import { FieldHelper } from 'components/FieldHelper'
+import { Button } from 'components/uiToolkit'
 import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
@@ -111,7 +112,11 @@ export default class QuestionItem extends Component {
               Required?
             </label>
           </div>
-          <button onClick={() => onDeleteClick()}>X</button>
+          <Button
+            size='small'
+            style='outline'
+            onClick={() => onDeleteClick()}
+          >X</Button>
         </div>
       </ClickOutside>
     )
