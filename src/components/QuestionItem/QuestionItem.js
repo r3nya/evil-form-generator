@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import Input from 'components/Input'
 import ClickOutside from 'react-click-outside'
 import { FieldHelper } from 'components/FieldHelper'
-import { Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
+import { Button, EditIcon, DeleteIcon, Input } from 'components/uiToolkit'
 import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
@@ -14,12 +13,12 @@ export default class QuestionItem extends Component {
     onEditTitle: PropTypes.func.isRequired,
     onChangeRequired: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
-  }
+  };
 
   state = {
     titleEditMode: false,
     newTitle: ''
-  }
+  };
 
   handleClickOutside = () => {
     this.pushNewTitle()
@@ -79,7 +78,7 @@ export default class QuestionItem extends Component {
         <div className={styles.frm}>
           <div className={styles.titleArea}>
             {!titleEditMode &&
-              <span onClick={this.editTitle}>{title} – {type}</span>
+              <span onClick={this.editTitle}>{title}</span>
             }
 
             {titleEditMode &&
@@ -95,7 +94,9 @@ export default class QuestionItem extends Component {
             {required &&
               <span className={styles.asterisk}>*</span>
             }
+
             <Button
+              className={styles.editBtn}
               style="outline"
               onClick={this.editTitle}
             >
@@ -118,7 +119,6 @@ export default class QuestionItem extends Component {
             </label>
           </div>
           <Button
-            size="small"
             style="outline"
             onClick={() => onDeleteClick()}
           >

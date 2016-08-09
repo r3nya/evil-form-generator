@@ -20,11 +20,6 @@ const common = {
     filename: 'bundle.js',
     publicPath: '/static/',
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
-  ],
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
@@ -54,7 +49,10 @@ if (TARGET === 'start') {
     ],
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new ProgressBar()
+      new ProgressBar(),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('development')
+      })
     ],
     module: {
       loaders: [
@@ -88,6 +86,9 @@ if (TARGET === 'build') {
           warnings: false,
         },
       }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      })
     ],
     module: {
       loaders: [

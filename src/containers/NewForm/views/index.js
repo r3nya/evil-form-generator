@@ -1,2 +1,2 @@
-export { default as Creator } from './Creator';
-export { default as Viewer } from './Viewer';
+export * from './Creator'
+export { default as Viewer } from './Viewer'

@@ -1,12 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react'
+import { Input } from 'components/uiToolkit'
 
-export const SingleLineText = props => {
-
-  return (
-    <div>SingleLineText</div>
-  );
-}
-
-SingleLineText.propTypes = {
-
-}
+export const SingleLineText = () => (<Input type="text" />)

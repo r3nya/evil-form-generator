@@ -1,14 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import { Input } from 'components/uiToolkit'
 
-export const FileUpload = props => {
-
-  return (
-    <input
-      type="file"
-    />
-  )
-}
-
-FileUpload.propTypes = {
-
-}
+export const FileUpload = () => (<Input type="file" />)

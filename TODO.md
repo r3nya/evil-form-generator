@@ -21,17 +21,17 @@
   * [ ] Loader
 
 * [ ] `NewForm` container
-  * [ ] Dead simple layout
-  * [ ] Fields tab
-    * [ ] Btns
+  * [x] Dead simple layout
+  * [x] Fields tab
+    * [x] Btns
   * [ ] Description tab
     * [ ] TextArea
   * [ ] Items for:
-    * [ ] Single-line text field
+    * [x] Single-line text field
     * [ ] CheckBoxes
     * [ ] RadioBtns
     * [ ] Select field
-    * [ ] File Upload
+    * [x] File Upload
     * [ ] Paragraph Text Field
   * [ ] Ability to save form on `localStorage`
 
@@ -42,10 +42,10 @@
 ## Components
 
 * [ ] Loader
-* [ ] Alerts / Notifications
+* [x] Alerts / Notifications
 * [ ] Item for list (`AllForms` container)
 * [ ] Tabs
-* [ ] Button
+* [x] Button
 * [ ] Input
 * [ ] CheckBox
 * [ ] Radio btn
