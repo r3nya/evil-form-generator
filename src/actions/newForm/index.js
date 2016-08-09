@@ -1,3 +1,5 @@
+export * from './addChoice'
+export * from './deleteChoice'
 export * from './addQuestion'
 export * from './changeRequired'
 export * from './editTitleQuestion'

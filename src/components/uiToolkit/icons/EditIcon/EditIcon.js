@@ -1,12 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
-export const EditIcon = props => {
-
-  return (
-    <i className="fa fa-pencil" />
-  )
-}
-
-// EditIcon.propTypes = {
-//
-// }
+export const EditIcon = props => (
+  <i className="fa fa-pencil" {...props} />
+)

@@ -1,9 +1,12 @@
 import React, { PropTypes } from 'react'
+import { CheckboxItem } from 'components/uiToolkit'
 
 export const Checkboxes = props => {
 
   return (
-    <div>Checkboxes</div>
+    <fieldset>
+      <CheckboxItem label="test2" />
+    </fieldset>
   )
 }
 

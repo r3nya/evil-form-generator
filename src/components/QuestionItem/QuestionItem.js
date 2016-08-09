@@ -70,7 +70,7 @@ export default class QuestionItem extends Component {
   };
 
   render() {
-    const { id, title, required, type, onChangeRequired, onDeleteClick } = this.props
+    const { id, title, required, type, onChangeRequired, onDeleteClick, ...rest } = this.props
     const { titleEditMode, newTitle } = this.state
 
     return (
@@ -105,7 +105,9 @@ export default class QuestionItem extends Component {
           </div>
 
           <FieldHelper
+            id={id}
             type={type}
+            {...rest}
           />
 
           <div>

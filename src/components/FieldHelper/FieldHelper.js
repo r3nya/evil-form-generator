@@ -9,7 +9,7 @@ import {
 } from 'components/fields'
 
 export const FieldHelper = props => {
-  const { type/*, data */} = props
+  const { type, ...rest } = props
 
   return (
     <div>
@@ -26,7 +26,7 @@ export const FieldHelper = props => {
       }
 
       {type === 'radio' &&
-        <RadioButtons />
+        <RadioButtons {...rest} />
       }
 
       {type === 'select' &&

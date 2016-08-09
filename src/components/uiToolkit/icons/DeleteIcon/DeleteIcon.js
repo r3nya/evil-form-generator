@@ -1,12 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
-export const DeleteIcon = props => {
-
-  return (
-    <i className="fa fa-trash-o" />
-  )
-}
-
-// DeleteIcon.propTypes = {
-//
-// }
+export const DeleteIcon = props => (
+  <i className="fa fa-trash-o" {...props} />
+)

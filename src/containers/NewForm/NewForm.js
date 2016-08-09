@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import {
+  addChoice,
+  deleteChoice,
   addQuestion,
   changeRequired,
   editTitleQuestion,
@@ -11,6 +13,8 @@ import { Creator, Viewer } from './views';
 import styles from './NewForm.css';
 
 const mapDispatchToProps = {
+  addChoice,
+  deleteChoice,
   addQuestion,
   changeRequired,
   editTitleQuestion,
@@ -21,6 +25,8 @@ const mapDispatchToProps = {
 export default class NewForm extends Component {
   static propTypes = {
     questions: PropTypes.array,
+    addChoice: PropTypes.func.isRequired,
+    deleteChoice: PropTypes.func.isRequired,
     addQuestion: PropTypes.func.isRequired,
     changeRequired: PropTypes.func.isRequired,
     editTitleQuestion: PropTypes.func.isRequired,
@@ -39,6 +45,8 @@ export default class NewForm extends Component {
 
         <Viewer
           data={questions}
+          onAddChoice={actions.addChoice}
+          onDeleteChoice={actions.deleteChoice}
           onChangeRequired={actions.changeRequired}
           onEditTitle={actions.editTitleQuestion}
           onDeleteClick={actions.deleteQuestion}

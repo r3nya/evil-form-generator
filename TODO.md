@@ -69,11 +69,12 @@
     questions:
     [
       {
+        id,
         title,
-        choices: {
-          type,
+        type,
+        choices: [
           values
-        },
+        ],
         required
       }
     ]
