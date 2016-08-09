@@ -13,7 +13,7 @@ export const RadioItem = props => {
         onClick={onDeleteChoice}
       />
     </div>
-  );
+  )
 }
 
 RadioItem.propTypes = {

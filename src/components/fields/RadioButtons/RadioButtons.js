@@ -27,5 +27,7 @@ export const RadioButtons = props => {
 
 RadioButtons.propTypes = {
   id: PropTypes.number,
-  onAddChoice: PropTypes.func
+  choices: PropTypes.array,
+  onAddChoice: PropTypes.func,
+  onDeleteChoice: PropTypes.func,
 }

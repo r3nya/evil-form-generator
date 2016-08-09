@@ -14,7 +14,7 @@ export const FieldHelper = props => {
   return (
     <div>
       {type === 'checkbox' &&
-        <Checkboxes />
+        <Checkboxes {...rest} />
       }
 
       {type === 'file' &&

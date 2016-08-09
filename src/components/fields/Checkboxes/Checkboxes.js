@@ -1,15 +1,33 @@
 import React, { PropTypes } from 'react'
-import { CheckboxItem } from 'components/uiToolkit'
+import { CheckboxItem, Button } from 'components/uiToolkit'
 
 export const Checkboxes = props => {
+  const { id, choices, onAddChoice, onDeleteChoice } = props
 
   return (
-    <fieldset>
-      <CheckboxItem label="test2" />
-    </fieldset>
+    <div>
+      <fieldset>
+        {[choices.length] && choices.map((choice, key) => (
+          <CheckboxItem
+            key={key}
+            label={choice}
+            onDeleteChoice={() => onDeleteChoice(id, key)}
+          />
+        ))}
+      </fieldset>
+      <Button
+        size="small"
+        onClick={() => onAddChoice(id, 'checkbox')}
+      >
+        <i className="fa fa-plus" /> Add Choice
+      </Button>
+    </div>
   )
 }
 
 Checkboxes.propTypes = {
-
+  id: PropTypes.number,
+  choices: PropTypes.array,
+  onAddChoice: PropTypes.func,
+  onDeleteChoice: PropTypes.func,
 }

@@ -1,18 +1,22 @@
 import React, { PropTypes } from 'react'
-import { Input } from 'components/uiToolkit'
+import { Input, DeleteIcon } from 'components/uiToolkit'
 
 export const CheckboxItem = props => {
-  const { label } = props
+  const { label, onDeleteChoice } = props
   return (
     <div>
       <label>
         <Input type="checkbox" />
         {label}
       </label>
+      <DeleteIcon
+        onClick={onDeleteChoice}
+      />
     </div>
   )
 }
 
 CheckboxItem.propTypes = {
   label: PropTypes.string,
+  onDeleteChoice: PropTypes.func.isRequired,
 }
