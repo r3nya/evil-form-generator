@@ -11,6 +11,8 @@ const TARGET = process.env.npm_lifecycle_event;
 const common = {
   entry: [
     './src/index.js',
+    'font-awesome/css/font-awesome.css',
+    'open-sans-fontface/open-sans.css',
     'normalize.css'
   ],
   output: {
