@@ -32,7 +32,7 @@ const common = {
     autoprefixer({ browsers: ['last 2 versions'] }),
     require('postcss-nested'),
     require('postcss-import'),
-    require('postcss-simple-vars'),
+    require('postcss-css-variables'),
     require('postcss-apply'),
     require('postcss-mixins')
   ],
