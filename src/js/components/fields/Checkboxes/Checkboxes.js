@@ -18,7 +18,7 @@ export const Checkboxes = props => {
       ))}
       <Button
         size="small"
-        style="outline"
+        style="transparent"
         onClick={() => onAddChoice(id, 'checkbox')}
       >
         <i className="fa fa-plus" /> Add Choice

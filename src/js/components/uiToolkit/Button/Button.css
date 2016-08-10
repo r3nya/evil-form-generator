@@ -43,6 +43,12 @@
     border-color: var(--main-color);
   }
 
+  .transparent {
+    color: var(--main-color);
+    background-image: none;
+    background-color: transparent;
+  }
+
   .disabled {
     cursor: not-allowed;
     opacity: 0.65;
