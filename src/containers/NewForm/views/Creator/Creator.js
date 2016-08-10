@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { Button } from 'components/uiToolkit'
+import { Button, TextArea } from 'components/uiToolkit'
 import styles from './Creator.css'
 
 export const Creator = props => {
-  const { onBtnClick } = props
+  const { onBtnClick, onChangeDescription } = props
 
   return (
     <div className={styles.bg}>
@@ -64,7 +64,11 @@ export const Creator = props => {
           </TabPanel>
 
           <TabPanel>
-            2
+            <TextArea
+              label="Form Description"
+              rows="4"
+              onChange={(event) => onChangeDescription(event.target.value)}
+            />
           </TabPanel>
         </Tabs>
 
@@ -77,4 +81,5 @@ export const Creator = props => {
 
 Creator.propTypes = {
   onBtnClick: PropTypes.func.isRequired,
+  onChangeDescription: PropTypes.func.isRequired,
 }

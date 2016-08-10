@@ -4,6 +4,7 @@ import {
   addChoice,
   deleteChoice,
   addQuestion,
+  changeDescription,
   changeRequired,
   editTitleQuestion,
   deleteQuestion
@@ -16,6 +17,7 @@ const mapDispatchToProps = {
   addChoice,
   deleteChoice,
   addQuestion,
+  changeDescription,
   changeRequired,
   editTitleQuestion,
   deleteQuestion
@@ -28,6 +30,7 @@ export default class NewForm extends Component {
     addChoice: PropTypes.func.isRequired,
     deleteChoice: PropTypes.func.isRequired,
     addQuestion: PropTypes.func.isRequired,
+    changeDescription: PropTypes.func.isRequired,
     changeRequired: PropTypes.func.isRequired,
     editTitleQuestion: PropTypes.func.isRequired,
     deleteQuestion: PropTypes.func.isRequired,
@@ -41,6 +44,7 @@ export default class NewForm extends Component {
 
         <Creator
           onBtnClick={actions.addQuestion}
+          onChangeDescription={actions.changeDescription}
         />
 
         <Viewer
