@@ -1,0 +1,25 @@
+:local {
+  .cont {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .txtArea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+  }
+}
