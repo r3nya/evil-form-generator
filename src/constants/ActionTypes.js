@@ -12,6 +12,7 @@ export const CHANGE_REQUIRED = 'CHANGE_REQUIRED'
 export const ADD_CHOICE = 'ADD_CHOICE'
 export const DELETE_CHOICE = 'DELETE_CHOICE'
 export const CHANGE_CHOICE = 'CHANGE_CHOICE'
+export const CHANGE_TEXT = 'CHANGE_TEXT'
 
 // extraData
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION'

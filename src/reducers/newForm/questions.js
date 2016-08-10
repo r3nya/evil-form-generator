@@ -5,7 +5,8 @@ import {
   EDIT_TITLE_QUESTION,
   ADD_CHOICE,
   DELETE_CHOICE,
-  CHANGE_CHOICE
+  CHANGE_CHOICE,
+  CHANGE_TEXT
 } from 'constants'
 
 export default function (state = [], action) {
@@ -19,6 +20,7 @@ export default function (state = [], action) {
         id: state.reduce((maxId, q) => Math.max(q.id, maxId), -1) + 1,
         required: false,
         choices: [],
+        text: '',
         ...payload
       }
     ]
@@ -71,6 +73,12 @@ export default function (state = [], action) {
       }
 
       return q
+    })
+
+  case CHANGE_TEXT:
+    return state.map(q => {
+      q.id === payload.id ?
+        Object.assign({}, q, { text: payload.text }) : q
     })
 
   default:
