@@ -28,6 +28,7 @@ const common = {
   postcss: [
     autoprefixer({ browsers: ['last 2 versions'] }),
     require('postcss-nested'),
+    require('lost'),
     require('postcss-import'),
     require('postcss-css-variables'),
     require('postcss-apply'),
