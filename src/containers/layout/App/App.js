@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
-import { Header, Footer } from 'containers/layout';
-import styles from './App.css';
+import React, { PropTypes } from 'react'
+import { Header, Footer } from 'containers/layout'
+import styles from './App.css'
 
 export const App = props => {
-  const { children } = props;
+  const { children } = props
 
   return (
     <div className={styles.main}>
@@ -15,9 +15,9 @@ export const App = props => {
 
       <Footer />
     </div>
-  );
-};
+  )
+}
 
 App.propTypes = {
   children: PropTypes.element.isRequired
-};
+}
