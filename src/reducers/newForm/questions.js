@@ -4,7 +4,8 @@ import {
   DELETE_QUESTION,
   EDIT_TITLE_QUESTION,
   ADD_CHOICE,
-  DELETE_CHOICE
+  DELETE_CHOICE,
+  CHANGE_CHOICE
 } from 'constants'
 
 export default function (state = [], action) {
@@ -56,6 +57,17 @@ export default function (state = [], action) {
 
         delete choices[number]
         q.choices = [...choices.filter(Boolean)]
+      }
+
+      return q
+    })
+
+  case CHANGE_CHOICE:
+    return state.map(q => {
+      if (q.id === payload.id) {
+        const { number, value } = payload
+
+        q.choices[number] = value
       }
 
       return q

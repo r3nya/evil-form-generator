@@ -6,6 +6,7 @@ export const Viewer = props => {
   const {
     data, onAddChoice, onChangeRequired,
     onDeleteChoice, description,
+    onChangeChoice,
     onEditTitle, onDeleteClick
   } = props
 
@@ -20,6 +21,7 @@ export const Viewer = props => {
           <QuestionItem
             key={id}
             onAddChoice={onAddChoice}
+            onChangeChoice={onChangeChoice}
             onDeleteChoice={onDeleteChoice}
             onChangeRequired={onChangeRequired}
             onEditTitle={onEditTitle}
@@ -39,5 +41,6 @@ Viewer.propTypes = {
   onEditTitle: PropTypes.func.isRequired,
   onDeleteClick: PropTypes.func.isRequired,
   onAddChoice: PropTypes.func.isRequired,
+  onChangeChoice: PropTypes.func.isRequired,
   onDeleteChoice: PropTypes.func.isRequired
 }

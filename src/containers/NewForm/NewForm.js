@@ -5,6 +5,7 @@ import {
   deleteChoice,
   addQuestion,
   changeDescription,
+  changeChoice,
   changeRequired,
   editTitleQuestion,
   deleteQuestion
@@ -18,6 +19,7 @@ const mapDispatchToProps = {
   deleteChoice,
   addQuestion,
   changeDescription,
+  changeChoice,
   changeRequired,
   editTitleQuestion,
   deleteQuestion
@@ -28,9 +30,11 @@ export default class NewForm extends Component {
   static propTypes = {
     questions: PropTypes.array,
     addChoice: PropTypes.func.isRequired,
+    extraData: PropTypes.object,
     deleteChoice: PropTypes.func.isRequired,
     addQuestion: PropTypes.func.isRequired,
     changeDescription: PropTypes.func.isRequired,
+    changeChoice: PropTypes.func.isRequired,
     changeRequired: PropTypes.func.isRequired,
     editTitleQuestion: PropTypes.func.isRequired,
     deleteQuestion: PropTypes.func.isRequired,
@@ -52,6 +56,7 @@ export default class NewForm extends Component {
           description={description}
           onAddChoice={actions.addChoice}
           onDeleteChoice={actions.deleteChoice}
+          onChangeChoice={actions.changeChoice}
           onChangeRequired={actions.changeRequired}
           onEditTitle={actions.editTitleQuestion}
           onDeleteClick={actions.deleteQuestion}
