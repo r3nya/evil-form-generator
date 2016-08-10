@@ -2,16 +2,18 @@ import React, { PropTypes } from 'react'
 import { CheckboxItem, Button } from 'components/uiToolkit'
 
 export const Checkboxes = props => {
-  const { id, choices, onAddChoice, onDeleteChoice } = props
+  const { id, choices, onAddChoice, ...rest } = props
 
   return (
     <div>
       <fieldset>
         {[choices.length] && choices.map((choice, key) => (
           <CheckboxItem
+            id={id}
             key={key}
+            number={key}
             label={choice}
-            onDeleteChoice={() => onDeleteChoice(id, key)}
+            {...rest}
           />
         ))}
       </fieldset>
