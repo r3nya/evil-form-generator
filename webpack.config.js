@@ -10,10 +10,10 @@ const TARGET = process.env.npm_lifecycle_event;
 // Common path
 const common = {
   entry: [
-    './src/index.js',
+    './src/js/index.js',
+    './src/css/main.css',
     'font-awesome/css/font-awesome.css',
     'open-sans-fontface/open-sans.css',
-    'flexboxgrid/dist/flexboxgrid.css',
     'normalize.css'
   ],
   output: {
@@ -32,12 +32,13 @@ const common = {
     require('postcss-import'),
     require('postcss-css-variables'),
     require('postcss-apply'),
+    require('postcss-for'),
     require('postcss-mixins')
   ],
   resolve: {
     extensions: ['', '.js', '.json'],
     root: [
-       path.resolve(__dirname, 'src')
+       path.resolve(__dirname, './src/js')
     ]
   }
 };

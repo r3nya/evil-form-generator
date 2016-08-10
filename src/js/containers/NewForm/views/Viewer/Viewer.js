@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import QuestionItem from 'components/QuestionItem'
-import styles from './Viewer.css'
 
 export const Viewer = props => {
   const {
@@ -11,7 +10,7 @@ export const Viewer = props => {
   } = props
 
   return (
-    <div className={styles.bg}>
+    <div>
       {description &&
         <header>Description: {description}</header>
       }

@@ -12,6 +12,7 @@ import {
 } from 'actions'
 import { newFormSelector } from 'selectors'
 import { Creator, Viewer } from './views'
+import cx from 'classnames'
 import styles from './NewForm.css'
 
 const mapDispatchToProps = {
@@ -44,23 +45,26 @@ export default class NewForm extends Component {
     const { questions, extraData: { description }, ...actions } = this.props
 
     return (
-      <div className={styles.main}>
+      <div className={cx('grid', styles.main)}>
+        <div className="cell cell__3of12">
+          <Creator
+            onBtnClick={actions.addQuestion}
+            onChangeDescription={actions.changeDescription}
+          />
+        </div>
 
-        <Creator
-          onBtnClick={actions.addQuestion}
-          onChangeDescription={actions.changeDescription}
-        />
-
-        <Viewer
-          data={questions}
-          description={description}
-          onAddChoice={actions.addChoice}
-          onDeleteChoice={actions.deleteChoice}
-          onChangeChoice={actions.changeChoice}
-          onChangeRequired={actions.changeRequired}
-          onEditTitle={actions.editTitleQuestion}
-          onDeleteClick={actions.deleteQuestion}
-        />
+        <div className={cx('cell cell__9of12', styles.viewer)}>
+          <Viewer
+            data={questions}
+            description={description}
+            onAddChoice={actions.addChoice}
+            onDeleteChoice={actions.deleteChoice}
+            onChangeChoice={actions.changeChoice}
+            onChangeRequired={actions.changeRequired}
+            onEditTitle={actions.editTitleQuestion}
+            onDeleteClick={actions.deleteQuestion}
+          />
+        </div>
       </div>
     )
   }

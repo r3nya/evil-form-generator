@@ -6,19 +6,19 @@ export const Checkboxes = props => {
 
   return (
     <div>
-      <fieldset>
-        {[choices.length] && choices.map((choice, key) => (
+      {[choices.length] && choices.map((choice, key) => (
+        <fieldset key={key}>
           <CheckboxItem
             id={id}
-            key={key}
             number={key}
             label={choice}
             {...rest}
           />
-        ))}
-      </fieldset>
+        </fieldset>
+      ))}
       <Button
         size="small"
+        style="outline"
         onClick={() => onAddChoice(id, 'checkbox')}
       >
         <i className="fa fa-plus" /> Add Choice

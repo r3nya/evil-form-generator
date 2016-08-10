@@ -4,7 +4,7 @@ import {
   // FETCH_FORMS_ERROR
 } from 'constants'
 
-export function fetchForms() {
+export default function fetchForms() {
   return dispatch => {
     dispatch({ type: FETCH_FORMS })
 

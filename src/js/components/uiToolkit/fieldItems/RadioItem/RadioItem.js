@@ -70,10 +70,10 @@ export default class RadioItem extends Component {
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
-        <div>
+        <div className="grid grid__middle grid__left">
 
           {!editMode &&
-            <label>
+            <label className="cell cell__9of12">
               <Input type="radio" />
               {label}
             </label>
@@ -84,17 +84,20 @@ export default class RadioItem extends Component {
               type="text"
               value={newValue}
               placeholder="?"
+              className="cell cell__9of12"
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
           }
 
-          <EditIcon
-            onClick={this.handleEdit}
-          />
-          <DeleteIcon
-            onClick={() => onDeleteChoice(id, number)}
-          />
+          <div className="cell cell__3of12">
+            <EditIcon
+              onClick={this.handleEdit}
+            />
+            <DeleteIcon
+              onClick={() => onDeleteChoice(id, number)}
+            />
+          </div>
         </div>
       </ClickOutside>
     )

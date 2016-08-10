@@ -6,19 +6,20 @@ export const RadioButtons = props => {
 
   return (
     <div>
-      <fieldset>
-        {[choices.length] && choices.map((choice, key) => (
+      {[choices.length] && choices.map((choice, key) => (
+        <fieldset key={key}>
           <RadioItem
             id={id}
-            key={key}
             number={key}
             label={choice}
             {...rest}
           />
-        ))}
-      </fieldset>
+        </fieldset>
+      ))}
+
       <Button
         size="small"
+        style="outline"
         onClick={() => onAddChoice(id, 'radio')}
       >
         <i className="fa fa-plus" /> Add Choice

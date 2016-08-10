@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
 import { FieldHelper } from 'components/FieldHelper'
 import { Button, EditIcon, DeleteIcon, Input } from 'components/uiToolkit'
+import cx from 'classnames'
 import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
@@ -75,8 +76,8 @@ export default class QuestionItem extends Component {
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
-        <div className={styles.frm}>
-          <div className={styles.titleArea}>
+        <div className={cx('grid grid__middle', styles.frm)}>
+          <div className={cx('cell cell__5of12', styles.titleArea)}>
             {!titleEditMode &&
               <span onClick={this.editTitle}>{title}</span>
             }
@@ -106,12 +107,12 @@ export default class QuestionItem extends Component {
 
           <FieldHelper
             id={id}
-            className={styles.fields}
+            className={cx('cell сell__fill', styles.fields)}
             type={type}
             {...rest}
           />
 
-          <div className={styles.extra}>
+          <div className={cx('cell cell__2of12 grid grid__around grid__middle', styles.extra)}>
             <div className={styles.req}>
               <input
                 type="checkbox"
