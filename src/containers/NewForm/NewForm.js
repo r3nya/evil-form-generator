@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import {
   addChoice,
   deleteChoice,
@@ -8,10 +8,10 @@ import {
   changeRequired,
   editTitleQuestion,
   deleteQuestion
-} from 'actions';
-import { newFormSelector } from 'selectors';
-import { Creator, Viewer } from './views';
-import styles from './NewForm.css';
+} from 'actions'
+import { newFormSelector } from 'selectors'
+import { Creator, Viewer } from './views'
+import styles from './NewForm.css'
 
 const mapDispatchToProps = {
   addChoice,
@@ -21,7 +21,7 @@ const mapDispatchToProps = {
   changeRequired,
   editTitleQuestion,
   deleteQuestion
-};
+}
 
 @connect(newFormSelector, mapDispatchToProps)
 export default class NewForm extends Component {
@@ -37,7 +37,7 @@ export default class NewForm extends Component {
   };
 
   render() {
-    const { questions, ...actions } = this.props;
+    const { questions, extraData: { description }, ...actions } = this.props
 
     return (
       <div className={styles.main}>
@@ -49,6 +49,7 @@ export default class NewForm extends Component {
 
         <Viewer
           data={questions}
+          description={description}
           onAddChoice={actions.addChoice}
           onDeleteChoice={actions.deleteChoice}
           onChangeRequired={actions.changeRequired}
@@ -56,6 +57,6 @@ export default class NewForm extends Component {
           onDeleteClick={actions.deleteQuestion}
         />
       </div>
-    );
+    )
   }
 }
