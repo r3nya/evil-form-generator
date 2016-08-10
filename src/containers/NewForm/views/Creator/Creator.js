@@ -16,11 +16,12 @@ export const Creator = props => {
             <Tab>Description (Optional)</Tab>
           </TabList>
 
-          <TabPanel>
+          <TabPanel className={styles.panel}>
             <header>Add Custom Field</header>
-            <article className={styles.btns}>
+            <article className={styles.btnsArea}>
               <Button
                 style="outline"
+                className={styles.btn}
                 onClick={() => onBtnClick('input')}
               >
                 Single-line text
@@ -28,6 +29,7 @@ export const Creator = props => {
 
               <Button
                 style="outline"
+                className={styles.btn}
                 onClick={() => onBtnClick('radio')}
               >
                 Radio buttom
@@ -35,6 +37,7 @@ export const Creator = props => {
 
               <Button
                 style="outline"
+                className={styles.btn}
                 onClick={() => onBtnClick('checkbox')}
               >
                 Checkboxes
@@ -42,6 +45,7 @@ export const Creator = props => {
 
               <Button
                 style="outline"
+                className={styles.btn}
                 onClick={() => onBtnClick('select')}
               >
                 Select
@@ -49,6 +53,7 @@ export const Creator = props => {
 
               <Button
                 style="outline"
+                className={styles.btn}
                 onClick={() => onBtnClick('file')}
               >
                 File upload
@@ -56,6 +61,7 @@ export const Creator = props => {
 
               <Button
                 style="outline"
+                className={styles.btn}
                 onClick={() => onBtnClick('paragraph')}
               >
                 Paragraph text
@@ -63,7 +69,7 @@ export const Creator = props => {
             </article>
           </TabPanel>
 
-          <TabPanel>
+          <TabPanel className={styles.panel}>
             <TextArea
               label="Form Description"
               rows="4"

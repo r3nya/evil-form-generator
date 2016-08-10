@@ -3,14 +3,16 @@
     width: 26rem;
   }
 
-  .btns {
-    display: flex;
-    flex-direction: column;
+  .panel {
+    padding: 0.5rem;
+  }
 
-    & > button {
-      margin-bottom: 1rem;
-      cursor: pointer;
-      height: 3rem;
-    }
+  .btnsArea {
+    lost-utility: clearfix;
+  }
+
+  .btn {
+    lost-column: 1/2;
+    margin-bottom: 1rem;
   }
 }

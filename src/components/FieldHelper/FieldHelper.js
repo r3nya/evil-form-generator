@@ -9,10 +9,10 @@ import {
 } from 'components/fields'
 
 export const FieldHelper = props => {
-  const { type, ...rest } = props
+  const { type, className, ...rest } = props
 
   return (
-    <div>
+    <div className={className}>
       {type === 'checkbox' &&
         <Checkboxes {...rest} />
       }
