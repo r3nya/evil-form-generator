@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
 import { FieldHelper } from 'components/FieldHelper'
 import { Button, EditIcon, DeleteIcon, Input } from 'components/uiToolkit'
-import cx from 'classnames'
 import styles from './QuestionItem.css'
 
 export default class QuestionItem extends Component {
@@ -76,7 +75,7 @@ export default class QuestionItem extends Component {
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
-        <div className={cx('row', styles.frm)}>
+        <div className={styles.frm}>
           <div className={styles.titleArea}>
             {!titleEditMode &&
               <span onClick={this.editTitle}>{title}</span>
@@ -113,21 +112,21 @@ export default class QuestionItem extends Component {
           />
 
           <div className={styles.extra}>
-            <label>
+            <div className={styles.req}>
               <input
                 type="checkbox"
                 checked={required}
                 onChange={() => onChangeRequired({ id, required: !required })}
               />
-              Required?
-            </label>
-
-            <Button
-              style="outline"
-              onClick={() => onDeleteClick()}
-            >
-              <DeleteIcon />
-            </Button>
+            </div>
+            <div className={styles.del}>
+              <Button
+                style="outline"
+                onClick={() => onDeleteClick()}
+              >
+                <DeleteIcon />
+              </Button>
+            </div>
           </div>
         </div>
       </ClickOutside>

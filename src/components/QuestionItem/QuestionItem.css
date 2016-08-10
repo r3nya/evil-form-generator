@@ -4,33 +4,16 @@
   }
 
   .frm {
-    /*lost-utility: clearfix;*/
-    /*display: flex;
-    justify-content: space-between;
-    align-items: center;*/
-    /*lost-align: center;*/
     border: 1px solid black;
     padding: 0.2rem 0.4rem;
     margin-bottom: 0.4rem;
   }
 
   .titleArea {
-    lost-column: 2/5 0;
     min-width: 20rem;
-    /*display: flex;*/
-    /*justify-content: flex-start;*/
-    /*align-items: center;*/
   }
 
   .editBtn {
     margin-left: 4px;
-  }
-
-  .fields {
-    lost-column: 2/5 0;
-  }
-
-  .extra {
-    lost-column: 1/5 0;
   }
 }

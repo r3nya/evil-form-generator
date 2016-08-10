@@ -13,6 +13,7 @@ const common = {
     './src/index.js',
     'font-awesome/css/font-awesome.css',
     'open-sans-fontface/open-sans.css',
+    'flexboxgrid/dist/flexboxgrid.css',
     'normalize.css'
   ],
   output: {
@@ -28,7 +29,6 @@ const common = {
   postcss: [
     autoprefixer({ browsers: ['last 2 versions'] }),
     require('postcss-nested'),
-    require('lost'),
     require('postcss-import'),
     require('postcss-css-variables'),
     require('postcss-apply'),
