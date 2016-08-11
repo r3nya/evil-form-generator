@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', Helvetica-Light, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
+  color: #4f4f4f;
 }
 
 
@@ -21,5 +22,5 @@ body {
   .test {
     color: red;
   }
-  
+
 }
