@@ -15,4 +15,8 @@
     vertical-align: middle;
     border-collapse: separate;
   }
+
+  .input {
+    width: 100%;
+  }
 }

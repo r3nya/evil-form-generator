@@ -6,9 +6,15 @@ export const ParagraphText = props => {
 
   return (
     <div className={styles.group}>
-      <Input type="text" placeholder="Input text here…" />
+      <Input
+        type="text"
+        className={styles.input}
+        placeholder="Input text here…"
+      />
       <span className={styles.groupBtn}>
-        <Button className="btn btn-secondary" type="button">
+        <Button
+          style="transparent"
+        >
           <EditIcon />
         </Button>
       </span>

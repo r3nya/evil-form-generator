@@ -11,6 +11,8 @@
 
 .grid { @apply --grid; }
 
+.grid__no-wrap { flex-wrap: nowrap; }
+
 .grid__top { align-items: flex-start; }
 .grid__middle { align-items: center; }
 .grid__bottom { align-items: flex-end; }
@@ -22,7 +24,6 @@
 .grid__right { justify-content: flex-end; }
 .grid__between { justify-content: space-between; }
 .grid__around { justify-content: space-around; }
-
 
 .cell { @apply --cell; }
 

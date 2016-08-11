@@ -77,7 +77,9 @@ export default class RadioCheckboxItem extends Component {
 
           {!editMode &&
             <label className="cell cell__10of12">
-              <Input type={type} />
+              {type !== 'text' &&
+                <Input type={type} />
+              }
               {label}
             </label>
           }
@@ -93,7 +95,7 @@ export default class RadioCheckboxItem extends Component {
             />
           }
 
-          <div className="cell cell__2of12">
+          <div className="cell cell__2of12 grid grid__right">
             <Button
               size="small"
               style="transparent"

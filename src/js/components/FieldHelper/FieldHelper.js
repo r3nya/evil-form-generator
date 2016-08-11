@@ -30,7 +30,7 @@ export const FieldHelper = props => {
       }
 
       {type === 'select' &&
-        <Select />
+        <Select {...rest} />
       }
 
       {type === 'input' &&
@@ -42,4 +42,5 @@ export const FieldHelper = props => {
 
 FieldHelper.propTypes = {
   type: PropTypes.string.isRequired,
+  className: PropTypes.string
 }
