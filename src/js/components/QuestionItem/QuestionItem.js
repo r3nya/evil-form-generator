@@ -6,7 +6,7 @@ import {
 } from 'react-dnd'
 import { FieldHelper } from 'components/FieldHelper'
 import { itemSource, itemTarget } from 'utils'
-import { Button, EditIcon, DeleteIcon, Input } from 'components/uiToolkit'
+import { Button, EditIcon, DeleteIcon, Input, DragArea } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './QuestionItem.css'
 
@@ -15,6 +15,7 @@ import styles from './QuestionItem.css'
 }))
 @dragSource('ITEM', itemSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
+  connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging()
 }))
 export default class QuestionItem extends Component {
@@ -87,16 +88,22 @@ export default class QuestionItem extends Component {
     const {
       id, title, required, type, onChangeRequired,
       onDeleteClick, isDragging, connectDragSource, connectDropTarget,
+      connectDragPreview,
       ...rest
     } = this.props
     const { titleEditMode, newTitle } = this.state
 
     const opacity = isDragging ? 0 : 1
 
-    return connectDragSource(connectDropTarget((
+    return connectDragPreview(connectDropTarget((
       <div style={{ opacity }}>
         <ClickOutside onClickOutside={this.handleClickOutside}>
           <div className={cx('grid grid__middle', styles.frm)}>
+            {connectDragSource(
+              <div>
+                <DragArea className="cell cell__fill" />
+              </div>
+            )}
             <div className={cx('cell cell__5of12 grid grid__middle grid__left', styles.titleArea)}>
               {!titleEditMode &&
                 <span onClick={this.editTitle}>{title}</span>

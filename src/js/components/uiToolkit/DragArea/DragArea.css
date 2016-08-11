@@ -1,0 +1,35 @@
+:local {
+  .drag {
+    cursor: move;
+  }
+
+  .row {
+    position: relative;
+    width: 15px;
+    height: 3px;
+    margin-bottom: 10px;
+  }
+
+  .row::before,
+  .row::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: gray;
+  }
+
+  .row::before {
+    left: 0;
+  }
+
+  .row::after {
+    right: 0;
+  }
+
+  .row:last-child {
+    margin-bottom: 0;
+  }
+}
