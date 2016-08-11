@@ -28,6 +28,9 @@ export default class QuestionItem extends Component {
     onEditTitle: PropTypes.func.isRequired,
     onChangeRequired: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
+    connectDragSource: PropTypes.func.isRequired,
+    connectDropTarget: PropTypes.func.isRequired,
+    connectDragPreview: PropTypes.func.isRequired
   };
 
   state = {
@@ -59,9 +62,6 @@ export default class QuestionItem extends Component {
   pushNewTitle = () => {
     const { newTitle } = this.state
     const { id, onEditTitle } = this.props
-
-    // todo
-    // use trim() for newTitle
 
     if (newTitle) {
       onEditTitle({ id, newTitle })
@@ -116,7 +116,7 @@ export default class QuestionItem extends Component {
                   placeholder="Title?"
                   className="cell cell__9of12"
                   onKeyPress={this.handleKeyPress}
-                  onChange={e => this.handleChangeField('newTitle', e.target.value)}
+                  onChange={e => this.handleChangeField('newTitle', e.target.value.trim())}
                 />
               }
 

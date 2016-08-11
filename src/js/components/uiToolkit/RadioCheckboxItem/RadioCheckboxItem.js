@@ -91,7 +91,7 @@ export default class RadioCheckboxItem extends Component {
               placeholder="?"
               className={cx('cell cell__10of12', styles.input)}
               onKeyPress={this.handleKeyPress}
-              onChange={e => this.handleChangeField('newValue', e.target.value)}
+              onChange={e => this.handleChangeField('newValue', e.target.value.trim())}
             />
           }
 
