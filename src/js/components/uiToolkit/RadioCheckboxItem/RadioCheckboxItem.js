@@ -1,11 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
 import { Input, Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
+import cx from 'classnames'
+import styles from './RadioCheckboxItem.css'
 
-export default class CheckboxItem extends Component {
+export default class RadioCheckboxItem extends Component {
   static propTypes = {
     id: PropTypes.number.isRequired,
     label: PropTypes.string,
+    type: PropTypes.string,
     number: PropTypes.number.isRequired,
     onChangeChoice: PropTypes.func.isRequired,
     onDeleteChoice: PropTypes.func.isRequired,
@@ -14,7 +17,7 @@ export default class CheckboxItem extends Component {
   state = {
     editMode: false,
     newValue: ''
-  }
+  };
 
   handleClickOutside = () => {
     this.pushNewValue()
@@ -65,7 +68,7 @@ export default class CheckboxItem extends Component {
   }
 
   render() {
-    const { id, label, number, onDeleteChoice } = this.props
+    const { id, label, type, number, onDeleteChoice } = this.props
     const { editMode, newValue } = this.state
 
     return (
@@ -74,7 +77,7 @@ export default class CheckboxItem extends Component {
 
           {!editMode &&
             <label className="cell cell__10of12">
-              <Input type="checkbox" />
+              <Input type={type} />
               {label}
             </label>
           }
@@ -84,7 +87,7 @@ export default class CheckboxItem extends Component {
               type="text"
               value={newValue}
               placeholder="?"
-              className="cell cell__10of12"
+              className={cx('cell cell__10of12', styles.input)}
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
