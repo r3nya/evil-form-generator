@@ -35,7 +35,7 @@ export default class QuestionItem extends Component {
 
   state = {
     titleEditMode: false,
-    newTitle: ''
+    newTitle: '…'
   };
 
   handleClickOutside = () => {

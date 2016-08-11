@@ -18,7 +18,7 @@ export const Creator = props => {
           </TabList>
 
           <TabPanel className={cx('grid', styles.panel)}>
-            <div className="cell cell__12of12">
+            <div className="cell cell__12of12 grid grid__center">
               <header>
                 <h2>Add Custom Field</h2>
               </header>
@@ -75,15 +75,14 @@ export const Creator = props => {
                   </Button>
                 </div>
 
-
               </article>
             </div>
           </TabPanel>
 
-          <TabPanel className={styles.panel}>
+          <TabPanel className={cx(styles.textAreaPanel, styles.panel)}>
             <TextArea
               label="Form Description"
-              rows="4"
+              rows="5"
               onChange={(event) => onChangeDescription(event.target.value)}
             />
           </TabPanel>

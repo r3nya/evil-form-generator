@@ -1,0 +1,18 @@
+:local {
+  .description {
+    font-size: 0.85rem;
+    color: #bfbfbf;
+    text-transform: uppercase;
+  }
+
+  hr {
+    height: 1px;
+    background-color: #e5e5e5;
+    border: 0;
+  }
+
+  small {
+    font-size: 0.85rem;
+    color: #4f4f4f;
+  }
+}
