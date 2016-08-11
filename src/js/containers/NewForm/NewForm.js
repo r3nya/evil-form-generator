@@ -12,7 +12,7 @@ import {
   dragQuestion
 } from 'actions'
 import { newFormSelector } from 'selectors'
-import { Creator, Viewer, ViewerContainer } from './views'
+import { Creator, Viewer, ViewerContainer, ViewerHeader } from './views'
 import cx from 'classnames'
 import styles from './NewForm.css'
 
@@ -60,6 +60,7 @@ export default class NewForm extends Component {
           <Viewer
             description={description}
           >
+            <ViewerHeader />
             <ViewerContainer
               data={questions}
               onAddChoice={actions.addChoice}

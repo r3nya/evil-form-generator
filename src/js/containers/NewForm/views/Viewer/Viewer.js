@@ -17,5 +17,5 @@ export const Viewer = props => {
 
 Viewer.propTypes = {
   description: PropTypes.string,
-  children: PropTypes.element.isRequired
+  children: PropTypes.node.isRequired
 }
