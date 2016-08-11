@@ -6,16 +6,19 @@ export const RadioButtons = props => {
 
   return (
     <div>
-      {[choices.length] && choices.map((choice, key) => (
-        <fieldset key={key}>
-          <RadioItem
-            id={id}
-            number={key}
-            label={choice}
-            {...rest}
-          />
+      {!!choices.length &&
+        <fieldset>
+          {choices.length && choices.map((choice, key) => (
+            <RadioItem
+              id={id}
+              key={key}
+              number={key}
+              label={choice}
+              {...rest}
+            />
+          ))}
         </fieldset>
-      ))}
+      }
 
       <Button
         size="small"

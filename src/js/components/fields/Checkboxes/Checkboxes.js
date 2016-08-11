@@ -6,16 +6,19 @@ export const Checkboxes = props => {
 
   return (
     <div>
-      {[choices.length] && choices.map((choice, key) => (
-        <fieldset key={key}>
-          <CheckboxItem
-            id={id}
-            number={key}
-            label={choice}
-            {...rest}
-          />
+      {!!choices.length &&
+        <fieldset>
+          {choices.length && choices.map((choice, key) => (
+            <CheckboxItem
+              id={id}
+              key={key}
+              number={key}
+              label={choice}
+              {...rest}
+            />
+          ))}
         </fieldset>
-      ))}
+      }
       <Button
         size="small"
         style="transparent"
