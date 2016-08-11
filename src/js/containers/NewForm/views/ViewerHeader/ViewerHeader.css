@@ -2,4 +2,8 @@
   .header {
     padding-left: 3rem;
   }
+
+  .h5 {
+    text-transform: uppercase;
+  }
 }
