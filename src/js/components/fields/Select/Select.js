@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { SelectElement, RadioCheckboxItem, Button } from 'components/uiToolkit'
+import { SelectElement, ChoiceItem, Button } from 'components/uiToolkit'
 import './Select.css'
 
 export const Select = props => {
@@ -16,7 +16,7 @@ export const Select = props => {
       {!!choices.length &&
         <fieldset>
           {choices.length && choices.map((choice, key) => (
-            <RadioCheckboxItem
+            <ChoiceItem
               id={id}
               key={key}
               type="text"

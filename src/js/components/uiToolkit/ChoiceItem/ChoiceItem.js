@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
 import { Input, Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
 import cx from 'classnames'
-import styles from './RadioCheckboxItem.css'
+import styles from './ChoiceItem.css'
 
-export default class RadioCheckboxItem extends Component {
+export default class ChoiceItem extends Component {
   static propTypes = {
     id: PropTypes.number.isRequired,
     label: PropTypes.string,

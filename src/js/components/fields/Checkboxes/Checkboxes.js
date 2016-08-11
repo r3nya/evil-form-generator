@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { RadioCheckboxItem, Button } from 'components/uiToolkit'
+import { ChoiceItem, Button } from 'components/uiToolkit'
 
 export const Checkboxes = props => {
   const { id, choices, onAddChoice, ...rest } = props
@@ -9,7 +9,7 @@ export const Checkboxes = props => {
       {!!choices.length &&
         <fieldset>
           {choices.length && choices.map((choice, key) => (
-            <RadioCheckboxItem
+            <ChoiceItem
               id={id}
               key={key}
               type="checkbox"
