@@ -18,7 +18,7 @@
     display: block;
     width: 3px;
     height: 3px;
-    background-color: gray;
+    background-color: #dadada;
   }
 
   .row::before {

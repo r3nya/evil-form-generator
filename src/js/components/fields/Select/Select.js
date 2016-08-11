@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { SelectElement, RadioCheckboxItem, Button } from 'components/uiToolkit'
+import './Select.css'
 
 export const Select = props => {
   const { id, choices, onAddChoice, ...rest } = props
