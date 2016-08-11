@@ -1,1 +1,1 @@
-export default from './NewForm';
+export default from './NewForm'

@@ -6,7 +6,8 @@ import {
   ADD_CHOICE,
   DELETE_CHOICE,
   CHANGE_CHOICE,
-  CHANGE_TEXT
+  CHANGE_TEXT,
+  DRAG_QUESTION
 } from 'constants'
 
 export default function (state = [], action) {
@@ -80,6 +81,9 @@ export default function (state = [], action) {
       q.id === payload.id ?
         Object.assign({}, q, { text: payload.text }) : q
     })
+
+  case DRAG_QUESTION:
+    return payload
 
   default:
     return state

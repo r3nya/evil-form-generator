@@ -13,6 +13,7 @@ export const ADD_CHOICE = 'ADD_CHOICE'
 export const DELETE_CHOICE = 'DELETE_CHOICE'
 export const CHANGE_CHOICE = 'CHANGE_CHOICE'
 export const CHANGE_TEXT = 'CHANGE_TEXT'
+export const DRAG_QUESTION = 'DRAG_QUESTION'
 
 // extraData
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION'

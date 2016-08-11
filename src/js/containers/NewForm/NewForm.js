@@ -8,10 +8,11 @@ import {
   changeChoice,
   changeRequired,
   editTitleQuestion,
-  deleteQuestion
+  deleteQuestion,
+  dragQuestion
 } from 'actions'
 import { newFormSelector } from 'selectors'
-import { Creator, Viewer } from './views'
+import { Creator, Viewer, ViewerContainer } from './views'
 import cx from 'classnames'
 import styles from './NewForm.css'
 
@@ -23,7 +24,8 @@ const mapDispatchToProps = {
   changeChoice,
   changeRequired,
   editTitleQuestion,
-  deleteQuestion
+  deleteQuestion,
+  dragQuestion
 }
 
 @connect(newFormSelector, mapDispatchToProps)
@@ -39,6 +41,7 @@ export default class NewForm extends Component {
     changeRequired: PropTypes.func.isRequired,
     editTitleQuestion: PropTypes.func.isRequired,
     deleteQuestion: PropTypes.func.isRequired,
+    dragQuestion: PropTypes.func.isRequired,
   };
 
   render() {
@@ -55,15 +58,19 @@ export default class NewForm extends Component {
 
         <div className={cx('cell cell__9of12', styles.viewer)}>
           <Viewer
-            data={questions}
             description={description}
-            onAddChoice={actions.addChoice}
-            onDeleteChoice={actions.deleteChoice}
-            onChangeChoice={actions.changeChoice}
-            onChangeRequired={actions.changeRequired}
-            onEditTitle={actions.editTitleQuestion}
-            onDeleteClick={actions.deleteQuestion}
-          />
+          >
+            <ViewerContainer
+              data={questions}
+              onAddChoice={actions.addChoice}
+              onDeleteChoice={actions.deleteChoice}
+              onChangeChoice={actions.changeChoice}
+              onChangeRequired={actions.changeRequired}
+              onEditTitle={actions.editTitleQuestion}
+              onDeleteClick={actions.deleteQuestion}
+              onDragQuestion={actions.dragQuestion}
+            />
+          </Viewer>
         </div>
       </div>
     )

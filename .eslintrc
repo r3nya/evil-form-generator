@@ -28,7 +28,8 @@
         '^containers.*',
         '^reducers.*',
         '^selectors.*',
-        '^store.*'
+        '^store.*',
+        '^utils.*'
       ]
     }]
   },
