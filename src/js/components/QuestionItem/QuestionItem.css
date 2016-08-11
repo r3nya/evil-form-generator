@@ -1,6 +1,8 @@
 :local {
   .asterisk {
     color: red;
+    width: 0.7rem;
+    padding-left: 0.3rem;
   }
 
   .frm {

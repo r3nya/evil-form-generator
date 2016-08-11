@@ -77,7 +77,7 @@ export default class QuestionItem extends Component {
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
         <div className={cx('grid grid__middle', styles.frm)}>
-          <div className={cx('cell cell__5of12', styles.titleArea)}>
+          <div className={cx('cell cell__5of12 grid grid__middle grid__left', styles.titleArea)}>
             {!titleEditMode &&
               <span onClick={this.editTitle}>{title}</span>
             }
@@ -87,18 +87,19 @@ export default class QuestionItem extends Component {
                 type="text"
                 value={newTitle}
                 placeholder="Title?"
+                className="cell cell__9of12"
                 onKeyPress={this.handleKeyPress}
                 onChange={e => this.handleChangeField('newTitle', e.target.value)}
               />
             }
 
-            {required &&
-              <span className={styles.asterisk}>*</span>
-            }
+            <span className={cx('cell cell_1of12', styles.asterisk)}>
+              {required && ['*']}
+            </span>
 
             <Button
-              className={styles.editBtn}
-              style="outline"
+              className={cx('cell cell__2of12', styles.editBtn)}
+              style="transparent"
               onClick={this.editTitle}
             >
               <EditIcon />

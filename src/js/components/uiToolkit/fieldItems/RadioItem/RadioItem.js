@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
-import { Input, EditIcon, DeleteIcon } from 'components/uiToolkit'
+import { Input, Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
 
 export default class RadioItem extends Component {
   static propTypes = {
@@ -73,7 +73,7 @@ export default class RadioItem extends Component {
         <div className="grid grid__middle grid__left">
 
           {!editMode &&
-            <label className="cell cell__9of12">
+            <label className="cell cell__10of12">
               <Input type="radio" />
               {label}
             </label>
@@ -84,19 +84,30 @@ export default class RadioItem extends Component {
               type="text"
               value={newValue}
               placeholder="?"
-              className="cell cell__9of12"
+              className="cell cell__10of12"
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
           }
 
-          <div className="cell cell__3of12">
-            <EditIcon
+          <div className="cell cell__2of12">
+            <Button
+              size="small"
+              style="transparent"
               onClick={this.handleEdit}
-            />
-            <DeleteIcon
+            >
+              <EditIcon />
+            </Button>
+
+            <Button
+              size="small"
+              style="transparent"
               onClick={() => onDeleteChoice(id, number)}
-            />
+            >
+              <DeleteIcon
+                onClick={() => onDeleteChoice(id, number)}
+              />
+            </Button>
           </div>
         </div>
       </ClickOutside>

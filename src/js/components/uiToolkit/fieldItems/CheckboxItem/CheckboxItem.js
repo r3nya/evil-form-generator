@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
-import { Input, EditIcon, DeleteIcon } from 'components/uiToolkit'
+import { Input, Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
 
 export default class CheckboxItem extends Component {
   static propTypes = {
@@ -70,10 +70,10 @@ export default class CheckboxItem extends Component {
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
-        <div>
+        <div className="grid grid__middle grid__left">
 
           {!editMode &&
-            <label>
+            <label className="cell cell__10of12">
               <Input type="checkbox" />
               {label}
             </label>
@@ -84,17 +84,31 @@ export default class CheckboxItem extends Component {
               type="text"
               value={newValue}
               placeholder="?"
+              className="cell cell__10of12"
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
           }
 
-          <EditIcon
-            onClick={this.handleEdit}
-          />
-          <DeleteIcon
-            onClick={() => onDeleteChoice(id, number)}
-          />
+          <div className="cell cell__2of12">
+            <Button
+              size="small"
+              style="transparent"
+              onClick={this.handleEdit}
+            >
+              <EditIcon />
+            </Button>
+
+            <Button
+              size="small"
+              style="transparent"
+              onClick={() => onDeleteChoice(id, number)}
+            >
+              <DeleteIcon
+                onClick={() => onDeleteChoice(id, number)}
+              />
+            </Button>
+          </div>
         </div>
       </ClickOutside>
     )
