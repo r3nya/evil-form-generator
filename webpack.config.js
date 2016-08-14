@@ -33,7 +33,9 @@ const common = {
     require('postcss-css-variables'),
     require('postcss-apply'),
     require('postcss-for'),
-    require('postcss-mixins')
+    require('postcss-mixins'),
+    require('postcss-custom-media'),
+    require('css-mqpacker')
   ],
   resolve: {
     extensions: ['', '.js', '.json'],

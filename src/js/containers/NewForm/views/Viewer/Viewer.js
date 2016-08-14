@@ -1,15 +1,26 @@
 import React, { PropTypes } from 'react'
+import cx from 'classnames'
+import { Button } from 'components/uiToolkit'
 import styles from './Viewer.css'
 
 export const Viewer = props => {
-  const { children, description } = props
+  const { children, description, onSaveForm } = props
 
   return (
     <div>
-      <header>
-        <h6 className={styles.description}>Description:&nbsp;
+      <header className="grid grid__middle">
+        <h6 className={cx(styles.description, 'cell cell__10of12')}>Description:&nbsp;
           <small>{description}</small>
         </h6>
+
+        <div className="cell cell__2of12">
+          <Button
+            style="primary"
+            onClick={() => onSaveForm()}
+          >
+            Save form
+          </Button>
+        </div>
 
       </header>
 
@@ -23,5 +34,6 @@ export const Viewer = props => {
 
 Viewer.propTypes = {
   description: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  onSaveForm: PropTypes.func.isRequired
 }

@@ -9,7 +9,8 @@ import {
   changeRequired,
   editTitleQuestion,
   deleteQuestion,
-  dragQuestion
+  dragQuestion,
+  saveForm
 } from 'actions'
 import { newFormSelector } from 'selectors'
 import { Creator, Viewer, ViewerContainer, ViewerHeader } from './views'
@@ -25,7 +26,8 @@ const mapDispatchToProps = {
   changeRequired,
   editTitleQuestion,
   deleteQuestion,
-  dragQuestion
+  dragQuestion,
+  saveForm
 }
 
 @connect(newFormSelector, mapDispatchToProps)
@@ -42,6 +44,7 @@ export default class NewForm extends Component {
     editTitleQuestion: PropTypes.func.isRequired,
     deleteQuestion: PropTypes.func.isRequired,
     dragQuestion: PropTypes.func.isRequired,
+    saveForm: PropTypes.func.isRequired,
   };
 
   render() {
@@ -59,6 +62,7 @@ export default class NewForm extends Component {
         <div className={cx('cell cell__9of12', styles.viewer)}>
           <Viewer
             description={description}
+            onSaveForm={actions.saveForm}
           >
             <ViewerHeader />
             <ViewerContainer

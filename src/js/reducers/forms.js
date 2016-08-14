@@ -1,43 +1,17 @@
 import {
   FETCH_FORMS,
   FETCH_FORMS_SUCCESS,
-  FETCH_FORMS_ERROR
+  FETCH_FORMS_ERROR,
+  SAVE_FORM_SUCCESS
 } from 'constants'
 
 const initialState = {
   loading: false,
-  data: [
-    {
-      id: 1,
-      description: 'hello from FORM',
-      questions: [
-        {
-          title: 'How are you?',
-          choices: {
-            type: 'radio',
-            value: [
-              'not bad',
-              'lolok',
-              'wtf'
-            ]
-          },
-          require: true
-        },
-        {
-          title: 'Hope you are well',
-          choices: {
-            type: 'textArea',
-            value: 'hey'
-          },
-          require: true
-        }
-      ]
-    }
-  ]
+  data: []
 }
 
 export default function (state = initialState, action) {
-  const { type, payload } = action;
+  const { type, payload } = action
 
   switch (type) {
   case FETCH_FORMS:
@@ -58,6 +32,19 @@ export default function (state = initialState, action) {
       ...state,
       loading: false,
       error: payload.err
+    }
+
+  case SAVE_FORM_SUCCESS:
+    return {
+      ...state,
+      data: [
+        ...state.data,
+        {
+          id: state.data.length,
+          createdAt: new Date().toLocaleString(),
+          ...payload
+        }
+      ]
     }
 
   default:

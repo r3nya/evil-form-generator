@@ -7,10 +7,13 @@ import {
   DELETE_CHOICE,
   CHANGE_CHOICE,
   CHANGE_TEXT,
-  DRAG_QUESTION
+  DRAG_QUESTION,
+  SAVE_FORM_SUCCESS
 } from 'constants'
 
-export default function (state = [], action) {
+const initialState = []
+
+export default function (state = initialState, action) {
   const { type, payload } = action
 
   switch (type) {
@@ -57,9 +60,11 @@ export default function (state = [], action) {
       if (q.id === payload.id) {
         const { number } = payload
         const { choices } = q
-
+        console.log('1', choices)
         delete choices[number]
+        console.log('2', choices)
         q.choices = [...choices.filter(Boolean)]
+        console.log('3', q.choices)
       }
 
       return q
@@ -84,6 +89,9 @@ export default function (state = [], action) {
 
   case DRAG_QUESTION:
     return payload
+
+  case SAVE_FORM_SUCCESS:
+    return initialState
 
   default:
     return state

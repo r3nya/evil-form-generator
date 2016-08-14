@@ -8,7 +8,7 @@ export const Creator = props => {
   const { onBtnClick, onChangeDescription } = props
 
   return (
-    <div className={styles.bg}>
+    <div>
       <header>Evil form generator</header>
       <main>
         <Tabs>
@@ -23,7 +23,7 @@ export const Creator = props => {
                 <h2>Add Custom Field</h2>
               </header>
               <article className={cx('grid grid__between', styles.btnsArea)}>
-                <div className={cx('cell cell__6of12', styles.btnsCol)}>
+                <div className={cx('cell cell__12of12 cell__md__6of12', styles.btnsCol)}>
                   <Button
                     style="outline"
                     className={styles.btn}
@@ -49,7 +49,7 @@ export const Creator = props => {
                   </Button>
                 </div>
 
-                <div className="cell cell__6of12">
+                <div className="cell cell__12of12 cell__md__6of12">
                   <Button
                     style="outline"
                     className={styles.btn}

@@ -33,7 +33,7 @@ export const Select = props => {
         style="transparent"
         onClick={() => onAddChoice(id, 'select')}
       >
-        <i className="fa fa-plus" /> Add Choice
+        <i className="fa fa-plus" /> Add value
       </Button>
     </div>
   )

@@ -16,6 +16,16 @@
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
+
+    @media (min-width: 64em) and (max-width: 75em) {
+      font-size: 0.8rem;
+      padding: 0.5rem;
+    }
+
+    /*@media (max-width: 990px) {
+      font-size: 0.7rem;
+      padding: 0.35rem;
+    }*/
   }
 
   .large {

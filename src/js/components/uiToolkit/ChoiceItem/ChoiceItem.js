@@ -78,7 +78,11 @@ export default class ChoiceItem extends Component {
           {!editMode &&
             <label className="cell cell__10of12">
               {type !== 'text' &&
-                <Input type={type} />
+                <Input
+                  type={type}
+                  className="not-allowed"
+                  disabled="disabled"
+                />
               }
               {label}
             </label>

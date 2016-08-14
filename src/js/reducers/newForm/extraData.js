@@ -1,6 +1,8 @@
-import { CHANGE_DESCRIPTION } from 'constants'
+import { CHANGE_DESCRIPTION, SAVE_FORM_SUCCESS } from 'constants'
 
-export default function (state = {}, action) {
+const initialState = {}
+
+export default function (state = initialState, action) {
   const { type, payload } = action
 
   switch (type) {
@@ -9,6 +11,9 @@ export default function (state = {}, action) {
       ...state,
       description: payload
     }
+
+  case SAVE_FORM_SUCCESS:
+    return initialState
 
   default:
     return state

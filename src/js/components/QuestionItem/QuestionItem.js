@@ -34,8 +34,8 @@ export default class QuestionItem extends Component {
   };
 
   state = {
-    titleEditMode: false,
-    newTitle: '…'
+    titleEditMode: true,
+    newTitle: ''
   };
 
   handleClickOutside = () => {
@@ -106,14 +106,19 @@ export default class QuestionItem extends Component {
             )}
             <div className={cx('cell cell__5of12 grid grid__middle grid__left', styles.titleArea)}>
               {!titleEditMode &&
-                <span onClick={this.editTitle}>{title}</span>
+                <span
+                  className={cx('cell cell__10of12', styles.input)}
+                  onClick={this.editTitle}
+                >
+                  {title}
+                </span>
               }
 
               {titleEditMode &&
                 <Input
                   type="text"
                   value={newTitle}
-                  placeholder="Title?"
+                  placeholder={type}
                   className="cell cell__9of12"
                   onKeyPress={this.handleKeyPress}
                   onChange={e => this.handleChangeField('newTitle', e.target.value.trim())}
@@ -125,7 +130,7 @@ export default class QuestionItem extends Component {
               </span>
 
               <Button
-                className={cx('cell cell__2of12', styles.editBtn)}
+                className={cx('cell cell__1of12', styles.editBtn)}
                 style="transparent"
                 onClick={this.editTitle}
               >

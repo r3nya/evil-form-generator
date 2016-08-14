@@ -14,6 +14,9 @@ export const DELETE_CHOICE = 'DELETE_CHOICE'
 export const CHANGE_CHOICE = 'CHANGE_CHOICE'
 export const CHANGE_TEXT = 'CHANGE_TEXT'
 export const DRAG_QUESTION = 'DRAG_QUESTION'
+export const SAVE_FORM = 'SAVE_FORM'
+export const SAVE_FORM_SUCCESS = 'SAVE_FORM_SUCCESS'
+export const SAVE_FORM_ERROR = 'SAVE_FORM_ERROR'
 
 // extraData
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION'

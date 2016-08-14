@@ -5,6 +5,11 @@
     padding-left: 0.3rem;
   }
 
+  .input {
+    word-break: break-all;
+    white-space: normal;
+  }
+
   .frm {
     border: 1px dotted #e6e6e6;
     border-radius: 0.5rem;

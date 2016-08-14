@@ -26,7 +26,7 @@ export const RadioButtons = props => {
         style="transparent"
         onClick={() => onAddChoice(id, 'radio')}
       >
-        <i className="fa fa-plus" /> Add Choice
+        <i className="fa fa-plus" /> Add value
       </Button>
     </div>
   )

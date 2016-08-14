@@ -1,12 +1,15 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { fetchForms } from 'actions';
-import { formsSelector } from 'selectors';
-import { ListItem } from 'components/ListItem';
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { fetchForms } from 'actions'
+import { formsSelector } from 'selectors'
+import { ListItem } from 'components/ListItem'
+import { ListGroup } from 'components/uiToolkit'
+import cx from 'classnames'
+import styles from './AllForms.css'
 
 const mapDispatchToProps = {
   fetchForms
-};
+}
 
 @connect(formsSelector, mapDispatchToProps)
 export default class AllForms extends Component {
@@ -16,24 +19,26 @@ export default class AllForms extends Component {
   };
 
   componentDidMount() {
-    const { fetchForms } = this.props;
-    fetchForms();
+    const { fetchForms } = this.props
+    fetchForms()
   }
 
   render() {
-    const { data } = this.props;
+    const { data } = this.props
 
     return (
-      <div>
-        {data.length &&
-          data.map((item, id) => (
-            <ListItem
-              key={id}
-              {...item}
-            />
-          ))
-        }
+      <div className={cx('grid', styles.main)}>
+        <ListGroup className="cell cell__12of12">
+          {!!data.length &&
+            data.map((item, key) => (
+              <ListItem
+                key={key}
+                {...item}
+              />
+            ))
+          }
+        </ListGroup>
       </div>
-    );
+    )
   }
 }

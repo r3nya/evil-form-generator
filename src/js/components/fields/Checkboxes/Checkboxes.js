@@ -25,7 +25,7 @@ export const Checkboxes = props => {
         style="transparent"
         onClick={() => onAddChoice(id, 'checkbox')}
       >
-        <i className="fa fa-plus" /> Add Choice
+        <i className="fa fa-plus" /> Add value
       </Button>
     </div>
   )
