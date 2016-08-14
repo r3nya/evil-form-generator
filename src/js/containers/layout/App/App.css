@@ -17,10 +17,3 @@ body {
     flex: 1;
   }
 }
-
-:global {
-  .test {
-    color: red;
-  }
-
-}

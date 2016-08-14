@@ -1,3 +1,9 @@
 .not-allowed {
   cursor: not-allowed;
 }
+
+button:active,
+button:hover,
+button:focus {
+  outline-width: 0;
+}

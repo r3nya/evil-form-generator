@@ -8,6 +8,7 @@
   .input {
     word-break: break-all;
     white-space: normal;
+    min-height: 1rem;
   }
 
   .frm {
