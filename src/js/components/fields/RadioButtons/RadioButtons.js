@@ -9,7 +9,7 @@ export const RadioButtons = props => {
       {!!choices.length &&
         <fieldset>
           {choices.length && choices.map((choice, key) => (
-            <ChoiceItem
+            choice && <ChoiceItem
               id={id}
               key={key}
               type="radio"

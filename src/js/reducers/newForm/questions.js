@@ -10,6 +10,7 @@ import {
   DRAG_QUESTION,
   SAVE_FORM_SUCCESS
 } from 'constants'
+import { compact } from 'lodash'
 
 const initialState = []
 
@@ -60,11 +61,8 @@ export default function (state = initialState, action) {
       if (q.id === payload.id) {
         const { number } = payload
         const { choices } = q
-        console.log('1', choices)
+
         delete choices[number]
-        console.log('2', choices)
-        q.choices = [...choices.filter(Boolean)]
-        console.log('3', q.choices)
       }
 
       return q

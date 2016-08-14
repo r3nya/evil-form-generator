@@ -76,7 +76,7 @@ export default class ChoiceItem extends Component {
         <div className="grid grid__middle grid__left">
 
           {!editMode &&
-            <label className="cell cell__10of12">
+            <label className="cell cell__10of12" onClick={this.handleEdit}>
               {type !== 'text' &&
                 <Input
                   type={type}

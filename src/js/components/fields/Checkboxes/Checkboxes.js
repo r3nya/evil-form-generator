@@ -9,7 +9,7 @@ export const Checkboxes = props => {
       {!!choices.length &&
         <fieldset>
           {choices.length && choices.map((choice, key) => (
-            <ChoiceItem
+            choice && <ChoiceItem
               id={id}
               key={key}
               type="checkbox"

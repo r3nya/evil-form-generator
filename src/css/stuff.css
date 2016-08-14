@@ -7,3 +7,9 @@ button:hover,
 button:focus {
   outline-width: 0;
 }
+
+input:active,
+input:hover,
+input:focus {
+  outline-width: 0;
+}
