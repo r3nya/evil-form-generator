@@ -9,18 +9,34 @@ const TARGET = process.env.npm_lifecycle_event;
 
 // Common path
 const common = {
-  entry: [
-    './src/js/index.js',
-    './src/css/main.css',
-    'font-awesome/css/font-awesome.css',
-    'open-sans-fontface/open-sans.css',
-    'normalize.css'
-  ],
+  entry: {
+    vendor: [
+      'classnames',
+      'react',
+      'react-dnd',
+      'react-dnd-html5-backend',
+      'react-dom',
+      'react-redux',
+      'redux',
+      'reselect'
+    ],
+    main: [
+      './src/js/index.js',
+      './src/css/main.css',
+      'font-awesome/css/font-awesome.css',
+      'open-sans-fontface/open-sans.css',
+      'normalize.css'
+    ],
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/',
   },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+  ],
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
@@ -48,9 +64,11 @@ const common = {
 if (TARGET === 'start') {
   module.exports = merge(common, {
     devtool: 'cheap-module-eval-source-map',
-    entry: [
-      'webpack-hot-middleware/client'
-    ],
+    entry: {
+      main: [
+        'webpack-hot-middleware/client'
+      ]
+    },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new ProgressBar(),
