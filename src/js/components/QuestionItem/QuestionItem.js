@@ -64,7 +64,10 @@ export default class QuestionItem extends Component {
     const { id, onEditTitle } = this.props
 
     if (newTitle) {
-      onEditTitle({ id, newTitle })
+      onEditTitle({
+        id,
+        newTitle: newTitle.trim()
+      })
       this.setState({
         newTitle: ''
       })
@@ -121,7 +124,7 @@ export default class QuestionItem extends Component {
                   placeholder={type}
                   className="cell cell__9of12"
                   onKeyPress={this.handleKeyPress}
-                  onChange={e => this.handleChangeField('newTitle', e.target.value.trim())}
+                  onChange={e => this.handleChangeField('newTitle', e.target.value)}
                 />
               }
 

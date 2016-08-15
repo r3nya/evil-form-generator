@@ -60,7 +60,7 @@ export default class ChoiceItem extends Component {
     const { id, number, onChangeChoice } = this.props
 
     if (newValue) {
-      onChangeChoice(id, number, newValue)
+      onChangeChoice(id, number, newValue.trim())
       this.setState({
         newValue: ''
       })
@@ -95,7 +95,7 @@ export default class ChoiceItem extends Component {
               placeholder="?"
               className={cx('cell cell__10of12', styles.input)}
               onKeyPress={this.handleKeyPress}
-              onChange={e => this.handleChangeField('newValue', e.target.value.trim())}
+              onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
           }
 
