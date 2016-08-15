@@ -15,9 +15,10 @@ export default (
 
     <Route path="/" component={App}>
       <Route path="all" component={AllForms} />
-      <Route path="new" backUrlType="all" component={NewForm} />
       <Route path="view/:id" component={Browser} />
     </Route>
+
+    <Route path="/new" backUrlType="all" component={NewForm} />
 
     <Route path="*" component={NotFoundPage} />
   </Route>

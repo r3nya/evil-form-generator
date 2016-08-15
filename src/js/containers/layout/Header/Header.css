@@ -1,16 +1,14 @@
 :local {
   .header {
     background-color: #85144b;
-    font-size: 2rem;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
 
     a {
       color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
     }
-  }
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    height: 2rem;
   }
 }

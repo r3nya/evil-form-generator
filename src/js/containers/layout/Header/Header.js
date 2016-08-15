@@ -1,9 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router';
-import styles from './Header.css';
+import React from 'react'
+import { Link } from 'react-router'
+import styles from './Header.css'
 
 export const Header = () => (
   <header className={styles.header} role="banner">
-    <Link to="/new">NEW</Link>
+    <h1>
+      <Link to="/new">
+        <i className="fa fa-plus-circle"></i> New form
+      </Link>
+    </h1>
   </header>
-);
+)
