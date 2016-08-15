@@ -14,6 +14,7 @@ import {
 } from 'actions'
 import { newFormSelector } from 'selectors'
 import { Creator, Viewer, ViewerContainer, ViewerHeader } from './views'
+import { BackBtn } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './NewForm.css'
 
@@ -48,10 +49,17 @@ export default class NewForm extends Component {
   };
 
   render() {
-    const { questions, extraData: { description }, ...actions } = this.props
+    const { questions, extraData: { description }, route: { backUrlType }, ...actions } = this.props
 
     return (
       <div className={cx('grid', styles.main)}>
+        <header className="cell cell__12of12 grid grid__middle grid__center">
+          <BackBtn
+            className={styles.backBtn}
+            to={`/${backUrlType}`}
+          />
+          <h3>Evil form generator</h3>
+        </header>
         <div className="cell cell__3of12">
           <Creator
             onBtnClick={actions.addQuestion}

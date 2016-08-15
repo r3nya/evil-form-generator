@@ -3,11 +3,14 @@ import { Header, Footer } from 'containers/layout'
 import styles from './App.css'
 
 export const App = props => {
-  const { children } = props
+  const { children, params, route: { backUrlType } } = props
 
   return (
     <div className={styles.main}>
-      <Header />
+      <Header
+        backBtn={!!params.id}
+        backUrlType={backUrlType}
+      />
 
       <section className={styles.content} role="main">
         {children}
@@ -19,5 +22,7 @@ export const App = props => {
 }
 
 App.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
+  params: PropTypes.object,
+  route: PropTypes.object,
 }

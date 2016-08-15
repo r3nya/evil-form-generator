@@ -4,11 +4,17 @@
     padding: 2rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     a {
       color: #fff;
       text-decoration: none;
       text-transform: uppercase;
     }
+  }
+
+  .backBtn {
+    position: absolute;
+    left: 0;
   }
 }

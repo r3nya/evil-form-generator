@@ -2,6 +2,11 @@
   .viewer {
     padding-left: 1rem;
   }
+
+  .backBtn {
+    position: absolute;
+    left: 0;
+  }
 }
 
 fieldset {

@@ -9,9 +9,6 @@ export const Creator = props => {
 
   return (
     <div>
-      <header>
-        <h2>Evil form generator</h2>
-      </header>
       <main>
         <Tabs>
           <TabList>

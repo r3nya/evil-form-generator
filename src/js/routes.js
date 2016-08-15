@@ -13,7 +13,7 @@ export default (
   <Route>
     <Redirect from="/" to="/all" />
 
-    <Route path="/" component={App}>
+    <Route path="/" component={App} backUrlType="all">
       <Route path="all" component={AllForms} />
       <Route path="view/:id" component={Browser} />
     </Route>

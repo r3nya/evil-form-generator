@@ -5,6 +5,6 @@ import pic from './mars_attacks.jpg'
 export const NotFoundPage = () => (
   <div className={styles.oops}>
     <div>404!</div>
-    <img src={pic} alt="Mars Attacks"/>
+    <img src={pic} alt="Mars Attacks" />
   </div>
 )
