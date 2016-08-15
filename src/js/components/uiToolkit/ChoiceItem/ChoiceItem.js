@@ -85,10 +85,13 @@ export default class ChoiceItem extends Component {
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
-        <div className="grid grid__middle grid__left">
+        <div className={cx('grid grid__middle grid__left', styles.row)}>
 
           {!editMode &&
-            <label className="cell cell__10of12" onClick={this.handleEdit}>
+            <label
+              className={cx('cell cell__10of12', styles.label)}
+              onClick={this.handleEdit}
+            >
               {type !== 'text' &&
                 <Input
                   type={type}

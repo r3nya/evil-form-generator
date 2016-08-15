@@ -2,4 +2,13 @@
   .input {
     width: 100%;
   }
+
+  .label {
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  .row {
+    margin: 0.2rem;
+  }
 }
