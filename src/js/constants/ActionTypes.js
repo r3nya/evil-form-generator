@@ -20,3 +20,8 @@ export const SAVE_FORM_ERROR = 'SAVE_FORM_ERROR'
 
 // extraData
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION'
+
+// Browser container
+export const FETCH_ITEM = 'FETCH_ITEM'
+export const FETCH_ITEM_SUCCESS = 'FETCH_ITEM_SUCCESS'
+export const FETCH_ITEM_ERROR = 'FETCH_ITEM_ERROR'

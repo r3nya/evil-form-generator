@@ -14,26 +14,26 @@
 * [x] Create containers and routes: `all`, `new`, `viewer`
 
 * [ ] `AllForms` container
-  * [ ] Simple layout
-  * [ ] 'New form' btn
-  * [ ] Item for forms
-  * [ ] Getting data from `localStorage`
+  * [x] Simple layout
+  * [x] 'New form' btn
+  * [x] Item for forms
+  * [x] Getting data from `localStorage`
   * [ ] Loader
 
 * [ ] `NewForm` container
   * [x] Dead simple layout
   * [x] Fields tab
     * [x] Btns
-  * [ ] Description tab
-    * [ ] TextArea
+  * [x] Description tab
+    * [x] TextArea
   * [ ] Items for:
     * [x] Single-line text field
-    * [ ] CheckBoxes
-    * [ ] RadioBtns
-    * [ ] Select field
+    * [x] CheckBoxes
+    * [x] RadioBtns
+    * [x] Select field
     * [x] File Upload
     * [ ] Paragraph Text Field
-  * [ ] Ability to save form on `localStorage`
+  * [x] Ability to save form on `localStorage`
 
 * [ ] `Browser` container
   * [ ] Get data for spec form from `localStorage`
@@ -46,17 +46,17 @@
 * [ ] Item for list (`AllForms` container)
 * [ ] Tabs
 * [x] Button
-* [ ] Input
-* [ ] CheckBox
-* [ ] Radio btn
-* [ ] TextArea
+* [x] Input
+* [x] CheckBox
+* [x] Radio btn
+* [x] TextArea
 
 
 ## Layout
 
 * [ ] Header
 * [ ] Footer
-* [ ] 404 page
+* [x] 404 page
 * [ ] Aria attrs
 
 ## Data spec

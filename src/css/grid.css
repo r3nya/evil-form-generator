@@ -3,10 +3,12 @@
     display: flex;
     flex-wrap: wrap;
   }
+
   --cell {
     box-sizing: border-box;
     flex-shrink: 0;
   }
+
   --xs-min: 30;
   --sm-min: 48;
   --md-min: 64;

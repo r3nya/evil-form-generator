@@ -9,7 +9,9 @@ export const Creator = props => {
 
   return (
     <div>
-      <header>Evil form generator</header>
+      <header>
+        <h2>Evil form generator</h2>
+      </header>
       <main>
         <Tabs>
           <TabList>
@@ -20,7 +22,7 @@ export const Creator = props => {
           <TabPanel className={cx('grid', styles.panel)}>
             <div className="cell cell__12of12 grid grid__center">
               <header>
-                <h2>Add Custom Field</h2>
+                <h3>Add Custom Field</h3>
               </header>
               <article className={cx('grid grid__between', styles.btnsArea)}>
                 <div className={cx('cell cell__12of12 cell__md__6of12', styles.btnsCol)}>
