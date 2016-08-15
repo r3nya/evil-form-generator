@@ -4,7 +4,7 @@ import {
   FETCH_ITEM_ERROR
 } from 'constants'
 import { loadData } from 'utils'
-import { get } from 'lodash'
+// import { get } from 'lodash'
 import { push } from 'react-router-redux'
 
 export function fetchItem(id) {
@@ -15,17 +15,17 @@ export function fetchItem(id) {
 
     const forms = loadData('forms')
 
-    if (get(forms, `data[${id}]`) && typeof id === 'number') {
-      const length = forms.data.length
+    if (forms.data) {
+      const form = forms.data.filter(form => form.id !== id)
 
-      if (id > length) {
+      if (!form.length) {
         dispatch(push('/404'))
+      } else {
+        dispatch({
+          type: FETCH_ITEM_SUCCESS,
+          payload: form[0]
+        })
       }
-
-      dispatch({
-        type: FETCH_ITEM_SUCCESS,
-        payload: forms.data[id]
-      })
     } else {
       dispatch({
         type: FETCH_ITEM_ERROR
