@@ -1,9 +1,10 @@
 :local {
   .alert {
     padding: 15px;
-    margin-bottom: 1rem;
+    margin: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
+    cursor: pointer;
   }
 
   .success {

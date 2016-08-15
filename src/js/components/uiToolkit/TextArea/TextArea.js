@@ -9,7 +9,7 @@ export const TextArea = props => {
   const classes = cx(styles.txtArea, className)
 
   return (
-    <div className={styles.cont}>
+    <div>
       {label &&
         <label
           htmlFor={idAttr}

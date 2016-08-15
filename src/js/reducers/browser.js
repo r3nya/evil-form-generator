@@ -29,8 +29,7 @@ export default function (state = initialState, action) {
   case FETCH_ITEM_ERROR:
     return {
       ...state,
-      loading: false,
-      error: payload.err
+      loading: false
     }
 
   default:

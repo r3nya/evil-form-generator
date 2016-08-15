@@ -35,7 +35,8 @@ export default class QuestionItem extends Component {
 
   state = {
     titleEditMode: true,
-    newTitle: ''
+    newTitle: '',
+    status: ''
   };
 
   handleClickOutside = () => {
@@ -78,6 +79,16 @@ export default class QuestionItem extends Component {
     this.setState({
       [field]: text
     })
+
+    if (text.length > 0) {
+      this.setState({
+        status: 'success'
+      })
+    } else {
+      this.setState({
+        status: 'error'
+      })
+    }
   };
 
   handleKeyPress = (e) => {
@@ -94,7 +105,7 @@ export default class QuestionItem extends Component {
       connectDragPreview,
       ...rest
     } = this.props
-    const { titleEditMode, newTitle } = this.state
+    const { titleEditMode, newTitle, status } = this.state
 
     const opacity = isDragging ? 0 : 1
 
@@ -122,6 +133,7 @@ export default class QuestionItem extends Component {
                   type="text"
                   value={newTitle}
                   placeholder={type}
+                  status={status}
                   className="cell cell__9of12"
                   onKeyPress={this.handleKeyPress}
                   onChange={e => this.handleChangeField('newTitle', e.target.value)}

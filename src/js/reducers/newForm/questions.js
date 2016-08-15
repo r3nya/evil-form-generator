@@ -10,7 +10,6 @@ import {
   DRAG_QUESTION,
   SAVE_FORM_SUCCESS
 } from 'constants'
-import { compact } from 'lodash'
 
 const initialState = []
 

@@ -10,7 +10,9 @@ import {
   editTitleQuestion,
   deleteQuestion,
   dragQuestion,
-  saveForm
+  saveForm,
+  validation,
+  clearNotifications
 } from 'actions'
 import { newFormSelector } from 'selectors'
 import { Creator, Viewer, ViewerContainer, ViewerHeader } from './views'
@@ -28,15 +30,19 @@ const mapDispatchToProps = {
   editTitleQuestion,
   deleteQuestion,
   dragQuestion,
-  saveForm
+  saveForm,
+  validation,
+  clearNotifications
 }
 
 @connect(newFormSelector, mapDispatchToProps)
 export default class NewForm extends Component {
   static propTypes = {
     questions: PropTypes.array,
+    notifications: PropTypes.array,
     addChoice: PropTypes.func.isRequired,
     extraData: PropTypes.object,
+    route: PropTypes.object,
     deleteChoice: PropTypes.func.isRequired,
     addQuestion: PropTypes.func.isRequired,
     changeDescription: PropTypes.func.isRequired,
@@ -46,14 +52,31 @@ export default class NewForm extends Component {
     deleteQuestion: PropTypes.func.isRequired,
     dragQuestion: PropTypes.func.isRequired,
     saveForm: PropTypes.func.isRequired,
+    validation: PropTypes.func.isRequired,
+    clearNotifications: PropTypes.func.isRequired,
   };
 
+  handleSaveForm = () => {
+    const { saveForm, validation } = this.props
+
+    return Promise.resolve()
+      .then(() => validation())
+      .then(() => saveForm())
+      .catch(err => console.error(err))
+  }
+
   render() {
-    const { questions, extraData: { description }, route: { backUrlType }, ...actions } = this.props
+    const {
+      questions,
+      extraData: { description },
+      route: { backUrlType },
+      notifications,
+      ...actions
+    } = this.props
 
     return (
       <div className={cx('grid', styles.main)}>
-        <header className="cell cell__12of12 grid grid__middle grid__center">
+        <header className={cx('cell cell__12of12 grid grid__middle grid__center', styles.header)}>
           <BackBtn
             className={styles.backBtn}
             to={`/${backUrlType}`}
@@ -70,7 +93,9 @@ export default class NewForm extends Component {
         <div className={cx('cell cell__9of12', styles.viewer)}>
           <Viewer
             description={description}
-            onSaveForm={actions.saveForm}
+            notifications={notifications}
+            onSaveForm={this.handleSaveForm}
+            clearNotifications={actions.clearNotifications}
           >
             <ViewerHeader />
             <ViewerContainer

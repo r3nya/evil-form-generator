@@ -16,7 +16,8 @@ export default class ChoiceItem extends Component {
 
   state = {
     editMode: false,
-    newValue: ''
+    newValue: '',
+    status: ''
   };
 
   handleClickOutside = () => {
@@ -47,6 +48,16 @@ export default class ChoiceItem extends Component {
     this.setState({
       [field]: text
     })
+
+    if (text.length > 0) {
+      this.setState({
+        status: 'success'
+      })
+    } else {
+      this.setState({
+        status: 'error'
+      })
+    }
   }
 
   editClose = () => {
@@ -69,7 +80,7 @@ export default class ChoiceItem extends Component {
 
   render() {
     const { id, label, type, number, onDeleteChoice } = this.props
-    const { editMode, newValue } = this.state
+    const { editMode, newValue, status } = this.state
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
@@ -93,6 +104,7 @@ export default class ChoiceItem extends Component {
               type="text"
               value={newValue}
               placeholder="?"
+              status={status}
               className={cx('cell cell__10of12', styles.input)}
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}

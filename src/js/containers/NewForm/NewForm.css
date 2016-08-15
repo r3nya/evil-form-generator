@@ -5,7 +5,13 @@
 
   .backBtn {
     position: absolute;
+    text-decoration: none;
+    color: #4f4f4f;
     left: 0;
+  }
+
+  .header {
+    background: #ebfbff;
   }
 }
 

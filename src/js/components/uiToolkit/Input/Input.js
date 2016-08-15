@@ -3,8 +3,12 @@ import cx from 'classnames'
 import styles from './Input.css'
 
 export const Input = props => {
-  const { className, ...rest } = props
-  const classes = cx(styles.input, className)
+  const { className, status, ...rest } = props
+  const classes = cx(styles.input, className, {
+    [styles.success]: status === 'success',
+    [styles.error]: status === 'error'
+  })
+
   return (
     <input
       className={classes}
@@ -17,4 +21,5 @@ export const Input = props => {
 
 Input.propTypes = {
   className: PropTypes.string,
+  status: PropTypes.string,
 }
