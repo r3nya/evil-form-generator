@@ -1,0 +1,23 @@
+
+@custom-media --mobile only screen and (max-width: 48em);
+@custom-media --tablet only screen and (min-width: 48em);
+
+@media (max-width: 48em) {
+  .xs-only {
+    display: block;
+  }
+
+  .not-xs {
+    display: none;
+  }
+}
+
+@media (min-width: 48em) {
+  .not-xs {
+    display: block;
+  }
+
+  .xs-only {
+    display: none;
+  }
+}

@@ -83,14 +83,14 @@ export default class NewForm extends Component {
           />
           <h3>Evil form generator</h3>
         </header>
-        <div className="cell cell__3of12">
+        <div className="cell cell__3of12 not-xs">
           <Creator
             onBtnClick={actions.addQuestion}
             onChangeDescription={actions.changeDescription}
           />
         </div>
 
-        <div className={cx('cell cell__9of12', styles.viewer)}>
+        <div className={cx('cell cell__12of12 cell__sm__9of12', styles.viewer)}>
           <Viewer
             description={description}
             notifications={notifications}

@@ -1,6 +1,8 @@
 :local {
   .viewer {
-    padding-left: 1rem;
+    @media (min-width: 48em) {
+      padding-left: 1rem;  
+    }
   }
 
   .backBtn {
