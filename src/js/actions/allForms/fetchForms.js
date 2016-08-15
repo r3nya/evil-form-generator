@@ -3,14 +3,14 @@ import {
   FETCH_FORMS_SUCCESS,
   // FETCH_FORMS_ERROR
 } from 'constants'
+import { loadData } from 'utils'
+
 
 export function fetchForms() {
   return dispatch => {
     dispatch({ type: FETCH_FORMS })
 
-    const forms = JSON.parse(localStorage.getItem('forms'))
-
-    // TODO
+    const forms = loadData('forms')
 
     dispatch({
       type: FETCH_FORMS_SUCCESS,

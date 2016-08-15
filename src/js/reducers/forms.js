@@ -4,6 +4,7 @@ import {
   FETCH_FORMS_ERROR,
   SAVE_FORM_SUCCESS
 } from 'constants'
+import { saveData } from 'utils'
 
 const initialState = {
   loading: false,
@@ -24,7 +25,7 @@ export default function (state = initialState, action) {
     return {
       ...state,
       loading: false,
-      // data: payload
+      ...payload
     }
 
   case FETCH_FORMS_ERROR:
@@ -35,7 +36,7 @@ export default function (state = initialState, action) {
     }
 
   case SAVE_FORM_SUCCESS:
-    return {
+    const newState = {
       ...state,
       data: [
         ...state.data,
@@ -46,6 +47,11 @@ export default function (state = initialState, action) {
         }
       ]
     }
+
+    saveData('forms', newState)
+
+    return newState
+
 
   default:
     return state
