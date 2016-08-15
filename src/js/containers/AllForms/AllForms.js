@@ -44,6 +44,12 @@ export default class AllForms extends Component {
             ))
           }
         </ListGroup>
+
+        {!data || !data.length &&
+          <h4 className={styles.notYet}>
+            No forms have been created…
+          </h4>
+        }
       </div>
     )
   }

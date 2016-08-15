@@ -3,4 +3,10 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
+  .notYet {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 }
