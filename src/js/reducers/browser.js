@@ -21,9 +21,8 @@ export default function (state = initialState, action) {
 
   case FETCH_ITEM_SUCCESS:
     return {
-      ...state,
       loading: false,
-      data: [...payload]
+      ...payload
     }
 
   case FETCH_ITEM_ERROR:

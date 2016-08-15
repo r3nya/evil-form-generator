@@ -1,9 +1,10 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchItem } from 'actions'
 import { browserSelector } from 'selectors'
+import { QuestionViewer } from 'components/QuestionViewer'
 import { Loader } from 'components/uiToolkit'
-import cx from 'classnames'
+// import cx from 'classnames'
 
 const mapDispatchToProps = {
   fetchItem
@@ -12,9 +13,11 @@ const mapDispatchToProps = {
 @connect(browserSelector, mapDispatchToProps)
 export default class Browser extends Component {
   static propTypes = {
-    // data: PropTypes.object,
+    questions: PropTypes.array,
     params: PropTypes.object,
     loading: PropTypes.bool,
+    description: PropTypes.string,
+    createdAt: PropTypes.string,
     fetchItem: PropTypes.func.isRequired,
   };
 
@@ -24,15 +27,24 @@ export default class Browser extends Component {
   }
 
   render() {
-    const { loading, data: { createdAt, questions } } = this.props
+    const { loading, createdAt, questions, description } = this.props
 
     return (
       <div>
         <Loader show={loading} />
 
         <div>
-          {createdAt}
+          {createdAt} – {description}
         </div>
+
+        {questions &&
+          questions.map((question, key) => (
+            <QuestionViewer
+              key={key}
+              {...question}
+            />
+          ))
+        }
 
 
       </div>
