@@ -1,15 +1,16 @@
 import React, { PropTypes } from 'react'
-import { Input, Button, EditIcon } from 'components/uiToolkit'
+import { TextArea, Button, EditIcon } from 'components/uiToolkit'
 import styles from './ParagraphText.css'
 
 export const ParagraphText = props => {
 
   return (
     <div className={styles.group}>
-      <Input
+      <TextArea
         type="text"
         className={styles.input}
         placeholder="Input text here…"
+        rows="4"
       />
       <span className={styles.groupBtn}>
         <Button

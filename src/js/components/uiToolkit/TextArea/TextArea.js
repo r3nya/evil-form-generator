@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
-// import cx from 'classnames'
+import cx from 'classnames'
 import camelcase from 'camelcase'
 import styles from './TextArea.css'
 
 export const TextArea = props => {
-  const { label, ...rest } = props
+  const { label, className, ...rest } = props
   const idAttr = label ? camelcase(label) : ''
+  const classes = cx(styles.txtArea, className)
 
   return (
     <div className={styles.cont}>
@@ -19,7 +20,7 @@ export const TextArea = props => {
       }
       <textarea
         id={idAttr}
-        className={styles.txtArea}
+        className={classes}
         {...rest}
       ></textarea>
     </div>
@@ -27,5 +28,6 @@ export const TextArea = props => {
 }
 
 TextArea.propTypes = {
-  label: PropTypes.string
+  label: PropTypes.string,
+  className: PropTypes.string
 }

@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchForms } from 'actions'
+import {
+  fetchForms,
+  deleteForm
+ } from 'actions'
 import { formsSelector } from 'selectors'
 import { ListItem } from 'components/ListItem'
 import { ListGroup } from 'components/uiToolkit'
@@ -8,7 +11,8 @@ import cx from 'classnames'
 import styles from './AllForms.css'
 
 const mapDispatchToProps = {
-  fetchForms
+  fetchForms,
+  deleteForm
 }
 
 @connect(formsSelector, mapDispatchToProps)
@@ -16,6 +20,7 @@ export default class AllForms extends Component {
   static propTypes = {
     data: PropTypes.array,
     fetchForms: PropTypes.func.isRequired,
+    deleteForm: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -24,15 +29,16 @@ export default class AllForms extends Component {
   }
 
   render() {
-    const { data } = this.props
+    const { data, deleteForm } = this.props
 
     return (
       <div className={cx('grid', styles.main)}>
         <ListGroup className="cell cell__12of12">
-          {!!data.length &&
+          {data && !!data.length &&
             data.map((item, key) => (
               <ListItem
                 key={key}
+                onDeleteForm={deleteForm}
                 {...item}
               />
             ))

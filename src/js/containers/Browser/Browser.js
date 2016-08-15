@@ -12,7 +12,7 @@ const mapDispatchToProps = {
 @connect(browserSelector, mapDispatchToProps)
 export default class Browser extends Component {
   static propTypes = {
-    data: PropTypes.object,
+    // data: PropTypes.object,
     params: PropTypes.object,
     loading: PropTypes.bool,
     fetchItem: PropTypes.func.isRequired,

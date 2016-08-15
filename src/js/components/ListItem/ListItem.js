@@ -1,15 +1,22 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import { Button, DeleteIcon } from 'components/uiToolkit'
 import styles from './ListItem.css'
 
 export const ListItem = props => {
-  const { id, description, createdAt } = props
+  const { id, description, createdAt, onDeleteForm } = props
 
   return (
     <li className={styles.item}>
       <Link to={`/view/${id}`}>
         {id} – {description} ({createdAt})
       </Link>
+      <Button
+        style="outline"
+        onClick={() => onDeleteForm(id)}
+      >
+        <DeleteIcon />
+      </Button>
     </li>
   )
 }
@@ -17,5 +24,6 @@ export const ListItem = props => {
 ListItem.propTypes = {
   id: PropTypes.number,
   description: PropTypes.string,
-  createdAt: PropTypes.string
+  createdAt: PropTypes.string,
+  onDeleteForm: PropTypes.func.isRequired,
 }
