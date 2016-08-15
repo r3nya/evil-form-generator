@@ -36,10 +36,23 @@ export default class QuestionItem extends Component {
   state = {
     titleEditMode: true,
     newTitle: '',
-    status: ''
+    status: '',
+    error: false
   };
 
   handleClickOutside = () => {
+    const { title } = this.props
+
+    if (!title) {
+      this.setState({
+        error: true
+      })
+    } else {
+      this.setState({
+        error: false
+      })
+    }
+
     this.pushNewTitle()
     this.editClose()
   }
@@ -47,10 +60,18 @@ export default class QuestionItem extends Component {
   editTitle = () => {
     const { titleEditMode } = this.state
     const { title } = this.props
+
+    if (title) {
+      this.setState({
+        error: false
+      })
+    }
+
     this.setState({
       titleEditMode: !titleEditMode,
       newTitle: title
     })
+
     this.pushNewTitle()
   }
 
@@ -69,8 +90,11 @@ export default class QuestionItem extends Component {
         id,
         newTitle: newTitle.trim()
       })
+
       this.setState({
-        newTitle: ''
+        newTitle: '',
+        error: false,
+        status: 'success'
       })
     }
   }
@@ -105,14 +129,14 @@ export default class QuestionItem extends Component {
       connectDragPreview,
       ...rest
     } = this.props
-    const { titleEditMode, newTitle, status } = this.state
+    const { titleEditMode, newTitle, status, error } = this.state
 
     const opacity = isDragging ? 0 : 1
 
     return connectDragPreview(connectDropTarget((
       <div style={{ opacity }}>
         <ClickOutside onClickOutside={this.handleClickOutside}>
-          <div className={cx('grid grid__middle', styles.frm)}>
+          <div className={cx('grid grid__middle', styles.frm, { [styles.danger]: error })}>
             {connectDragSource(
               <div>
                 <DragArea className="cell cell__fill" />

@@ -73,7 +73,8 @@ export default class ChoiceItem extends Component {
     if (newValue) {
       onChangeChoice(id, number, newValue.trim())
       this.setState({
-        newValue: ''
+        newValue: '',
+        status: 'success'
       })
     }
   }

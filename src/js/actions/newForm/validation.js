@@ -26,7 +26,7 @@ export function validation() {
 
     questions.map(q => {
       if (!q.title) {
-        const message = `Title field must be filled (question # ${q.id})`
+        const message = 'Title field must be filled'
         dispatch({
           type: NEW_NOTIFICATION,
           payload: {
@@ -38,8 +38,8 @@ export function validation() {
       }
 
       if (q.type === 'checkbox' || q.type === 'radio' || q.type === 'select') {
-        if (q.choices.length) {
-          const message = `Choices must not be empty (question # ${q.id})`
+        if (!q.choices.length) {
+          const message = 'Choices must not be empty'
 
           dispatch({
             type: NEW_NOTIFICATION,

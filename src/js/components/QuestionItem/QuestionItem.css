@@ -25,4 +25,9 @@
   .editBtn {
     margin-left: 4px;
   }
+
+  .danger {
+    border: 1px solid red;
+    background-color: #ffeeee;
+  }
 }
