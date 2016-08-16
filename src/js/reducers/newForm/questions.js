@@ -10,6 +10,7 @@ import {
   DRAG_QUESTION,
   SAVE_FORM_SUCCESS
 } from 'constants'
+import { compact } from 'lodash'
 
 const initialState = []
 
@@ -49,7 +50,7 @@ export default function (state = initialState, action) {
       q.id === payload.id ?
         Object.assign({}, q, {
           choices: [
-            ...q.choices,
+            ...compact(q.choices),
             payload.value
           ]
         }) : q
