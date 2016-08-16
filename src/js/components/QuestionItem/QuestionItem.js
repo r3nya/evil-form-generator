@@ -142,7 +142,7 @@ export default class QuestionItem extends Component {
                 <DragArea className="cell cell__fill" />
               </div>
             )}
-            <div className={cx('cell cell__5of12 grid grid__middle grid__left', styles.titleArea)}>
+            <div className={cx('cell cell__12of12 cell__sm__5of12 grid grid__middle grid__left', styles.titleArea)}>
               {!titleEditMode &&
                 <span
                   className={cx('cell cell__10of12', styles.input)}
@@ -179,7 +179,7 @@ export default class QuestionItem extends Component {
 
             <FieldHelper
               id={id}
-              className={cx('cell сell__fill', styles.fields)}
+              className={cx('cell cell__12of12 сell__sm__fill', styles.fields)}
               type={type}
               {...rest}
             />

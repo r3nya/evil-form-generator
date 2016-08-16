@@ -95,6 +95,8 @@ export default class NewForm extends Component {
             description={description}
             notifications={notifications}
             onSaveForm={this.handleSaveForm}
+            onBtnClick={actions.addQuestion}
+            onChangeDescription={actions.changeDescription}
             clearNotifications={actions.clearNotifications}
           >
             <ViewerHeader />

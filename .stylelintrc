@@ -1,6 +1,7 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "selector-pseudo-element-no-unknown": [true, { ignorePseudoElements: ["local"] }]
+    "selector-pseudo-element-no-unknown": [true, { ignorePseudoElements: ["local"] }],
+    "selector-type-no-unknown": [true, { ignoreTypes: ["--grid", "--cell"] }]
   }
 }

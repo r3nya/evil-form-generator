@@ -51,6 +51,12 @@
   @for $i from 1 to 12 {
     .cell__sm__$(i)of12 { width: calc(100% * $i / 12); }
   }
+
+  .сell__sm__fill {
+    width: 0;
+    min-width: 0;
+    flex-grow: 1;
+  }
 }
 
 @media (--md-viewport) {
