@@ -15,6 +15,7 @@ import {
   clearNotifications
 } from 'actions'
 import { newFormSelector } from 'selectors'
+import { arrayMove } from 'react-sortable-hoc'
 import { Creator, Viewer, ViewerContainer, ViewerHeader } from './views'
 import { BackBtn } from 'components/uiToolkit'
 import cx from 'classnames'
@@ -55,6 +56,11 @@ export default class NewForm extends Component {
     validation: PropTypes.func.isRequired,
     clearNotifications: PropTypes.func.isRequired,
   };
+
+  onSortEnd = ({ oldIndex, newIndex }) => {
+    const { questions, dragQuestion } = this.props
+    dragQuestion(arrayMove(questions, oldIndex, newIndex))
+  }
 
   handleSaveForm = () => {
     const { saveForm, validation } = this.props
@@ -101,6 +107,8 @@ export default class NewForm extends Component {
           >
             <ViewerHeader />
             <ViewerContainer
+              useDragHandle
+              onSortEnd={this.onSortEnd}
               data={questions}
               onAddChoice={actions.addChoice}
               onDeleteChoice={actions.deleteChoice}
@@ -108,7 +116,6 @@ export default class NewForm extends Component {
               onChangeRequired={actions.changeRequired}
               onEditTitle={actions.editTitleQuestion}
               onDeleteClick={actions.deleteQuestion}
-              onDragQuestion={actions.dragQuestion}
             />
           </Viewer>
         </div>

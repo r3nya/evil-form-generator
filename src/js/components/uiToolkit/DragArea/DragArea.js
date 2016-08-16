@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react'
+import { SortableHandle as sortableHandle } from 'react-sortable-hoc';
 import cx from 'classnames'
 import styles from './DragArea.css'
 
-export const DragArea = props => {
+export const DragArea = sortableHandle(props => {
   const { className } = props
 
   return (
@@ -12,7 +13,7 @@ export const DragArea = props => {
       <div className={styles.row}></div>
     </div>
   )
-}
+})
 
 DragArea.propTypes = {
   className: PropTypes.string

@@ -1,37 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 import ClickOutside from 'react-click-outside'
-import {
-  DragSource as dragSource,
-  DropTarget as dropTarget
-} from 'react-dnd'
 import { FieldHelper } from 'components/FieldHelper'
-import { itemSource, itemTarget } from 'utils'
+import { SortableElement as sortableElement } from 'react-sortable-hoc'
 import { Button, EditIcon, DeleteIcon, Input, DragArea } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './QuestionItem.css'
 
-@dropTarget('ITEM', itemTarget, (connect, monitor) => ({
-  connectDropTarget: connect.dropTarget(),
-  isOver: monitor.isOver()
-}))
-@dragSource('ITEM', itemSource, (connect, monitor) => ({
-  connectDragSource: connect.dragSource(),
-  connectDragPreview: connect.dragPreview(),
-  isDragging: monitor.isDragging()
-}))
-export default class QuestionItem extends Component {
+
+class QuestionItem extends Component {
   static propTypes = {
     id: PropTypes.number,
     type: PropTypes.string,
     title: PropTypes.string,
     required: PropTypes.bool,
-    isDragging: PropTypes.bool.isRequired,
     onEditTitle: PropTypes.func.isRequired,
     onChangeRequired: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
-    connectDragSource: PropTypes.func.isRequired,
-    connectDropTarget: PropTypes.func.isRequired,
-    connectDragPreview: PropTypes.func.isRequired
   };
 
   state = {
@@ -126,24 +110,18 @@ export default class QuestionItem extends Component {
   render() {
     const {
       id, title, required, type, onChangeRequired,
-      onDeleteClick, isDragging, connectDragSource, connectDropTarget,
-      connectDragPreview,
+      onDeleteClick,
       ...rest
     } = this.props
     const { titleEditMode, newTitle, status, error } = this.state
 
-    const opacity = isDragging ? 0 : 1
-
-    return connectDragPreview(connectDropTarget((
-      <div style={{ opacity }}>
+    return (
+      <div>
         <ClickOutside onClickOutside={this.handleClickOutside}>
           <div className={cx('grid grid__middle', styles.frm, { [styles.danger]: error })}>
-            {connectDragSource(
-              <div className={styles.dragArea}>
-                <DragArea className="cell" />
-              </div>,
-              { dropEffect: 'move' }
-            )}
+            <div className={styles.dragArea}>
+              <DragArea className="cell" />
+            </div>
             <div className={cx('grid grid__middle', styles.other)}>
               <div className={cx('cell cell__12of12 cell__sm__5of12 grid grid__middle grid__left', styles.titleArea)}>
                 {!titleEditMode &&
@@ -209,6 +187,8 @@ export default class QuestionItem extends Component {
           </div>
         </ClickOutside>
       </div>
-    )))
+    )
   }
 }
+
+export default sortableElement(QuestionItem)
