@@ -10,8 +10,9 @@ import { Button, EditIcon, DeleteIcon, Input, DragArea } from 'components/uiTool
 import cx from 'classnames'
 import styles from './QuestionItem.css'
 
-@dropTarget('ITEM', itemTarget, connect => ({
-  connectDropTarget: connect.dropTarget()
+@dropTarget('ITEM', itemTarget, (connect, monitor) => ({
+  connectDropTarget: connect.dropTarget(),
+  isOver: monitor.isOver()
 }))
 @dragSource('ITEM', itemSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
@@ -138,68 +139,71 @@ export default class QuestionItem extends Component {
         <ClickOutside onClickOutside={this.handleClickOutside}>
           <div className={cx('grid grid__middle', styles.frm, { [styles.danger]: error })}>
             {connectDragSource(
-              <div>
-                <DragArea className="cell cell__fill" />
-              </div>
+              <div className={styles.dragArea}>
+                <DragArea className="cell" />
+              </div>,
+              { dropEffect: 'move' }
             )}
-            <div className={cx('cell cell__12of12 cell__sm__5of12 grid grid__middle grid__left', styles.titleArea)}>
-              {!titleEditMode &&
-                <span
-                  className={cx('cell cell__10of12', styles.input)}
+            <div className={cx('grid grid__middle', styles.other)}>
+              <div className={cx('cell cell__12of12 cell__sm__5of12 grid grid__middle grid__left', styles.titleArea)}>
+                {!titleEditMode &&
+                  <span
+                    className={cx('cell cell__10of12', styles.input)}
+                    onClick={this.editTitle}
+                  >
+                    {title}
+                  </span>
+                }
+
+                {titleEditMode &&
+                  <Input
+                    type="text"
+                    value={newTitle}
+                    placeholder={type}
+                    status={status}
+                    className="cell cell__9of12"
+                    onKeyPress={this.handleKeyPress}
+                    onChange={e => this.handleChangeField('newTitle', e.target.value)}
+                  />
+                }
+
+                <span className={cx('cell cell_1of12', styles.asterisk)}>
+                  {required && ['*']}
+                </span>
+
+                <Button
+                  className={cx('cell cell__1of12', styles.editBtn)}
+                  style="transparent"
                   onClick={this.editTitle}
                 >
-                  {title}
-                </span>
-              }
-
-              {titleEditMode &&
-                <Input
-                  type="text"
-                  value={newTitle}
-                  placeholder={type}
-                  status={status}
-                  className="cell cell__9of12"
-                  onKeyPress={this.handleKeyPress}
-                  onChange={e => this.handleChangeField('newTitle', e.target.value)}
-                />
-              }
-
-              <span className={cx('cell cell_1of12', styles.asterisk)}>
-                {required && ['*']}
-              </span>
-
-              <Button
-                className={cx('cell cell__1of12', styles.editBtn)}
-                style="transparent"
-                onClick={this.editTitle}
-              >
-                <EditIcon />
-              </Button>
-            </div>
-
-            <FieldHelper
-              id={id}
-              className={cx('cell cell__12of12 сell__sm__fill', styles.fields)}
-              type={type}
-              {...rest}
-            />
-
-            <div className={cx('cell cell__2of12 grid grid__around grid__middle', styles.extra)}>
-              <div className={styles.req}>
-                <input
-                  type="checkbox"
-                  checked={required}
-                  onChange={() => onChangeRequired({ id, required: !required })}
-                />
-                <span className="xs-only">Required?</span>
-              </div>
-              <div className={styles.del}>
-                <Button
-                  style="outline"
-                  onClick={() => onDeleteClick()}
-                >
-                  <DeleteIcon />
+                  <EditIcon />
                 </Button>
+              </div>
+
+              <FieldHelper
+                id={id}
+                className={cx('cell cell__12of12 сell__sm__fill', styles.fields)}
+                type={type}
+                {...rest}
+              />
+
+              <div className={cx('cell cell__12of12 cell__sm__2of12 grid grid__middle', styles.extra)}>
+                <div className={styles.req}>
+                  <input
+                    type="checkbox"
+                    checked={required}
+                    onChange={() => onChangeRequired({ id, required: !required })}
+                  />
+                  <span className="xs-only">Required?</span>
+                </div>
+                <div className={styles.del}>
+                  <Button
+                    style="outline"
+                    onClick={() => onDeleteClick()}
+                  >
+                    <DeleteIcon />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

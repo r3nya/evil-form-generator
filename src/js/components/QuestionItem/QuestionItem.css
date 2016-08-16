@@ -30,4 +30,22 @@
     border: 1px solid red;
     background-color: #ffeeee;
   }
+
+  .dragArea {
+    width: 1rem;
+  }
+
+  .other {
+    width: calc(100% - 1rem);
+  }
+
+  .extra {
+    @media (max-width: 48em) {
+      justify-content: space-between;
+    }
+
+    @media (min-width: 48em) {
+      justify-content: space-around;
+    }
+  }
 }

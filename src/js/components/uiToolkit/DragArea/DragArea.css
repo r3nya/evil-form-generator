@@ -1,6 +1,6 @@
 :local {
   .drag {
-    cursor: move;
+    cursor: row-resize;
   }
 
   .row {

@@ -115,7 +115,7 @@ export default class ChoiceItem extends Component {
             />
           }
 
-          <div className="cell cell__2of12 grid grid__right">
+          <div className="cell cell__2of12 grid grid__right grid__no-wrap">
             <Button
               size="small"
               style="transparent"

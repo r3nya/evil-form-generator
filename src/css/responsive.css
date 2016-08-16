@@ -1,7 +1,4 @@
 
-@custom-media --mobile only screen and (max-width: 48em);
-@custom-media --tablet only screen and (min-width: 48em);
-
 @media (max-width: 48em) {
   .xs-only {
     visibility: visible;
