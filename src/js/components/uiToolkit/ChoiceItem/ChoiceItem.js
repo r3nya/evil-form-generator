@@ -49,7 +49,7 @@ export default class ChoiceItem extends Component {
       [field]: text
     })
 
-    if (text.length > 0) {
+    if (text.trim().length > 0) {
       this.setState({
         status: 'success'
       })
@@ -70,7 +70,7 @@ export default class ChoiceItem extends Component {
     const { newValue } = this.state
     const { id, number, onChangeChoice } = this.props
 
-    if (newValue) {
+    if (newValue && newValue.replace(/\s/g, '').length) {
       onChangeChoice(id, number, newValue.trim())
       this.setState({
         newValue: '',

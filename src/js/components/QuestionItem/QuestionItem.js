@@ -85,7 +85,7 @@ export default class QuestionItem extends Component {
     const { newTitle } = this.state
     const { id, onEditTitle } = this.props
 
-    if (newTitle) {
+    if (newTitle && newTitle.replace(/\s/g, '').length) {
       onEditTitle({
         id,
         newTitle: newTitle.trim()
@@ -104,7 +104,7 @@ export default class QuestionItem extends Component {
       [field]: text
     })
 
-    if (text.length > 0) {
+    if (text.trim().length > 0) {
       this.setState({
         status: 'success'
       })
