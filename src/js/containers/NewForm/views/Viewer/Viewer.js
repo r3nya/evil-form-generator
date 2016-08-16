@@ -24,11 +24,11 @@ export const Viewer = props => {
         ))
       }
       <header className="grid grid__middle">
-        <h6 className={cx(styles.description, 'cell cell__10of12')}>Description:&nbsp;
+        <h6 className={cx(styles.description, 'cell cell__12of12 cell__sm__10of12')}>Description:&nbsp;
           <small>{description}</small>
         </h6>
 
-        <div className="cell cell__2of12">
+        <div className="cell cell__4of12 cell__sm__2of12">
           <Button
             style="primary"
             onClick={() => onSaveForm()}

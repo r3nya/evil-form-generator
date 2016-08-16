@@ -191,6 +191,7 @@ export default class QuestionItem extends Component {
                   checked={required}
                   onChange={() => onChangeRequired({ id, required: !required })}
                 />
+                <span className="xs-only">Required?</span>
               </div>
               <div className={styles.del}>
                 <Button

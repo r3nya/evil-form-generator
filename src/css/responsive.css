@@ -4,7 +4,7 @@
 
 @media (max-width: 48em) {
   .xs-only {
-    display: block;
+    visibility: visible;
   }
 
   .not-xs {
@@ -14,7 +14,7 @@
 
 @media (min-width: 48em) {
   .not-xs {
-    display: block;
+    visibility: visible;
   }
 
   .xs-only {
