@@ -101,11 +101,11 @@ export default class Viewer extends Component {
 
         {descriptionModal &&
           <Modal onClose={this.openEditDescriptionModal}>
-          <TextArea
-            label="Form Description"
-            rows="5"
-            onChange={(event) => onChangeDescription(event.target.value)}
-          />
+            <TextArea
+              label="Form Description"
+              rows="5"
+              onChange={(event) => onChangeDescription(event.target.value)}
+            />
           </Modal>
         }
 

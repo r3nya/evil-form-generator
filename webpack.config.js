@@ -11,10 +11,9 @@ const TARGET = process.env.npm_lifecycle_event;
 const common = {
   entry: {
     vendor: [
+      'camelcase',
       'classnames',
       'react',
-      'react-dnd',
-      'react-dnd-html5-backend',
       'react-dom',
       'react-redux',
       'redux',

@@ -1,1 +1,1 @@
-export { default as ViewerContainer } from './ViewerContainer'
+export * from './ViewerContainer'
