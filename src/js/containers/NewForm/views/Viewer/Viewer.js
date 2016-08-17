@@ -63,7 +63,10 @@ export default class Viewer extends Component {
           ))
         }
         <header className="grid grid__middle">
-          <h6 className={cx(styles.description, 'cell cell__12of12 cell__sm__10of12')}>
+          <h6
+            className={cx(styles.description, 'cell cell__12of12',
+            'cell__sm__9of12 cell__md__10of12')}
+          >
             Description:&nbsp;
             <small>{description}</small>
             <Button
@@ -75,16 +78,14 @@ export default class Viewer extends Component {
             </Button>
           </h6>
 
-          <div className="xs-only">
+          <div className={cx('cell cell__12of12 cell__sm__3of12 cell__md__2of12', styles.btns)}>
             <Button
+              className="xs-only"
               style="primary"
               onClick={this.openFieldsModal}
             >
               Add field
             </Button>
-          </div>
-
-          <div className="cell cell__4of12 cell__sm__2of12">
             <Button
               style="primary"
               onClick={() => onSaveForm()}

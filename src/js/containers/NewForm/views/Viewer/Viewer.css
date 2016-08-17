@@ -15,4 +15,12 @@
     font-size: 0.85rem;
     color: #4f4f4f;
   }
+
+  .btns {
+    @media (max-width: 48em) {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0.5rem;
+    }
+  }
 }

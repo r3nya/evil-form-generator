@@ -1,19 +1,11 @@
 
 @media (max-width: 48em) {
-  .xs-only {
-    visibility: visible;
-  }
-
   .not-xs {
     display: none;
   }
 }
 
 @media (min-width: 48em) {
-  .not-xs {
-    visibility: visible;
-  }
-
   .xs-only {
     display: none;
   }
