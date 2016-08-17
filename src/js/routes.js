@@ -19,6 +19,7 @@ export default (
     </Route>
 
     <Route path="/new" backUrlType="all" component={NewForm} />
+    <Route path="/edit/:id" backUrlType="all" component={NewForm} />
 
     <Route path="*" component={NotFoundPage} />
   </Route>

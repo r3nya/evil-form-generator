@@ -12,7 +12,9 @@ import {
   dragQuestion,
   saveForm,
   validation,
-  clearNotifications
+  clearNotifications,
+  fetchForms,
+  getForm
 } from 'actions'
 import { newFormSelector } from 'selectors'
 import { arrayMove } from 'react-sortable-hoc'
@@ -33,7 +35,9 @@ const mapDispatchToProps = {
   dragQuestion,
   saveForm,
   validation,
-  clearNotifications
+  clearNotifications,
+  fetchForms,
+  getForm
 }
 
 @connect(newFormSelector, mapDispatchToProps)
@@ -44,6 +48,7 @@ export default class NewForm extends Component {
     addChoice: PropTypes.func.isRequired,
     extraData: PropTypes.object,
     route: PropTypes.object,
+    params: PropTypes.object,
     deleteChoice: PropTypes.func.isRequired,
     addQuestion: PropTypes.func.isRequired,
     changeDescription: PropTypes.func.isRequired,
@@ -54,8 +59,20 @@ export default class NewForm extends Component {
     dragQuestion: PropTypes.func.isRequired,
     saveForm: PropTypes.func.isRequired,
     validation: PropTypes.func.isRequired,
+    fetchForms: PropTypes.func.isRequired,
+    getForm: PropTypes.func.isRequired,
     clearNotifications: PropTypes.func.isRequired
   };
+
+  componentDidMount() {
+    const { fetchForms, getForm, params: { id } } = this.props
+
+    if (id) {
+      Promise.resolve()
+        .then(() => fetchForms())
+        .then(() => getForm(id))
+    }
+  }
 
   onSortEnd = ({ oldIndex, newIndex }) => {
     const { questions, dragQuestion } = this.props

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import { Button, DeleteIcon } from 'components/uiToolkit'
+import { Button, DeleteIcon, EditIcon } from 'components/uiToolkit'
 import styles from './ListItem.css'
 
 export const ListItem = props => {
@@ -11,6 +11,11 @@ export const ListItem = props => {
       <Link to={`/view/${id}`}>
         {id} – {description} ({createdAt})
       </Link>
+      <Button
+        to={`/edit/${id}`}
+      >
+        <EditIcon />
+      </Button>
       <Button
         style="outline"
         onClick={() => onDeleteForm(id)}

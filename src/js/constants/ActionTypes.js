@@ -29,6 +29,11 @@ export const CLEAR_NOTIFICATIONS = 'CLEAR_NOTIFICATIONS'
 // extraData
 export const CHANGE_DESCRIPTION = 'CHANGE_DESCRIPTION'
 
+// Get data
+export const GET_FORM = 'GET_FORM'
+export const GET_FORM_SUCCESS = 'GET_FORM_SUCCESS'
+export const GET_FORM_ERROR = 'GET_FORM_ERROR'
+
 // Browser container
 export const FETCH_ITEM = 'FETCH_ITEM'
 export const FETCH_ITEM_SUCCESS = 'FETCH_ITEM_SUCCESS'
