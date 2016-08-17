@@ -15,7 +15,7 @@ class QuestionItem extends Component {
     required: PropTypes.bool,
     onEditTitle: PropTypes.func.isRequired,
     onChangeRequired: PropTypes.func.isRequired,
-    onDeleteClick: PropTypes.func.isRequired,
+    onDeleteClick: PropTypes.func.isRequired
   };
 
   state = {
@@ -100,7 +100,7 @@ class QuestionItem extends Component {
     }
   };
 
-  handleKeyPress = (e) => {
+  handleKeyPress = e => {
     if (e.key === 'Enter') {
       this.pushNewTitle()
       this.editClose()
@@ -109,21 +109,27 @@ class QuestionItem extends Component {
 
   render() {
     const {
-      id, title, required, type, onChangeRequired,
-      onDeleteClick,
-      ...rest
+      id, title, required, type,
+      onChangeRequired, onDeleteClick, ...rest
     } = this.props
     const { titleEditMode, newTitle, status, error } = this.state
 
     return (
       <div>
         <ClickOutside onClickOutside={this.handleClickOutside}>
-          <div className={cx('grid grid__middle', styles.frm, { [styles.danger]: error })}>
+          <div
+            className={cx('grid grid__middle',
+            styles.frm, { [styles.danger]: error })}
+          >
             <div className={styles.dragArea}>
               <DragArea className="cell" />
             </div>
             <div className={cx('grid grid__middle', styles.other)}>
-              <div className={cx('cell cell__12of12 cell__sm__5of12 grid grid__middle grid__left', styles.titleArea)}>
+              <div
+                className={cx('cell cell__12of12',
+                'cell__sm__5of12 grid grid__middle grid__left',
+                styles.titleArea)}
+              >
                 {!titleEditMode &&
                   <span
                     className={cx('cell cell__10of12', styles.input)}
@@ -139,7 +145,7 @@ class QuestionItem extends Component {
                     value={newTitle}
                     placeholder={type}
                     status={status}
-                    className="cell cell__9of12"
+                    className="cell cell__10of12"
                     onKeyPress={this.handleKeyPress}
                     onChange={e => this.handleChangeField('newTitle', e.target.value)}
                   />
@@ -165,7 +171,10 @@ class QuestionItem extends Component {
                 {...rest}
               />
 
-              <div className={cx('cell cell__12of12 cell__sm__2of12 grid grid__middle', styles.extra)}>
+              <div
+                className={cx('cell cell__12of12 cell__sm__2of12',
+                'grid grid__middle', styles.extra)}
+              >
                 <div className={styles.req}>
                   <input
                     type="checkbox"

@@ -1,1 +1,1 @@
-export * from './ParagraphText';
+export * from './ParagraphText'

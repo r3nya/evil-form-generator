@@ -54,7 +54,7 @@ export default class NewForm extends Component {
     dragQuestion: PropTypes.func.isRequired,
     saveForm: PropTypes.func.isRequired,
     validation: PropTypes.func.isRequired,
-    clearNotifications: PropTypes.func.isRequired,
+    clearNotifications: PropTypes.func.isRequired
   };
 
   onSortEnd = ({ oldIndex, newIndex }) => {

@@ -22,7 +22,7 @@ export const FieldHelper = props => {
       }
 
       {type === 'paragraph' &&
-        <ParagraphText />
+        <ParagraphText {...rest} />
       }
 
       {type === 'radio' &&

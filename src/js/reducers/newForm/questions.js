@@ -6,7 +6,6 @@ import {
   ADD_CHOICE,
   DELETE_CHOICE,
   CHANGE_CHOICE,
-  CHANGE_TEXT,
   DRAG_QUESTION,
   SAVE_FORM_SUCCESS
 } from 'constants'
@@ -77,12 +76,6 @@ export default function (state = initialState, action) {
       }
 
       return q
-    })
-
-  case CHANGE_TEXT:
-    return state.map(q => {
-      q.id === payload.id ?
-        Object.assign({}, q, { text: payload.text }) : q
     })
 
   case DRAG_QUESTION:
