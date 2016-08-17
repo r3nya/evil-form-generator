@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBar = require('nyan-progress-webpack-plugin');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 
@@ -33,6 +34,7 @@ const common = {
     publicPath: '/static/',
   },
   plugins: [
+    new CaseSensitivePathsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ],
