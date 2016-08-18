@@ -6,6 +6,22 @@ export const QuestionViewer = props => {
 
   return (
     <div>
+      <h5>{title}</h5>
+      <div>
+        {type === 'file' || type === 'input' &&
+          <Input
+            type={type}
+          />
+        }
+
+        {type === 'paragraph' &&
+          <TextArea
+            rows="4"
+          />
+        }
+
+
+      </div>
       {type === 'checkbox' &&
         <div>
           <h5>{title}</h5>
@@ -16,9 +32,7 @@ export const QuestionViewer = props => {
         <div>file</div>
       }
 
-      {type === 'paragraph' &&
-        <div>file</div>
-      }
+
 
       {type === 'radio' &&
         <div>file</div>
