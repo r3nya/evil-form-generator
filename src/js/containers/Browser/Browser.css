@@ -6,4 +6,10 @@
     flex-direction: column;
     padding: 0 1rem;
   }
+
+  .sendBtn {
+    width: 10rem;
+    align-self: center;
+    margin-bottom: 2rem;
+  }
 }

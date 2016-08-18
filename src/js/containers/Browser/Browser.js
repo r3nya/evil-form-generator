@@ -32,7 +32,7 @@ export default class Browser extends Component {
     const { loading, createdAt, questions, description } = this.props
 
     return (
-      <div>
+      <div className={styles.conteiner}>
         <Loader show={loading} />
 
         <Header
@@ -49,13 +49,16 @@ export default class Browser extends Component {
               />
             ))
           }
+
+          <Button
+            style="primary"
+            className={styles.sendBtn}
+          >
+            Send
+          </Button>
         </main>
 
-        <Button
-          style="primary"
-        >
-          Send
-        </Button>
+
 
 
       </div>

@@ -1,25 +1,22 @@
 import React, { PropTypes } from 'react'
 import { Input, TextArea, SelectElement } from 'components/uiToolkit'
+import styles from './QuestionViewer.css'
 
 export const QuestionViewer = props => {
   const { type, title, required, choices } = props
 
   return (
-    <div>
+    <div className={styles.item}>
       <h5>{title}</h5>
-      <div>
-        {type === 'file' || type === 'input' &&
-          <div>
-            <label>{title}</label>
-            <Input
-              type={type}
-            />
-          </div>
+      <div className={styles.subj}>
+        {(type === 'file' || type === 'input') &&
+          <Input
+            type={type}
+          />
         }
 
         {type === 'paragraph' &&
           <TextArea
-            label={title}
             rows="4"
           />
         }
