@@ -37,17 +37,33 @@ export default function (state = initialState, action) {
     }
 
   case SAVE_FORM_SUCCESS: {
-    const newState = {
-      ...state,
-      data: [
-        ...state.data,
-        {
-          id: state.data.length,
-          createdAt: new Date().toLocaleString(),
-          ...payload
-        }
-      ]
+    const { id } = payload
+    let newState
+
+    if (!isNaN(id)) {
+      const data = state.data.map(item => (
+        item.id === id ?
+          Object.assign({}, item, { ...payload }) : item
+      ))
+
+      newState = {
+        ...state,
+        data
+      }
+    } else {
+      newState = {
+        ...state,
+        data: [
+          ...state.data,
+          {
+            ...payload,
+            id: state.data.length,
+            createdAt: new Date().toLocaleString()
+          }
+        ]
+      }
     }
+
     saveData('forms', newState)
     return newState
   }

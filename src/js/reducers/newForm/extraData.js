@@ -1,4 +1,8 @@
-import { CHANGE_DESCRIPTION, SAVE_FORM_SUCCESS } from 'constants'
+import {
+  CHANGE_DESCRIPTION,
+  SAVE_FORM_SUCCESS,
+  GET_FORM_SUCCESS
+} from 'constants'
 
 const initialState = {}
 
@@ -10,6 +14,12 @@ export default function (state = initialState, action) {
     return {
       ...state,
       description: payload
+    }
+
+  case GET_FORM_SUCCESS:
+    return {
+      ...state,
+      description: payload.description
     }
 
   case SAVE_FORM_SUCCESS:

@@ -80,11 +80,11 @@ export default class NewForm extends Component {
   }
 
   handleSaveForm = () => {
-    const { saveForm, validation } = this.props
+    const { saveForm, validation, params: { id } } = this.props
 
     return Promise.resolve()
       .then(() => validation())
-      .then(() => saveForm())
+      .then(() => saveForm(+id))
       .catch(err => console.error(err))
   }
 

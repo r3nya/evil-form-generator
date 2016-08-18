@@ -7,7 +7,8 @@ import {
   DELETE_CHOICE,
   CHANGE_CHOICE,
   DRAG_QUESTION,
-  SAVE_FORM_SUCCESS
+  SAVE_FORM_SUCCESS,
+  GET_FORM_SUCCESS
 } from 'constants'
 import { compact } from 'lodash'
 
@@ -71,7 +72,6 @@ export default function (state = initialState, action) {
     return state.map(q => {
       if (q.id === payload.id) {
         const { number, value } = payload
-
         q.choices[number] = value
       }
 
@@ -83,6 +83,9 @@ export default function (state = initialState, action) {
 
   case SAVE_FORM_SUCCESS:
     return initialState
+
+  case GET_FORM_SUCCESS:
+    return [...payload.questions]
 
   default:
     return state
