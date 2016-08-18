@@ -1,0 +1,9 @@
+:local {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 2rem;
+    background-color: #d0e9c6;
+  }
+}

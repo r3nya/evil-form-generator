@@ -4,6 +4,8 @@ import { fetchItem } from 'actions'
 import { browserSelector } from 'selectors'
 import { QuestionViewer } from 'components/QuestionViewer'
 import { Loader } from 'components/uiToolkit'
+import { Header } from './views'
+import styles from './Browser.css'
 // import cx from 'classnames'
 
 const mapDispatchToProps = {
@@ -33,18 +35,21 @@ export default class Browser extends Component {
       <div>
         <Loader show={loading} />
 
-        <div>
-          {createdAt} – {description}
-        </div>
+        <Header
+          createdAt={createdAt}
+          description={description}
+        />
 
-        {questions &&
-          questions.map((question, key) => (
-            <QuestionViewer
-              key={key}
-              {...question}
-            />
-          ))
-        }
+        <main className={styles.main}>
+          {questions &&
+            questions.map((question, key) => (
+              <QuestionViewer
+                key={key}
+                {...question}
+              />
+            ))
+          }
+        </main>
 
 
       </div>
