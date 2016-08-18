@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Input, TextArea } from 'components/uiToolkit'
+import { Input, TextArea, SelectElement } from 'components/uiToolkit'
 
 export const QuestionViewer = props => {
   const { type, title, required, choices } = props
@@ -9,42 +9,38 @@ export const QuestionViewer = props => {
       <h5>{title}</h5>
       <div>
         {type === 'file' || type === 'input' &&
-          <Input
-            type={type}
-          />
+          <div>
+            <label>{title}</label>
+            <Input
+              type={type}
+            />
+          </div>
         }
 
         {type === 'paragraph' &&
           <TextArea
+            label={title}
             rows="4"
           />
         }
 
+        {(type === 'checkbox' || type === 'radio') &&
+          choices.map((item, key) => (
+            <label key={key}>
+              <Input
+                type={type}
+              />
+              {item}
+            </label>
+          ))
+        }
 
+        {type === 'select' &&
+          <SelectElement
+            options={choices}
+          />
+        }
       </div>
-      {type === 'checkbox' &&
-        <div>
-          <h5>{title}</h5>
-        </div>
-      }
-
-      {type === 'file' &&
-        <div>file</div>
-      }
-
-
-
-      {type === 'radio' &&
-        <div>file</div>
-      }
-
-      {type === 'select' &&
-        <div>file</div>
-      }
-
-      {type === 'input' &&
-        <div>file</div>
-      }
     </div>
   )
 }

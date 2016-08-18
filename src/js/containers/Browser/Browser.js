@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchItem } from 'actions'
 import { browserSelector } from 'selectors'
 import { QuestionViewer } from 'components/QuestionViewer'
-import { Loader } from 'components/uiToolkit'
+import { Loader, Button } from 'components/uiToolkit'
 import { Header } from './views'
 import styles from './Browser.css'
 // import cx from 'classnames'
@@ -50,6 +50,12 @@ export default class Browser extends Component {
             ))
           }
         </main>
+
+        <Button
+          style="primary"
+        >
+          Send
+        </Button>
 
 
       </div>
