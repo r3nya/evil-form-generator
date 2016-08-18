@@ -16,7 +16,7 @@ export function fetchItem(id) {
     const forms = loadData('forms')
 
     if (forms.data) {
-      const form = forms.data.filter(form => form.id !== id)
+      const form = forms.data.filter(form => form.id === +id)
 
       if (!form.length) {
         dispatch(push('/404'))
