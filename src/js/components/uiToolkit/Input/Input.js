@@ -5,7 +5,6 @@ import styles from './Input.css'
 export const Input = props => {
   const { className, status, ...rest } = props
   const classes = cx(styles.input, className, {
-    [styles.success]: status === 'success',
     [styles.error]: status === 'error'
   })
 

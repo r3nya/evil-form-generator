@@ -1,0 +1,7 @@
+:local {
+  .txt {
+    @media (max-width: 21em) {
+      display: none;
+    }
+  }
+}

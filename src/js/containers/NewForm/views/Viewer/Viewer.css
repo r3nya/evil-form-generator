@@ -3,6 +3,8 @@
     font-size: 0.85rem;
     color: #bfbfbf;
     text-transform: uppercase;
+    word-break: break-all;
+    white-space: normal;
   }
 
   hr {

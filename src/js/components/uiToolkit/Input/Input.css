@@ -21,10 +21,6 @@ input[type="checkbox"] {
     border-radius: 0.25rem;
   }
 
-  .success {
-    background-color: #dcffd0;
-  }
-
   .error {
     background-color: #fecfd0;
   }

@@ -19,7 +19,7 @@ class QuestionItem extends Component {
   };
 
   state = {
-    titleEditMode: true,
+    titleEditMode: false,
     newTitle: '',
     status: '',
     error: false
@@ -92,10 +92,6 @@ class QuestionItem extends Component {
     if (text.trim().length > 0) {
       this.setState({
         status: 'success'
-      })
-    } else {
-      this.setState({
-        status: 'error'
       })
     }
   };

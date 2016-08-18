@@ -11,10 +11,22 @@
       text-decoration: none;
       text-transform: uppercase;
     }
+
+    @media (max-width: 48em) {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 21em) {
+      font-size: 0.6rem;
+    }
   }
 
   .backBtn {
     position: absolute;
     left: 0;
+
+    @media (max-width: 13em) {
+      display: none;
+    }
   }
 }

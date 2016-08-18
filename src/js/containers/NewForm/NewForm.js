@@ -14,7 +14,8 @@ import {
   validation,
   clearNotifications,
   fetchForms,
-  getForm
+  getForm,
+  cleanFields
 } from 'actions'
 import { newFormSelector } from 'selectors'
 import { arrayMove } from 'react-sortable-hoc'
@@ -37,7 +38,8 @@ const mapDispatchToProps = {
   validation,
   clearNotifications,
   fetchForms,
-  getForm
+  getForm,
+  cleanFields
 }
 
 @connect(newFormSelector, mapDispatchToProps)
@@ -61,16 +63,19 @@ export default class NewForm extends Component {
     validation: PropTypes.func.isRequired,
     fetchForms: PropTypes.func.isRequired,
     getForm: PropTypes.func.isRequired,
+    cleanFields: PropTypes.func.isRequired,
     clearNotifications: PropTypes.func.isRequired
   };
 
   componentDidMount() {
-    const { fetchForms, getForm, params: { id } } = this.props
+    const { fetchForms, getForm, cleanFields, params: { id } } = this.props
 
     if (id) {
       Promise.resolve()
         .then(() => fetchForms())
         .then(() => getForm(id))
+    } else {
+      cleanFields()
     }
   }
 

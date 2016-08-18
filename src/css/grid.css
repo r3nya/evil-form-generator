@@ -35,6 +35,8 @@
 .grid__between { justify-content: space-between; }
 .grid__around { justify-content: space-around; }
 
+.grid__column { flex-direction: column; }
+
 .cell { @apply --cell; }
 
 .сell__fill {

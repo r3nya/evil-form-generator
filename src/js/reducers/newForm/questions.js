@@ -8,7 +8,8 @@ import {
   CHANGE_CHOICE,
   DRAG_QUESTION,
   SAVE_FORM_SUCCESS,
-  GET_FORM_SUCCESS
+  GET_FORM_SUCCESS,
+  CLEAN_FIELDS
 } from 'constants'
 import { compact } from 'lodash'
 
@@ -82,6 +83,9 @@ export default function (state = initialState, action) {
     return payload
 
   case SAVE_FORM_SUCCESS:
+    return initialState
+
+  case CLEAN_FIELDS:
     return initialState
 
   case GET_FORM_SUCCESS:

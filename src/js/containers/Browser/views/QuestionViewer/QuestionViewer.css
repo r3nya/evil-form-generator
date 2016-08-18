@@ -1,0 +1,37 @@
+:local {
+  .item {
+    border: 1px solid grey;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .item:first-child {
+    margin-top: 1rem;
+  }
+
+  .subj {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .asterisk {
+    color: red;
+    cursor: help;
+  }
+
+  .h4 {
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+label {
+  word-break: break-all;
+  white-space: normal;
+  margin-bottom: 0.5rem;
+}
+
+label:last-child {
+  margin-bottom: 0;
+}

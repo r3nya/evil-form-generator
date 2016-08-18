@@ -5,5 +5,8 @@
     align-items: center;
     min-height: 2rem;
     background-color: #d0e9c6;
+    word-break: break-all;
+    white-space: normal;
+    padding: 0 1rem;
   }
 }
