@@ -21,4 +21,9 @@
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
   }
+
+  .link {
+    word-break: break-all;
+    white-space: normal;
+  }
 }
