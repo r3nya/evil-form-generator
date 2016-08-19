@@ -1,19 +1,6 @@
 :local {
   .group {
-    position: relative;
     width: 100%;
-    display: table;
-    border-collapse: separate;
-  }
-
-  .groupBtn {
-    display: table-cell;
-    position: relative;
-    font-size: 0;
-    white-space: nowrap;
-    width: 1%;
-    vertical-align: middle;
-    border-collapse: separate;
   }
 
   .input {

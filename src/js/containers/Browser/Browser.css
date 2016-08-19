@@ -1,15 +1,17 @@
 :local {
   .main {
     display: flex;
-    justify-content: center;
-    max-width: 75rem;
     flex-direction: column;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
     padding: 0 1rem;
+    max-width: 75rem;
   }
 
   .sendBtn {
-    width: 10rem;
     align-self: center;
     margin-bottom: 2rem;
+    width: 10rem;
   }
 }
