@@ -68,20 +68,23 @@ export default class Viewer extends Component {
           ))
         }
         <header className="grid grid__middle">
-          <h6
+          <div
             className={cx(styles.description, 'cell cell__12of12',
-            'cell__sm__9of12 cell__md__10of12')}
+                      'cell__sm__9of12 cell__md__10of12')}
           >
-            Description:&nbsp;
-            <small>{description}</small>
+            <h6>
+              Description:&nbsp;
+              <span className={styles.txt}>{description}</span>
+            </h6>
+
             <Button
               style="outline"
-              className="xs-only"
+              className={cx('xs-only', styles.editBtn)}
               onClick={this.openEditDescriptionModal}
             >
               <EditIcon />
             </Button>
-          </h6>
+          </div>
 
           <div className={cx('cell cell__12of12 cell__sm__3of12 cell__md__2of12', styles.btns)}>
             <Button
