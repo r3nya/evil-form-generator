@@ -1,0 +1,8 @@
+:local {
+  .item {
+    @media (max-width: 48em) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

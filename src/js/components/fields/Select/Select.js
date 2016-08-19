@@ -8,10 +8,13 @@ export const Select = props => {
   return (
     <div>
       <SelectElement
+        className="not-xs"
         options={choices}
       />
 
-      <br />
+      <br
+        className="not-xs"
+      />
 
       {!!choices.length &&
         <fieldset>

@@ -128,7 +128,7 @@ class QuestionItem extends Component {
               >
                 {!titleEditMode &&
                   <span
-                    className={cx('cell cell__10of12', styles.input)}
+                    className={cx('cell cell__10of12 cell__sm__9of12', styles.input)}
                     onClick={this.editTitle}
                   >
                     {title}
@@ -141,7 +141,7 @@ class QuestionItem extends Component {
                     value={newTitle}
                     placeholder={type}
                     status={status}
-                    className="cell cell__10of12"
+                    className="cell cell__10of12  cell__sm__9of12"
                     onKeyPress={this.handleKeyPress}
                     onChange={e => this.handleChangeField('newTitle', e.target.value)}
                   />

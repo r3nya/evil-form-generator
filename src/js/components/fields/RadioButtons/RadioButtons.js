@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import { ChoiceItem, Button } from 'components/uiToolkit'
+import styles from './RadioButtons.css'
 
 export const RadioButtons = props => {
   const { id, choices, onAddChoice, ...rest } = props
 
   return (
-    <div>
+    <div className={styles.item}>
       {!!choices.length &&
         <fieldset>
           {choices.length && choices.map((choice, key) => (

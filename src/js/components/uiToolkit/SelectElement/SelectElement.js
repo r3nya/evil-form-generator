@@ -1,10 +1,13 @@
 import React, { PropTypes } from 'react'
+import cx from 'classnames'
 import styles from './SelectElement.css'
 
 export const SelectElement = props => {
-  const { options } = props
+  const { options, className } = props
+  const classes = cx(styles.select, className)
+
   return (
-    <select className={styles.select}>
+    <select className={classes}>
       {options && options.map((item, key) => (
         <option key={key}>{item}</option>
       ))}
@@ -14,4 +17,5 @@ export const SelectElement = props => {
 
 SelectElement.propTypes = {
   options: PropTypes.array,
+  className: PropTypes.string,
 }

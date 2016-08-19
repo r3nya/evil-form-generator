@@ -10,6 +10,7 @@
     white-space: normal;
     height: 2.3rem;
     line-height: 2.3rem;
+    padding: 0 0.7rem;
 
     @media (max-width: 48em) {
       border: 1px dotted #9e9e9e;
@@ -27,7 +28,9 @@
   }
 
   .titleArea {
-    margin-left: 0.4rem;
+    @media (min-width: 48em) {
+      margin-left: 0.4rem;
+    }
   }
 
   .editBtn {
@@ -49,6 +52,14 @@
     @media (max-width: 48em) {
       width: calc(100% - 2rem);
       padding: 0 0.5rem;
+
+      div {
+        margin-bottom: 0.25rem;
+      }
+
+      div:first-child {
+        margin-top: 0.25rem;
+      }
     }
   }
 

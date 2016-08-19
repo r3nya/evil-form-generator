@@ -21,6 +21,12 @@ export default class Viewer extends Component {
     fieldsModal: false
   }
 
+  handleAddField = type => {
+    const { onBtnClick } = this.props
+    onBtnClick(type)
+    this.openFieldsModal()
+  }
+
   // Modals im mobile layout
   openEditDescriptionModal = () => {
     const { descriptionModal } = this.state
@@ -45,7 +51,6 @@ export default class Viewer extends Component {
       notifications,
       onSaveForm,
       clearNotifications,
-      onBtnClick,
       onChangeDescription
     } = this.props
 
@@ -114,7 +119,7 @@ export default class Viewer extends Component {
         {fieldsModal &&
           <Modal onClose={this.openFieldsModal}>
             <FieldButtons
-              onBtnClick={onBtnClick}
+              onBtnClick={this.handleAddField}
             />
           </Modal>
         }
