@@ -1,5 +1,5 @@
-.ReactTabs__Tab {
-  font-size: 0.85rem;
+:root {
+  --active-color: #7d88d4;
 }
 
 :local {
@@ -8,4 +8,53 @@
     flex-direction: column;
     padding: 0.5rem;
   }
+
+  .tabsBar {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.7rem;
+    cursor: pointer;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1.5rem;
+    user-select: none;
+
+    @media (max-width: 64em) {
+      font-size: 0.6rem;
+    }
+
+    @media (max-width: 75em) {
+      padding: 0 0.5rem;
+    }
+  }
+
+  .tab:hover {
+    opacity: 0.8;
+  }
+
+  .optional {
+    @media (max-width: 64em) {
+      display: none;
+    }
+  }
+}
+
+.ReactTabs__Tab--selected {
+  color: var(--active-color);
+  border-bottom: 2px solid var(--active-color);
 }

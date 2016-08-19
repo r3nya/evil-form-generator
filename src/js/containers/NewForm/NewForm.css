@@ -1,5 +1,6 @@
 :local {
   .viewer {
+    padding: 0 0.25rem;
     @media (min-width: 48em) {
       padding-left: 1rem;
     }

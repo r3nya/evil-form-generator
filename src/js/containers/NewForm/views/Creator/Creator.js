@@ -6,15 +6,18 @@ import cx from 'classnames'
 import styles from './Creator.css'
 
 export const Creator = props => {
+  Tabs.setUseDefaultStyles(false)
   const { onBtnClick, onChangeDescription } = props
 
   return (
     <div>
       <main>
         <Tabs>
-          <TabList>
-            <Tab>Custom fields</Tab>
-            <Tab>Description (Optional)</Tab>
+          <TabList className={styles.tabsBar}>
+            <Tab className={styles.tab}>Custom fields</Tab>
+            <Tab className={styles.tab}>
+              Description <span className={styles.optional}>&nbsp;(Optional)</span>
+            </Tab>
           </TabList>
 
           <TabPanel className={cx('grid', styles.panel)}>
