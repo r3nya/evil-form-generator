@@ -7,7 +7,7 @@ import styles from './Creator.css'
 
 export const Creator = props => {
   Tabs.setUseDefaultStyles(false)
-  const { onBtnClick, onChangeDescription } = props
+  const { description, onBtnClick, onChangeDescription } = props
 
   return (
     <div>
@@ -36,6 +36,7 @@ export const Creator = props => {
           <TabPanel className={cx(styles.textAreaPanel, styles.panel)}>
             <TextArea
               label="Form Description"
+              value={description}
               rows="5"
               onChange={(event) => onChangeDescription(event.target.value)}
             />
@@ -49,6 +50,7 @@ export const Creator = props => {
 }
 
 Creator.propTypes = {
+  description: PropTypes.string,
   onBtnClick: PropTypes.func.isRequired,
   onChangeDescription: PropTypes.func.isRequired,
 }

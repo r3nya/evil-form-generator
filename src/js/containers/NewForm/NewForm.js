@@ -113,6 +113,7 @@ export default class NewForm extends Component {
         </header>
         <div className="cell cell__3of12 not-xs">
           <Creator
+            description={description}
             onBtnClick={actions.addQuestion}
             onChangeDescription={actions.changeDescription}
           />

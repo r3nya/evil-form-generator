@@ -105,6 +105,7 @@ export default class Viewer extends Component {
             <TextArea
               label="Form Description"
               rows="5"
+              value={description}
               onChange={(event) => onChangeDescription(event.target.value)}
             />
           </Modal>
