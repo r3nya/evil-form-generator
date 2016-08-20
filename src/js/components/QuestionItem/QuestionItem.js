@@ -128,7 +128,7 @@ class QuestionItem extends Component {
               >
                 {!titleEditMode &&
                   <span
-                    className={cx('cell cell__10of12 cell__sm__9of12', styles.input)}
+                    className={cx('cell cell__9of12 cell__sm__9of12', styles.input)}
                     onClick={this.editTitle}
                   >
                     {title}
@@ -172,12 +172,14 @@ class QuestionItem extends Component {
                 'grid grid__middle', styles.extra)}
               >
                 <div className={styles.req}>
-                  <input
-                    type="checkbox"
-                    checked={required}
-                    onChange={() => onChangeRequired({ id, required: !required })}
-                  />
-                  <span className="xs-only">Required?</span>
+                  <label>
+                    <Input
+                      type="checkbox"
+                      checked={required}
+                      onChange={() => onChangeRequired({ id, required: !required })}
+                    />
+                    <span className="xs-only">Required?</span>
+                  </label>
                 </div>
                 <div className={styles.del}>
                   <Button

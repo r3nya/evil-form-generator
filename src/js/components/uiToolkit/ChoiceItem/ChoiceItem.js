@@ -85,7 +85,7 @@ export default class ChoiceItem extends Component {
 
     return (
       <ClickOutside onClickOutside={this.handleClickOutside}>
-        <div className={cx('grid grid__middle grid__left', styles.row)}>
+        <div className={cx('grid grid__middle grid__between', styles.row)}>
 
           {!editMode &&
             <label
@@ -109,7 +109,7 @@ export default class ChoiceItem extends Component {
               value={newValue}
               placeholder="?"
               status={status}
-              className={cx('cell cell__10of12', styles.input)}
+              className={cx('cell cell__9of12 cell__sm__10of12', styles.input)}
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
