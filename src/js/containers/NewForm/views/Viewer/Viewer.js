@@ -79,7 +79,7 @@ export default class Viewer extends Component {
 
             <Button
               style="outline"
-              className={cx('xs-only', styles.editBtn)}
+              className={cx('sm-only', styles.editBtn)}
               onClick={this.openEditDescriptionModal}
             >
               <EditIcon />
@@ -88,7 +88,7 @@ export default class Viewer extends Component {
 
           <div className={cx('cell cell__12of12 cell__sm__3of12 cell__md__2of12', styles.btns)}>
             <Button
-              className="xs-only"
+              className="sm-only"
               style="primary"
               onClick={this.openFieldsModal}
             >

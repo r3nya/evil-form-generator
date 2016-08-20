@@ -1,3 +1,27 @@
+@media (max-width: 29.9em) {
+  .not-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 47.9em) {
+  .not-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 29.9em) {
+  .xs-only {
+    display: none;
+  }
+}
+
+@media (min-width: 47.9em) {
+  .sm-only {
+    display: none;
+  }
+}
+
 .not-allowed {
   cursor: not-allowed;
 }

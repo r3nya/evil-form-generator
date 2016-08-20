@@ -178,7 +178,7 @@ class QuestionItem extends Component {
                       checked={required}
                       onChange={() => onChangeRequired({ id, required: !required })}
                     />
-                    <span className="xs-only">Required?</span>
+                    <span className="sm-only">Required?</span>
                   </label>
                 </div>
                 <div className={styles.del}>
