@@ -1,5 +1,6 @@
 :root {
   --active-color: #7d88d4;
+  --hover-color: #d3d8f7;
 }
 
 :local {
@@ -44,7 +45,7 @@
   }
 
   .tab:hover {
-    opacity: 0.8;
+    border-bottom: 2px solid var(--hover-color);
   }
 
   .optional {
@@ -56,5 +57,9 @@
 
 .ReactTabs__Tab--selected {
   color: var(--active-color);
+  border-bottom: 2px solid var(--active-color);
+}
+
+.ReactTabs__Tab--selected:hover {
   border-bottom: 2px solid var(--active-color);
 }

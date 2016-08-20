@@ -48,7 +48,7 @@ export default class NewForm extends Component {
     questions: PropTypes.array,
     notifications: PropTypes.array,
     addChoice: PropTypes.func.isRequired,
-    extraData: PropTypes.object,
+    description: PropTypes.string,
     route: PropTypes.object,
     params: PropTypes.object,
     deleteChoice: PropTypes.func.isRequired,
@@ -96,7 +96,7 @@ export default class NewForm extends Component {
   render() {
     const {
       questions,
-      extraData: { description },
+      description,
       route: { backUrlType },
       notifications,
       ...actions

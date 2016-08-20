@@ -35,12 +35,12 @@ export const QuestionViewer = props => {
         }
 
         {(type === 'checkbox' || type === 'radio') &&
-          choices.map((item, key) => (
-            <label key={key}>
+          choices.map(item => (
+            <label key={item.id}>
               <Input
                 type={type}
               />
-              {item}
+              {item.value}
             </label>
           ))
         }

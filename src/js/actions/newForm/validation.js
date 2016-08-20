@@ -4,6 +4,8 @@ import {
   CLEAR_NOTIFICATIONS
 } from 'constants'
 
+import { uniqBy } from 'lodash'
+
 function newNotification(type, message) {
   return {
     type: NEW_NOTIFICATION,
@@ -20,7 +22,7 @@ export function validation() {
       type: VALIDATION
     })
 
-    const { questions } = getState().newForm
+    const { questions, choices } = getState().newForm
 
     if (!questions.length) {
       const message = 'Empty form …'
@@ -36,17 +38,19 @@ export function validation() {
       }
 
       if (q.type === 'checkbox' || q.type === 'radio' || q.type === 'select') {
-        if (!q.choices.length) {
+        const currentChoices = choices.filter(item => item.questionId === q.id)
+
+        if (!currentChoices.length) {
           const message = 'Choices must not be empty'
           dispatch(newNotification('danger', message))
           throw new Error(message)
         }
-      }
 
-      if (q.choices.length !== [...new Set(q.choices)].length) {
-        const message = 'Choices must be unique'
-        dispatch(newNotification('danger', message))
-        throw new Error(message)
+        if (currentChoices.length !== uniqBy(currentChoices, 'value').length) {
+          const message = 'Choices must be unique'
+          dispatch(newNotification('danger', message))
+          throw new Error(message)
+        }
       }
     })
   }

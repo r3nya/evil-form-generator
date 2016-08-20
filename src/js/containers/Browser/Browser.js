@@ -57,9 +57,6 @@ export default class Browser extends Component {
           </Button>
         </main>
 
-
-
-
       </div>
     )
   }

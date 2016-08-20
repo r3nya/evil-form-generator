@@ -38,6 +38,7 @@ export default class AllForms extends Component {
             data.map((item, key) => (
               <ListItem
                 key={key}
+                number={key}
                 onDeleteForm={deleteForm}
                 {...item}
               />

@@ -8,8 +8,8 @@ export const SelectElement = props => {
 
   return (
     <select className={classes}>
-      {options && options.map((item, key) => (
-        <option key={key}>{item}</option>
+      {options && options.map(item => (
+        <option key={item.id}>{item.value}</option>
       ))}
     </select>
   )

@@ -1,29 +1,29 @@
 import React, { PropTypes } from 'react'
 import { ChoiceItem, Button } from 'components/uiToolkit'
+import styles from './ChoiceField.css'
 
-export const Checkboxes = props => {
-  const { id, choices, onAddChoice, ...rest } = props
+export const ChoiceField = props => {
+  const { id, choices, type, onAddChoice, ...rest } = props
 
   return (
-    <div>
+    <div className={styles.item}>
       {!!choices.length &&
-        <fieldset>
+        <fieldset className={styles.fset}>
           {choices.length && choices.map((choice, key) => (
-            choice && <ChoiceItem
-              id={id}
+            <ChoiceItem
               key={key}
-              type="checkbox"
-              number={key}
-              label={choice}
+              type={type}
+              {...choice}
               {...rest}
             />
           ))}
         </fieldset>
       }
+
       <Button
         size="small"
         style="transparent"
-        onClick={() => onAddChoice(id, 'checkbox')}
+        onClick={() => onAddChoice(id, type)}
       >
         <i className="fa fa-plus" /> Add value
       </Button>
@@ -31,9 +31,9 @@ export const Checkboxes = props => {
   )
 }
 
-Checkboxes.propTypes = {
+ChoiceField.propTypes = {
   id: PropTypes.number,
+  type: PropTypes.string,
   choices: PropTypes.array,
   onAddChoice: PropTypes.func,
-  onDeleteChoice: PropTypes.func,
 }

@@ -5,7 +5,7 @@ import cx from 'classnames'
 import styles from './ListItem.css'
 
 export const ListItem = props => {
-  const { id, description, createdAt, onDeleteForm } = props
+  const { id, number, description, createdAt, onDeleteForm } = props
 
   return (
     <li className={styles.item}>
@@ -13,7 +13,7 @@ export const ListItem = props => {
         className={cx('cell cell__8of12 cell__sm__10of12', styles.link)}
         to={`/view/${id}`}
       >
-        {id} – {description} ({createdAt})
+        {number + 1} – {description} ({createdAt})
       </Link>
       <Button
         button
@@ -36,6 +36,7 @@ export const ListItem = props => {
 
 ListItem.propTypes = {
   id: PropTypes.number,
+  number: PropTypes.number,
   description: PropTypes.string,
   createdAt: PropTypes.string,
   onDeleteForm: PropTypes.func.isRequired,

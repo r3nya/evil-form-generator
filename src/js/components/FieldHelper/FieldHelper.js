@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react'
 import {
-  Checkboxes,
   FileUpload,
   ParagraphText,
-  RadioButtons,
-  Select,
-  SingleLineText
+  SingleLineText,
+  ChoiceField
 } from 'components/fields'
 
 export const FieldHelper = props => {
@@ -13,8 +11,11 @@ export const FieldHelper = props => {
 
   return (
     <div className={className}>
-      {type === 'checkbox' &&
-        <Checkboxes {...rest} />
+      {(type === 'checkbox' || type === 'radio' || type === 'select') &&
+        <ChoiceField
+          type={type}
+          {...rest}
+        />
       }
 
       {type === 'file' &&
@@ -23,14 +24,6 @@ export const FieldHelper = props => {
 
       {type === 'paragraph' &&
         <ParagraphText {...rest} />
-      }
-
-      {type === 'radio' &&
-        <RadioButtons {...rest} />
-      }
-
-      {type === 'select' &&
-        <Select {...rest} />
       }
 
       {type === 'input' &&

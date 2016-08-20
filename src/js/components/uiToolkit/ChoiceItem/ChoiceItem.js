@@ -7,9 +7,9 @@ import styles from './ChoiceItem.css'
 export default class ChoiceItem extends Component {
   static propTypes = {
     id: PropTypes.number.isRequired,
-    label: PropTypes.string,
+    value: PropTypes.string,
     type: PropTypes.string,
-    number: PropTypes.number.isRequired,
+    questionId: PropTypes.number.isRequired,
     onChangeChoice: PropTypes.func.isRequired,
     onDeleteChoice: PropTypes.func.isRequired,
   };
@@ -27,11 +27,11 @@ export default class ChoiceItem extends Component {
 
   handleEdit = () => {
     const { editMode } = this.state
-    const { label } = this.props
+    const { value } = this.props
 
     this.setState({
       editMode: !editMode,
-      newValue: label
+      newValue: value
     })
 
     this.pushNewValue()
@@ -68,10 +68,10 @@ export default class ChoiceItem extends Component {
 
   pushNewValue = () => {
     const { newValue } = this.state
-    const { id, number, onChangeChoice } = this.props
+    const { id, questionId, onChangeChoice } = this.props
 
     if (newValue && newValue.replace(/\s/g, '').length) {
-      onChangeChoice(id, number, newValue.trim())
+      onChangeChoice(id, questionId, newValue.trim())
       this.setState({
         newValue: '',
         status: 'success'
@@ -80,7 +80,7 @@ export default class ChoiceItem extends Component {
   }
 
   render() {
-    const { id, label, type, number, onDeleteChoice } = this.props
+    const { id, value, type, questionId, onDeleteChoice } = this.props
     const { editMode, newValue, status } = this.state
 
     return (
@@ -92,14 +92,14 @@ export default class ChoiceItem extends Component {
               className={cx('cell cell__10of12', styles.label)}
               onClick={this.handleEdit}
             >
-              {type !== 'text' &&
+              {type !== 'select' &&
                 <Input
                   type={type}
                   className="not-allowed"
                   disabled="disabled"
                 />
               }
-              {label}
+              {value}
             </label>
           }
 
@@ -127,11 +127,9 @@ export default class ChoiceItem extends Component {
             <Button
               size="small"
               style="transparent"
-              onClick={() => onDeleteChoice(id, number)}
+              onClick={() => onDeleteChoice(id, questionId)}
             >
-              <DeleteIcon
-                onClick={() => onDeleteChoice(id, number)}
-              />
+              <DeleteIcon />
             </Button>
           </div>
         </div>

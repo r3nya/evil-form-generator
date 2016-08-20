@@ -1,11 +1,11 @@
 import { ADD_CHOICE } from 'constants'
 
-export function addChoice(id, value = '') {
+export function addChoice(questionId, value = '') {
   return dispatch => {
     dispatch({
       type: ADD_CHOICE,
       payload: {
-        id,
+        questionId,
         value
       }
     })

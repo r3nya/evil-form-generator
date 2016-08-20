@@ -9,7 +9,7 @@ export function saveForm(id) {
   return (dispatch, getState) => {
     dispatch({ type: SAVE_FORM })
 
-    const { newForm: { questions, extraData: { description } } } = getState()
+    const { newForm: { questions, choices, extraData: { description } } } = getState()
 
     if (questions) {
       dispatch({
@@ -17,7 +17,8 @@ export function saveForm(id) {
         payload: {
           id,
           description,
-          questions
+          questions,
+          choices
         }
       })
       dispatch(push('/all'))
