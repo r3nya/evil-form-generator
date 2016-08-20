@@ -1,26 +1,30 @@
 import {
   NEW_NOTIFICATION,
   CLEAR_NOTIFICATIONS,
-  SAVE_FORM_SUCCESS
+  SAVE_FORM_SUCCESS,
+  CLEAN_FIELDS
 } from 'constants'
 
-export default function (state = [], action) {
+const initialState = []
+export default function (state = initialState, action) {
   const { type, payload } = action
 
   switch (type) {
   case NEW_NOTIFICATION:
     return [
-      // ...state,
       {
         ...payload
       }
     ]
 
   case CLEAR_NOTIFICATIONS:
-    return []
+    return initialState
 
   case SAVE_FORM_SUCCESS:
-    return []
+    return initialState
+
+  case CLEAN_FIELDS:
+    return initialState
 
   default:
     return state
