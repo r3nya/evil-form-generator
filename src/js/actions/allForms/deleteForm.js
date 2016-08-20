@@ -4,7 +4,7 @@ import {
   DELETE_FORM_ERROR
 } from 'constants'
 
-import { get, compact } from 'lodash'
+import { get } from 'lodash'
 
 export function deleteForm(id) {
   return (dispatch, getState) => {
@@ -18,7 +18,7 @@ export function deleteForm(id) {
       const { data } = forms
       dispatch({
         type: DELETE_FORM_SUCCESS,
-        payload: compact(data.filter(item => item.id !== id))
+        payload: data.filter(item => item.id !== id)
       })
     } else {
       dispatch({

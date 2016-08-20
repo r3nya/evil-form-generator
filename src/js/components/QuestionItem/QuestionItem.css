@@ -8,14 +8,13 @@
   .input {
     word-break: break-all;
     white-space: normal;
-    height: 2.3rem;
+    min-height: 2.3rem;
     line-height: 2.3rem;
     padding: 0 0.7rem;
 
     @media (max-width: 48em) {
       border: 1px dotted #9e9e9e;
       border-radius: 0.25rem;
-      height: 2.3rem;
     }
   }
 

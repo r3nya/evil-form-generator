@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
     return [
       ...state,
       {
-        id: state.length ? state.length : 0,
+        id: state.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1,
         questionId: payload.questionId,
         value: payload.value
       }

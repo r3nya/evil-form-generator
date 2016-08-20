@@ -57,7 +57,7 @@ export default function (state = initialState, action) {
           ...state.data,
           {
             ...payload,
-            id: state.data.length,
+            id: state.data.reduce((maxId, q) => Math.max(q.id, maxId), -1) + 1,
             createdAt: new Date().toLocaleString()
           }
         ]

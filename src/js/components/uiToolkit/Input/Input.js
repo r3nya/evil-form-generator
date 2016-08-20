@@ -1,24 +1,31 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import cx from 'classnames'
 import styles from './Input.css'
 
-export const Input = props => {
-  const { className, status, ...rest } = props
-  const classes = cx(styles.input, className, {
-    [styles.error]: status === 'error'
-  })
+export default class Input extends Component {
+  static propTypes = {
+    className: PropTypes.string,
+    status: PropTypes.string,
+  };
 
-  return (
-    <input
-      className={classes}
-      autoCapitalize="off"
-      autoCorrect="off"
-      {...rest}
-    />
-  )
-}
+  componentDidMount() {
+    this.input.focus()
+  }
 
-Input.propTypes = {
-  className: PropTypes.string,
-  status: PropTypes.string,
+  render() {
+    const { className, status, ...rest } = this.props
+    const classes = cx(styles.input, className, {
+      [styles.error]: status === 'error'
+    })
+
+    return (
+      <input
+        ref={value => this.input = value}
+        className={classes}
+        autoCapitalize="off"
+        autoCorrect="off"
+        {...rest}
+      />
+    )
+  }
 }
