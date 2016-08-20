@@ -10,6 +10,7 @@ export const Alert = props => {
   })
   return (
     <div
+      role="alert"
       className={classes}
       onClick={onCloseClick}
       {...rest}

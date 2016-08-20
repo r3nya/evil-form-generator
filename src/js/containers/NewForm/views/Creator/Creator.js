@@ -10,42 +10,38 @@ export const Creator = props => {
   const { description, onBtnClick, onChangeDescription } = props
 
   return (
-    <div>
-      <main>
-        <Tabs>
-          <TabList className={styles.tabsBar}>
-            <Tab className={styles.tab}>Custom fields</Tab>
-            <Tab className={styles.tab}>
-              Description <span className={styles.optional}>&nbsp;(Optional)</span>
-            </Tab>
-          </TabList>
+    <aside>
+      <Tabs>
+        <TabList className={styles.tabsBar}>
+          <Tab className={styles.tab}>Custom fields</Tab>
+          <Tab className={styles.tab}>
+            Description <span className={styles.optional}>&nbsp;(Optional)</span>
+          </Tab>
+        </TabList>
 
-          <TabPanel className={cx('grid', styles.panel)}>
-            <div className="cell cell__12of12 grid grid__center">
-              <header>
-                <h3>Add Custom Field</h3>
-              </header>
+        <TabPanel className={cx('grid', styles.panel)}>
+          <div className="cell cell__12of12 grid grid__center">
+            <header>
+              <h3>Add Custom Field</h3>
+            </header>
 
-              <FieldButtons
-                onBtnClick={onBtnClick}
-              />
-
-            </div>
-          </TabPanel>
-
-          <TabPanel className={cx(styles.textAreaPanel, styles.panel)}>
-            <TextArea
-              label="Form Description"
-              value={description}
-              rows="5"
-              onChange={(event) => onChangeDescription(event.target.value)}
+            <FieldButtons
+              onBtnClick={onBtnClick}
             />
-          </TabPanel>
-        </Tabs>
 
-      </main>
+          </div>
+        </TabPanel>
 
-    </div>
+        <TabPanel className={cx(styles.textAreaPanel, styles.panel)}>
+          <TextArea
+            label="Form Description"
+            value={description}
+            rows="5"
+            onChange={(event) => onChangeDescription(event.target.value)}
+          />
+        </TabPanel>
+      </Tabs>
+    </aside>
   )
 }
 

@@ -10,6 +10,7 @@ export const ListItem = props => {
   return (
     <li className={styles.item}>
       <Link
+        role="link"
         className={cx('cell cell__8of12 cell__sm__10of12', styles.link)}
         to={`/view/${id}`}
       >

@@ -8,7 +8,7 @@ export const FieldButtons = props => {
   const { onBtnClick } = props
 
   return (
-    <article className={cx('grid grid__between', styles.btnsArea)}>
+    <section className={cx('grid grid__between', styles.btnsArea)}>
       <div className={cx('cell cell__12of12 cell__md__6of12', styles.btnsCol)}>
         <Button
           style="outline"
@@ -61,7 +61,7 @@ export const FieldButtons = props => {
         </Button>
       </div>
 
-    </article>
+    </section>
   )
 }
 

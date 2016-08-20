@@ -140,6 +140,7 @@ class QuestionItem extends Component {
                     type="text"
                     value={newTitle}
                     placeholder={type}
+                    defaultValue="?"
                     status={status}
                     className="cell cell__10of12  cell__sm__9of12"
                     onKeyPress={this.handleKeyPress}
