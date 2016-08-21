@@ -9,10 +9,6 @@
     border: 1px solid #e5e5e5;
     background-color: #fff;
     font-size: 1.45rem;
-
-    a {
-      color: #4f4f4f;
-    }
   }
 
   .item:first-child {
@@ -27,7 +23,12 @@
   }
 
   .link {
+    color: #4f4f4f;
     white-space: normal;
     word-break: break-all;
+  }
+
+  .link:hover {
+    color: #7d88d4;
   }
 }
