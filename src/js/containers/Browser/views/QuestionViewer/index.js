@@ -1,1 +1,1 @@
-export * from './QuestionViewer'
+export { default as QuestionViewer } from './QuestionViewer'

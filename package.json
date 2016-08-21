@@ -79,6 +79,7 @@
     "react": "^15.1.0",
     "react-click-outside": "github:tj/react-click-outside",
     "react-dom": "^15.1.0",
+    "react-radio-group": "^3.0.1",
     "react-redux": "^4.4.5",
     "react-responsive": "^1.1.4",
     "react-router": "^2.4.1",
