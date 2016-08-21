@@ -22,7 +22,7 @@ export const ChoiceField = props => {
 
       <Button
         size="small"
-        style="transparent"
+        style="transparent-primary"
         onClick={() => onAddChoice(id, type)}
       >
         <i className="fa fa-plus" /> Add value

@@ -103,7 +103,7 @@ export default class NewForm extends Component {
     } = this.props
 
     return (
-      <div className={cx('grid', styles.main)}>
+      <div className="grid">
         <header className={cx('cell cell__12of12 grid grid__middle grid__center', styles.header)}>
           <BackBtn
             className={styles.backBtn}

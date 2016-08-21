@@ -1,4 +1,13 @@
 :local {
+  .container {
+    @media (min-width: 75em) {
+      background-color: #fff;
+      border: 1px solid #e5e5e5;
+      height: calc(100% - 6.5rem);
+      padding: 0 1rem;
+    }
+  }
+
   .description {
     display: flex;
     justify-content: space-between;

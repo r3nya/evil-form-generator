@@ -68,6 +68,16 @@
   }
 
   .transparent {
+    color: var(--color-1);
+    background-image: none;
+    background-color: transparent;
+  }
+
+  .transparent:hover {
+    color: var(--main-color);
+  }
+
+  .transparent_primary {
     color: var(--main-color);
     background-image: none;
     background-color: transparent;

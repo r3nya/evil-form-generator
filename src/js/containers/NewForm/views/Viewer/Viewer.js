@@ -57,7 +57,7 @@ export default class Viewer extends Component {
     const { descriptionModal, fieldsModal } = this.state
 
     return (
-      <div>
+      <div className={styles.container}>
         {!!notifications.length &&
           notifications.map((msg, key) => (
             <Alert
@@ -67,7 +67,7 @@ export default class Viewer extends Component {
             />
           ))
         }
-        <header className="grid grid__middle">
+        <header className="grid grid__baseline">
           <div
             className={cx(styles.description, 'cell cell__12of12',
                       'cell__sm__9of12 cell__md__10of12')}

@@ -13,6 +13,7 @@ export const Button = props => {
     [styles.delete]: style === 'delete',
     [styles.button]: button,
     [styles.transparent]: style === 'transparent',
+    [styles.transparent_primary]: style === 'transparent-primary',
     [styles.large]: size === 'large',
     [styles.small]: size === 'small',
     [styles.disabled]: disabled
@@ -38,5 +39,7 @@ Button.propTypes = {
   button: PropTypes.bool,
   disabled: PropTypes.bool,
   to: PropTypes.string,
-  style: PropTypes.oneOf(['outline', 'primary', 'transparent', 'delete'])
+  style: PropTypes.oneOf([
+    'outline', 'primary', 'transparent', 'delete', 'transparent-primary'
+  ])
 }
