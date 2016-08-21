@@ -1,16 +1,16 @@
 body {
-  font-family: 'Open Sans', Helvetica-Light, Helvetica, Arial, sans-serif;
+  color: #4f4f4f;
   font-weight: 400;
   font-size: 16px;
-  color: #4f4f4f;
+  font-family: 'Open Sans', Helvetica-Light, Helvetica, Arial, sans-serif;
 }
 
 
 :local {
   .main {
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
+    min-height: 100vh;
   }
 
   .content {

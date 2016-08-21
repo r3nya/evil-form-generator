@@ -1,9 +1,9 @@
 :local {
   .item {
+    margin-bottom: 1rem;
+    padding: 1rem;
     border: 1px solid #e5e5e5;
     border-radius: 0.25rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
   }
 
   .item:first-child {
@@ -21,15 +21,15 @@
   }
 
   .h4 {
-    word-break: break-all;
     white-space: normal;
+    word-break: break-all;
   }
 }
 
 label {
-  word-break: break-all;
-  white-space: normal;
   margin-bottom: 0.5rem;
+  white-space: normal;
+  word-break: break-all;
 }
 
 label:last-child {

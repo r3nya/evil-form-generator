@@ -1,22 +1,22 @@
 :local {
   .container {
     @media (min-width: 75em) {
-      background-color: #fff;
-      border: 1px solid #e5e5e5;
-      min-height: calc(100% - 6.5rem);
       padding: 0 1rem;
+      min-height: calc(100% - 6.5rem);
+      border: 1px solid #e5e5e5;
+      background-color: #fff;
     }
   }
 
   .description {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    font-size: 1.2rem;
     color: #bfbfbf;
     text-transform: uppercase;
-    word-break: break-all;
     white-space: normal;
-    align-items: center;
+    word-break: break-all;
+    font-size: 1.2rem;
 
     @media (max-width: 48em) {
       margin-bottom: 2rem;
@@ -34,8 +34,8 @@
 
   hr {
     height: 1px;
-    background-color: #e5e5e5;
     border: 0;
+    background-color: #e5e5e5;
   }
 
   .txt {

@@ -1,16 +1,10 @@
 :local {
   .header {
-    background-color: #e5e5e5;
-    padding: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    a {
-      color: #4f4f4f;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
+    justify-content: center;
+    padding: 2rem;
+    background-color: #e5e5e5;
 
     @media (max-width: 48em) {
       font-size: 0.8rem;
@@ -18,6 +12,12 @@
 
     @media (max-width: 21em) {
       font-size: 0.6rem;
+    }
+
+    a {
+      color: #4f4f4f;
+      text-decoration: none;
+      text-transform: uppercase;
     }
   }
 

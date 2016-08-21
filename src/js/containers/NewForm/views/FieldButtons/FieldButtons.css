@@ -4,8 +4,7 @@
   }
 
   .btnsCol {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 0.5rem;
   }
 
   .btn {
@@ -13,8 +12,8 @@
     width: 100%;
 
     @media (min-width: 64em) and (max-width: 75em) {
-      font-size: 0.8rem;
       padding: 0.5rem;
+      font-size: 0.8rem;
     }
   }
 }
