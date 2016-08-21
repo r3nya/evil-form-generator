@@ -6,6 +6,8 @@
   .label {
     word-break: break-all;
     white-space: normal;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .row {
