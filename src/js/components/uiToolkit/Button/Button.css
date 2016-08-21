@@ -1,4 +1,7 @@
 :root {
+  --color-1: #7f7f7f;
+  --color-2: #f2f2f2;
+  --color-3: #ff8ca0;
   --main-color: #7d88d4;
 }
 
@@ -31,6 +34,13 @@
   }
 
   .outline {
+    color: var(--color-1);
+    background-image: none;
+    background-color: transparent;
+    border-color: var(--color-2);
+  }
+
+  .outline:hover {
     color: var(--main-color);
     background-image: none;
     background-color: transparent;
@@ -41,6 +51,20 @@
     color: #fff;
     background-color: var(--main-color);
     border-color: var(--main-color);
+  }
+
+  .delete {
+    color: var(--color-1);
+    background-image: none;
+    background-color: transparent;
+    border-color: var(--color-2);
+  }
+
+  .delete:hover {
+    color: var(--color-3);
+    background-image: none;
+    background-color: transparent;
+    border-color: var(--color-3);
   }
 
   .transparent {

@@ -10,6 +10,7 @@ export const Button = props => {
   const classes = cx(styles.button, className, {
     [styles.outline]: style === 'outline',
     [styles.primary]: style === 'primary',
+    [styles.delete]: style === 'delete',
     [styles.button]: button,
     [styles.transparent]: style === 'transparent',
     [styles.large]: size === 'large',
@@ -37,5 +38,5 @@ Button.propTypes = {
   button: PropTypes.bool,
   disabled: PropTypes.bool,
   to: PropTypes.string,
-  style: PropTypes.oneOf(['outline', 'primary', 'transparent'])
+  style: PropTypes.oneOf(['outline', 'primary', 'transparent', 'delete'])
 }

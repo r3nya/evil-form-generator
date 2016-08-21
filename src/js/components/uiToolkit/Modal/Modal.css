@@ -12,12 +12,12 @@
   }
 
   .panel {
-    background-color: #ebfbff;
-    height: 3.6rem;
+    background-color: #e5e5e5;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 0.8rem;
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }

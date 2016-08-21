@@ -184,7 +184,7 @@ class QuestionItem extends Component {
                 </div>
                 <div className={styles.del}>
                   <Button
-                    style="outline"
+                    style="delete"
                     onClick={() => onDeleteClick()}
                   >
                     <DeleteIcon />

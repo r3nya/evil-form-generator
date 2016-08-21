@@ -111,7 +111,7 @@ export default class NewForm extends Component {
           />
           <h3>Evil form generator</h3>
         </header>
-        <div className="cell cell__3of12 not-xs not-sm">
+        <div className={cx('cell cell__3of12 not-xs not-sm', styles.creator)}>
           <Creator
             description={description}
             onBtnClick={actions.addQuestion}

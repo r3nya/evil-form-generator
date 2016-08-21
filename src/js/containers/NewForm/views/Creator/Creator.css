@@ -55,6 +55,10 @@
   }
 }
 
+.ReactTabs__Tab {
+  border-bottom: 1px solid #e5e5e5;
+}
+
 .ReactTabs__Tab--selected {
   color: var(--active-color);
   border-bottom: 2px solid var(--active-color);

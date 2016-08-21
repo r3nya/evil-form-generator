@@ -1,13 +1,13 @@
 :local {
   .header {
-    background-color: #85144b;
+    background-color: #e5e5e5;
     padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
     a {
-      color: #fff;
+      color: #4f4f4f;
       text-decoration: none;
       text-transform: uppercase;
     }

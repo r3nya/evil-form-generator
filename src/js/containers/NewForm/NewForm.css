@@ -14,7 +14,13 @@
   }
 
   .header {
-    background: #ebfbff;
+    background: #e5e5e5;
+    height: 3.5rem;
+  }
+
+  .creator {
+    height: calc(100% - 3.5rem);
+    border-right: 1px solid #e5e5e5;
   }
 }
 
