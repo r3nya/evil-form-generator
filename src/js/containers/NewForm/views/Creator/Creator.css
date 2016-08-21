@@ -10,30 +10,47 @@
     padding: 0.5rem;
   }
 
+  .help {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(100% * 11 / 12);
+    height: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+    color: #bfbfbf;
+    font-style: italic;
+    font-size: 0.7rem;
+    padding-left: 0.25rem;
+
+    @media (min-width: 64em) {
+      font-size: 0.8rem;
+    }
+  }
+
   .tabsBar {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-    margin-top: 0;
-    background-color: transparent;
-    white-space: nowrap;
-    overflow-x: auto;
     display: flex;
     justify-content: space-between;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    background-color: transparent;
+    list-style: none;
+    white-space: nowrap;
   }
 
   .tab {
-    width: 100%;
     display: flex;
     justify-content: center;
-    white-space: nowrap;
+    padding: 0 1.5rem;
+    width: 100%;
+    height: 3rem;
     text-transform: uppercase;
+    white-space: nowrap;
     font-weight: 600;
     font-size: 0.7rem;
-    cursor: pointer;
-    height: 3rem;
     line-height: 3rem;
-    padding: 0 1.5rem;
+    cursor: pointer;
     user-select: none;
 
     @media (max-width: 64em) {
@@ -61,8 +78,8 @@
 }
 
 .ReactTabs__Tab--selected {
-  color: var(--active-color);
   border-bottom: 2px solid var(--active-color);
+  color: var(--active-color);
 }
 
 .ReactTabs__Tab--selected:hover {

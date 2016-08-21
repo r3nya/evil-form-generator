@@ -15,7 +15,7 @@ export const TextArea = props => {
           htmlFor={idAttr}
           className={styles.label}
         >
-          {label}
+          <h3>{label}</h3>
         </label>
       }
       <textarea

@@ -21,6 +21,10 @@ export const Creator = props => {
 
         <TabPanel className={cx('grid', styles.panel)}>
           <div className="cell cell__12of12 grid grid__center">
+            <section className={styles.help}>
+              Select fields will be added to form
+            </section>
+
             <header>
               <h3>Add Custom Field</h3>
             </header>
@@ -33,6 +37,10 @@ export const Creator = props => {
         </TabPanel>
 
         <TabPanel className={cx(styles.textAreaPanel, styles.panel)}>
+          <section className={styles.help}>
+            Optional form description
+          </section>
+
           <TextArea
             label="Form Description"
             value={description}
