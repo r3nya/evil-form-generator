@@ -9,6 +9,10 @@
     border: 1px solid #e5e5e5;
     background-color: #fff;
     font-size: 1.45rem;
+
+    a {
+      color: #4f4f4f;
+    }
   }
 
   .item:first-child {

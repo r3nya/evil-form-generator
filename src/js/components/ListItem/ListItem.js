@@ -26,7 +26,7 @@ export const ListItem = props => {
       </Button>
       <Button
         className="cell"
-        style="outline"
+        style="delete"
         onClick={() => onDeleteForm(id)}
       >
         <DeleteIcon />

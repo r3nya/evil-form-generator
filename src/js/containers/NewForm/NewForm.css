@@ -33,7 +33,7 @@
   }
 
   .creator {
-    height: calc(100% - 3.5rem);
+    min-height: calc(100% - 3.5rem);
     border-right: 1px solid var(--color-1);
   }
 
