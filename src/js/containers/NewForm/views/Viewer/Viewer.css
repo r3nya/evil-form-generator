@@ -43,10 +43,13 @@
   }
 
   .btns {
-    @media (max-width: 48em) {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+
+    @media (min-width: 48em) {
+      justify-content: flex-end;
+      padding: 0;
     }
   }
 }
