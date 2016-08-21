@@ -89,7 +89,7 @@ export default class ChoiceItem extends Component {
 
           {!editMode &&
             <label
-              className={cx('cell cell__10of12', styles.label)}
+              className={cx('cell cell__9of12 cell__md__10of12', styles.label)}
               onClick={this.handleEdit}
             >
               {type !== 'select' &&
