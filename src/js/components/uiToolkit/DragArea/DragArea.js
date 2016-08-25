@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { SortableHandle as sortableHandle } from 'react-sortable-hoc';
+import { SortableHandle as sortableHandle } from 'react-sortable-hoc'
 import cx from 'classnames'
 import styles from './DragArea.css'
 

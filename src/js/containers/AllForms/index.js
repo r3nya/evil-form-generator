@@ -1,1 +1,1 @@
-export default from './AllForms';
+export default from './AllForms'
