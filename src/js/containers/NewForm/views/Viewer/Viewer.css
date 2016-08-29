@@ -2,7 +2,7 @@
   .container {
     @media (min-width: 75em) {
       padding: 0 1rem;
-      min-height: calc(100% - 6.5rem);
+      min-height: calc(100vh - 6.5rem - 2px);
       border: 1px solid #e5e5e5;
       background-color: #fff;
     }
