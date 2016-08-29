@@ -12,6 +12,10 @@ export default class Input extends Component {
     this.input.focus()
   }
 
+  inputRef = value => {
+    this.input = value
+  }
+
   render() {
     const { className, status, ...rest } = this.props
     const classes = cx(styles.input, className, {
@@ -20,7 +24,7 @@ export default class Input extends Component {
 
     return (
       <input
-        ref={value => this.input = value}
+        ref={this.inputRef}
         className={classes}
         autoCapitalize="off"
         autoCorrect="off"

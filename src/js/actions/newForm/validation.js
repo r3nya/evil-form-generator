@@ -30,6 +30,7 @@ export function validation() {
       throw new Error(message)
     }
 
+    /* eslint-disable array-callback-return */
     questions.map(q => {
       if (!q.title) {
         const message = 'Title field must be filled'
@@ -53,6 +54,7 @@ export function validation() {
         }
       }
     })
+    /* eslint-enable array-callback-return */
   }
 }
 
