@@ -1,4 +1,8 @@
 :local {
+  .btn:hover {
+    color: #7d88d4;
+  }
+
   .txt {
     @media (max-width: 21em) {
       display: none;

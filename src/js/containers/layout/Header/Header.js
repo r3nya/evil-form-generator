@@ -17,6 +17,7 @@ export const Header = props => {
       <h1>
         <Link
           role="link"
+          className={styles.newForm}
           to="/new"
         >
           <i className="fa fa-plus-circle"></i> New form

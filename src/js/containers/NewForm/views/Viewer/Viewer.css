@@ -42,6 +42,23 @@
     color: #4f4f4f;
   }
 
+  .modal_description {
+    margin: 0 0.5rem;
+  }
+
+  .help {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+    color: #bfbfbf;
+    font-style: italic;
+    font-size: 0.9rem;
+    padding-left: 0.25rem;
+  }
+
   .btns {
     display: flex;
     justify-content: space-between;

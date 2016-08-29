@@ -23,10 +23,14 @@
 
   .backBtn {
     position: absolute;
-    left: 0;
+    left: 0.25rem;
 
     @media (max-width: 13em) {
       display: none;
     }
+  }
+
+  .newForm:hover {
+    box-shadow: 0 2px 2px -2px #7d88d4;
   }
 }

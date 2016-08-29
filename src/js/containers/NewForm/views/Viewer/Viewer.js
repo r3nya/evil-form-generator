@@ -108,21 +108,30 @@ export default class Viewer extends Component {
 
         {children}
 
-        {descriptionModal &&
-          <Modal onClose={this.openEditDescriptionModal}>
-            <TextArea
-              label="Form Description"
-              rows="5"
-              value={description}
-              onChange={(event) => onChangeDescription(event.target.value)}
+        {fieldsModal &&
+          <Modal onClose={this.openFieldsModal}>
+            <section className={styles.help}>
+              Select fields will be added to form
+            </section>
+
+            <FieldButtons
+              onBtnClick={this.handleAddField}
             />
           </Modal>
         }
 
-        {fieldsModal &&
-          <Modal onClose={this.openFieldsModal}>
-            <FieldButtons
-              onBtnClick={this.handleAddField}
+        {descriptionModal &&
+          <Modal onClose={this.openEditDescriptionModal}>
+            <section className={styles.help}>
+              Optional form description
+            </section>
+          
+            <TextArea
+              label="Form Description"
+              rows="7"
+              mainClassName={styles.modal_description}
+              value={description}
+              onChange={(event) => onChangeDescription(event.target.value)}
             />
           </Modal>
         }

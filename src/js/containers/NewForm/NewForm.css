@@ -22,7 +22,7 @@
 
   .backBtn {
     position: absolute;
-    left: 0;
+    left: 0.25rem;
     color: var(--color-2);
     text-decoration: none;
   }

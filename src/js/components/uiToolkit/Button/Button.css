@@ -45,12 +45,17 @@
     background-image: none;
     background-color: transparent;
     border-color: var(--main-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 
   .primary {
     color: #fff;
     background-color: var(--main-color);
     border-color: var(--main-color);
+  }
+
+  .primary:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .delete {
@@ -65,6 +70,7 @@
     background-image: none;
     background-color: transparent;
     border-color: var(--color-3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 
   .transparent {
