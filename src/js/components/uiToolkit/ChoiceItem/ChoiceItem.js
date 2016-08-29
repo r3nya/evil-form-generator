@@ -109,7 +109,7 @@ export default class ChoiceItem extends Component {
               value={newValue}
               placeholder="?"
               status={status}
-              className={cx('cell cell__9of12 cell__sm__10of12', styles.input)}
+              className={cx('cell cell__9of12 cell__md__10of12', styles.input)}
               onKeyPress={this.handleKeyPress}
               onChange={e => this.handleChangeField('newValue', e.target.value)}
             />
