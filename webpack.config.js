@@ -52,6 +52,7 @@ const common = {
     require('postcss-for'),
     require('postcss-mixins'),
     require('postcss-custom-media'),
+    require('postcss-focus'),
     require('css-mqpacker')
   ],
   resolve: {
