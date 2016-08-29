@@ -125,7 +125,7 @@ export default class Viewer extends Component {
             <section className={styles.help}>
               Optional form description
             </section>
-          
+
             <TextArea
               label="Form Description"
               rows="7"
