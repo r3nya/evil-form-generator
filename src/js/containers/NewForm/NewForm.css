@@ -22,12 +22,15 @@
 
   .backBtn {
     position: absolute;
+    top: 50%;
     left: 0.25rem;
     color: var(--color-2);
     text-decoration: none;
+    transform: translateY(-50%);
   }
 
   .header {
+    position: relative;
     height: 3.5rem;
     background: var(--color-1);
   }
