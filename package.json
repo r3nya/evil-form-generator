@@ -8,7 +8,10 @@
     "clean": "rimraf dist",
     "lint": "eslint src",
     "lint:style": "stylelint ./src/**/*.css",
-    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js"
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "test": "jest",
+    "test:w": "jest --watch",
+    "test:c": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
     "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.5",
+    "babel-jest": "^15.0.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.9.0",
@@ -47,6 +51,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "jest-cli": "^15.1.1",
     "nyan-progress-webpack-plugin": "^1.1.4",
     "postcss-apply": "^0.2.0",
     "postcss-css-variables": "^0.5.1",
@@ -92,5 +97,16 @@
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3"
+  },
+  "jest": {
+    "modulePaths": [
+      "src/js"
+    ],
+    "collectCoverageFrom": [
+      "src/js/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "index.js"
+    ]
   }
 }
