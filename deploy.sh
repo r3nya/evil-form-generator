@@ -4,7 +4,7 @@ set -o errexit -o nounset
 
 rev=$(git rev-parse --short HEAD)
 
-cd ./dist
+cd $TRAVIS_BUILD_DIR/dist
 
 git init
 git config user.name "Andrew M."
