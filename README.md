@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/r3nya/evil-form-generator.svg?branch=master)](https://travis-ci.org/r3nya/evil-form-generator)
+
 # Evil form generator
 
 Hey!
