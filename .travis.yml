@@ -7,15 +7,20 @@ cache:
   directories:
     - node_modules
 
-scripts:
+before_install:
   - npm run lint
   - 'npm run lint:style'
-  - npm run test
+
+install:
   - npm run build
+
+scripts:
+  - npm run test
+
+after_success:
+  - test $TRAVIS_BRANCH == "master" && bash deploy.sh
+
 
 branches:
   only:
     - master
-
-after_script:
-  - test $TRAVIS_BRANCH == "master" && bash deploy.sh
