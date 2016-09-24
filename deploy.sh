@@ -19,5 +19,4 @@ git config user.email "me@r3nya.ru"
 
 git add -A .
 git commit -m "rebuild pages at ${REV}"
-git push -q upstream HEAD:gh-pages
 git push -q $FULL_REPO master:gh-pages
