@@ -8,7 +8,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 
-// Common path
+// Common part
 const common = {
   entry: {
     vendor: [
