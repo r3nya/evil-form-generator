@@ -5,6 +5,7 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBar = require('nyan-progress-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const TARGET = process.env.npm_lifecycle_event;
 
@@ -100,6 +101,11 @@ if (TARGET === 'build') {
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
+      }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        reportFilename: 'report.html',
+        openAnalyzer: false,
       })
     ],
     module: {
