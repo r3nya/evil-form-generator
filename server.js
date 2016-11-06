@@ -25,6 +25,7 @@ app.get('*', (req, res) => {
 app.listen(port, 'localhost', (err) => {
   if (err) {
     console.log(err)
+
     return
   }
 

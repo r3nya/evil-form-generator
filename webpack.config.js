@@ -43,18 +43,6 @@ const common = {
       { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
     ]
   },
-  postcss: [
-    autoprefixer({ browsers: ['last 2 versions'] }),
-    require('postcss-nested'),
-    require('postcss-import'),
-    require('postcss-css-variables'),
-    require('postcss-apply'),
-    require('postcss-for'),
-    require('postcss-mixins'),
-    require('postcss-custom-media'),
-    require('postcss-focus'),
-    require('css-mqpacker')
-  ],
   resolve: {
     extensions: ['', '.js', '.json'],
     root: [
