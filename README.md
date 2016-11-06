@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/r3nya/evil-form-generator.svg?branch=master)](https://travis-ci.org/r3nya/evil-form-generator)
+[![Build Status](https://travis-ci.org/r3nya/evil-form-generator.svg?branch=master)](https://travis-ci.org/r3nya/evil-form-generator) ![](https://david-dm.org/r3nya/evil-form-generator.svg)
 
 # Evil form generator
 
