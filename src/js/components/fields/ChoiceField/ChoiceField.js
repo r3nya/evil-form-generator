@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { ChoiceItem, Button } from 'components/uiToolkit'
 import styles from './ChoiceField.css'
 
+const { number, string, array, func } = PropTypes
+
 export const ChoiceField = props => {
   const { id, choices, type, onAddChoice, ...rest } = props
 
@@ -32,8 +34,8 @@ export const ChoiceField = props => {
 }
 
 ChoiceField.propTypes = {
-  id: PropTypes.number,
-  type: PropTypes.string,
-  choices: PropTypes.array,
-  onAddChoice: PropTypes.func,
+  id: number,
+  type: string,
+  choices: array,
+  onAddChoice: func,
 }

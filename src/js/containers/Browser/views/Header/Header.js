@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react'
 import styles from './Header.css'
 
+const { string } = PropTypes
+
 export const Header = props => {
   const { description, createdAt } = props
+
   return (
     <header className={styles.header}>
       {description &&
@@ -14,6 +17,6 @@ export const Header = props => {
 }
 
 Header.propTypes = {
-  description: PropTypes.string,
-  createdAt: PropTypes.string,
+  description: string,
+  createdAt: string,
 }

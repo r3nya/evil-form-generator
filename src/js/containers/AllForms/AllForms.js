@@ -10,17 +10,14 @@ import { ListGroup } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './AllForms.css'
 
-const mapDispatchToProps = {
-  fetchForms,
-  deleteForm
-}
+const { array, func } = PropTypes
 
-@connect(formsSelector, mapDispatchToProps)
+@connect(formsSelector, { fetchForms, deleteForm })
 export default class AllForms extends Component {
   static propTypes = {
-    data: PropTypes.array,
-    fetchForms: PropTypes.func.isRequired,
-    deleteForm: PropTypes.func.isRequired,
+    data: array,
+    fetchForms: func.isRequired,
+    deleteForm: func.isRequired,
   };
 
   componentDidMount() {

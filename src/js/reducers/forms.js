@@ -65,6 +65,7 @@ export default function (state = initialState, action) {
     }
 
     saveData('forms', newState)
+
     return newState
   }
 
@@ -75,6 +76,7 @@ export default function (state = initialState, action) {
     }
 
     saveData('forms', newState)
+
     return newState
   }
 

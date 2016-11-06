@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react'
 import cx from 'classnames'
 import styles from './Alert.css'
 
-export const Alert = props => {
-  const { message, className, type, onCloseClick, ...rest } = props
+export const Alert = ({ message, className, type, onCloseClick, ...rest }) => {
   const classes = cx(styles.alert, className, {
     [styles.success]: type === 'success',
     [styles.danger]: type === 'danger'
   })
+
   return (
     <div
       role="alert"

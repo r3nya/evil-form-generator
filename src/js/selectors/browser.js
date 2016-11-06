@@ -12,6 +12,7 @@ export const browserSelector = createSelector(
           ...item,
           choices: choices.filter(choice => choice.questionId === item.id)
         })
+
         return data
       }, [])
 

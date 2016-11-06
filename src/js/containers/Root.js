@@ -4,9 +4,12 @@ import { Router } from 'react-router'
 import routes from '../routes'
 import 'babel-polyfill'
 
+const { object } = PropTypes
+
 
 export const Root = (props) => {
   const { store, history } = props
+
   return (
     <Provider store={store}>
       <Router history={history} routes={routes} />
@@ -15,6 +18,6 @@ export const Root = (props) => {
 }
 
 Root.propTypes = {
-  store: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  store: object.isRequired,
+  history: object.isRequired
 }

@@ -6,6 +6,8 @@ import {
   ChoiceField
 } from 'components/fields'
 
+const { string } = PropTypes
+
 export const FieldHelper = props => {
   const { type, className, ...rest } = props
 
@@ -34,6 +36,6 @@ export const FieldHelper = props => {
 }
 
 FieldHelper.propTypes = {
-  type: PropTypes.string.isRequired,
-  className: PropTypes.string
+  type: string.isRequired,
+  className: string
 }

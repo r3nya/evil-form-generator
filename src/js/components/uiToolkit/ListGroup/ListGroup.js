@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react'
 import './ListGroup.css'
 
+const { node, string } = PropTypes
+
 export const ListGroup = props => {
   const { children, className } = props
+
   return (
     <ul className={className}>
       {children}
@@ -11,6 +14,6 @@ export const ListGroup = props => {
 }
 
 ListGroup.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+  children: node,
+  className: string,
 }

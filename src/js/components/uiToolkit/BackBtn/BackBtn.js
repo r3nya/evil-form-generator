@@ -6,6 +6,7 @@ import styles from './BackBtn.css'
 export const BackBtn = props => {
   const { className, ...rest } = props
   const classes = cx(className, styles.btn)
+
   return (
     <Button
       className={classes}

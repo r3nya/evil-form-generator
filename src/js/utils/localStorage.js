@@ -4,6 +4,7 @@ export const loadData = (item) => {
     if (data === null) {
       return undefined
     }
+
     return JSON.parse(data)
   } catch (err) {
     return undefined

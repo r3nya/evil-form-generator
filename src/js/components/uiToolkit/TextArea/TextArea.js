@@ -3,8 +3,9 @@ import cx from 'classnames'
 import camelcase from 'camelcase'
 import styles from './TextArea.css'
 
-export const TextArea = props => {
-  const { label, className, mainClassName, ...rest } = props
+const { string } = PropTypes
+
+export const TextArea = ({ label, className, mainClassName, ...rest }) => {
   const idAttr = label ? camelcase(label) : ''
   const classes = cx(styles.txtArea, className)
 
@@ -28,7 +29,7 @@ export const TextArea = props => {
 }
 
 TextArea.propTypes = {
-  label: PropTypes.string,
-  className: PropTypes.string,
-  mainClassName: PropTypes.string
+  label: string,
+  className: string,
+  mainClassName: string
 }

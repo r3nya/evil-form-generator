@@ -4,16 +4,18 @@ import { FieldButtons } from '../'
 import { Button, Alert, EditIcon, Modal, TextArea } from 'components/uiToolkit'
 import styles from './Viewer.css'
 
+const { string, array, node, func } = PropTypes
+
 
 export default class Viewer extends Component {
   static propTypes = {
-    description: PropTypes.string,
-    notifications: PropTypes.array,
-    children: PropTypes.node.isRequired,
-    onSaveForm: PropTypes.func.isRequired,
-    clearNotifications: PropTypes.func.isRequired,
-    onBtnClick: PropTypes.func.isRequired,
-    onChangeDescription: PropTypes.func.isRequired,
+    description: string,
+    notifications: array,
+    children: node.isRequired,
+    onSaveForm: func.isRequired,
+    clearNotifications: func.isRequired,
+    onBtnClick: func.isRequired,
+    onChangeDescription: func.isRequired,
   };
 
   state = {
