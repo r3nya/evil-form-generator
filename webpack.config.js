@@ -8,6 +8,20 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 
+const cssLoaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      importLoaders: 2,
+      localIdentName: '[local]---[name]---[hash:base64:5]'
+    }
+  },
+  {
+    loader: 'postcss-loader'
+  }
+];
+
+
 // Common part
 const common = {
   entry: {
@@ -35,26 +49,16 @@ const common = {
   },
   plugins: [
     new CaseSensitivePathsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js'
+    }),
   ],
   module: {
-    loaders: [
-      { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
+    rules: [
+      { test: /\.js$/, rules: ['babel'], exclude: /node_modules/ }
     ]
   },
-  postcss: [
-    autoprefixer({ browsers: ['last 2 versions'] }),
-    require('postcss-nested'),
-    require('postcss-import'),
-    require('postcss-css-variables'),
-    require('postcss-apply'),
-    require('postcss-for'),
-    require('postcss-mixins'),
-    require('postcss-custom-media'),
-    require('postcss-focus'),
-    require('css-mqpacker')
-  ],
   resolve: {
     extensions: ['', '.js', '.json'],
     root: [
@@ -79,10 +83,10 @@ if (TARGET === 'start') {
       })
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.css$/,
-          loaders: [
+          rules: [
             'style?sourceMap',
             'css?importLoaders=2&localIdentName=[name]__[local]___[hash:base64:5]',
             'postcss'
@@ -100,8 +104,9 @@ if (TARGET === 'start') {
 if (TARGET === 'build') {
   module.exports = merge(common, {
     plugins: [
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new ExtractTextPlugin('app.css', {
+      new ExtractTextPlugin({
+        filename: 'app.css',
+        disable: false,
         allChunks: true
       }),
       new webpack.optimize.UglifyJsPlugin({
@@ -115,13 +120,13 @@ if (TARGET === 'build') {
       })
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract(
-            'style',
-            'css?importLoaders=2&localIdentName=[local]---[name]---[hash:base64:5]!postcss'
-          )
+          loader: ExtractTextPlugin.extract({
+            fallbackLoader: 'style-loader',
+            loader: cssLoaders
+          })
         },
         {
           test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/,
