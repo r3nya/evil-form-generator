@@ -1,0 +1,17 @@
+{
+    "map": false,
+    "plugins": {
+        "autoprefixer": {
+            browsers: ['last 2 versions']
+        },
+        "postcss-nested": {},
+        "postcss-import": {},
+        "postcss-css-variables": {},
+        "postcss-apply": {},
+        "postcss-for": {},
+        "postcss-mixins": {},
+        "postcss-custom-media": {},
+        "postcss-focus": {},
+        "css-mqpacker": {}
+    }
+}
