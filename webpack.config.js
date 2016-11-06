@@ -32,6 +32,7 @@ const common = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
+    chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/static/',
   },
   plugins: [
