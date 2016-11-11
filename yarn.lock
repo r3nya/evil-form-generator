@@ -5892,10 +5892,11 @@ react-router@^2.4.1:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
-react-sortable-hoc@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-0.0.7.tgz#0966f398f6a8e48ff9d0867807cab04107e75b82"
+react-sortable-hoc@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-0.2.0.tgz#e1e0f96b40d872d4ba6b5eb7b3cfd1376d1092c6"
   dependencies:
+    babel-runtime "^6.11.6"
     invariant "^2.2.1"
     lodash "^4.12.0"
 
