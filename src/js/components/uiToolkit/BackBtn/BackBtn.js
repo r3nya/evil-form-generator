@@ -3,6 +3,8 @@ import { Button } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './BackBtn.css'
 
+const { string } = PropTypes
+
 export const BackBtn = props => {
   const { className, ...rest } = props
   const classes = cx(className, styles.btn)
@@ -19,5 +21,5 @@ export const BackBtn = props => {
 }
 
 BackBtn.propTypes = {
-  className: PropTypes.string,
+  className: string,
 }

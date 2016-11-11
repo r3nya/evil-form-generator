@@ -6,6 +6,8 @@ import { FieldButtons } from '../'
 import cx from 'classnames'
 import styles from './Creator.css'
 
+const { string, func } = PropTypes
+
 export const Creator = props => {
   Tabs.setUseDefaultStyles(false)
   const { description, onBtnClick, onChangeDescription } = props
@@ -57,7 +59,7 @@ export const Creator = props => {
 }
 
 Creator.propTypes = {
-  description: PropTypes.string,
-  onBtnClick: PropTypes.func.isRequired,
-  onChangeDescription: PropTypes.func.isRequired,
+  description: string,
+  onBtnClick: func.isRequired,
+  onChangeDescription: func.isRequired,
 }

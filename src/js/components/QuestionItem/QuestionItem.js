@@ -6,16 +6,18 @@ import { Button, EditIcon, DeleteIcon, Input, DragArea } from 'components/uiTool
 import cx from 'classnames'
 import styles from './QuestionItem.css'
 
+const { number, string, bool, func } = PropTypes
+
 
 class QuestionItem extends Component {
   static propTypes = {
-    id: PropTypes.number,
-    type: PropTypes.string,
-    title: PropTypes.string,
-    required: PropTypes.bool,
-    onEditTitle: PropTypes.func.isRequired,
-    onChangeRequired: PropTypes.func.isRequired,
-    onDeleteClick: PropTypes.func.isRequired
+    id: number,
+    type: string,
+    title: string,
+    required: bool,
+    onEditTitle: func.isRequired,
+    onChangeRequired: func.isRequired,
+    onDeleteClick: func.isRequired
   };
 
   state = {

@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import cx from 'classnames'
 import styles from './SelectElement.css'
 
+const { array, string } = PropTypes
+
 export const SelectElement = props => {
   const { options, className } = props
   const classes = cx(styles.select, className)
@@ -16,6 +18,6 @@ export const SelectElement = props => {
 }
 
 SelectElement.propTypes = {
-  options: PropTypes.array,
-  className: PropTypes.string,
+  options: array,
+  className: string,
 }

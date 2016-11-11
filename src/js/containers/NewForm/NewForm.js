@@ -24,6 +24,8 @@ import { BackBtn } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './NewForm.css'
 
+const { array, func, object, string } = PropTypes
+
 const mapDispatchToProps = {
   addChoice,
   deleteChoice,
@@ -45,26 +47,26 @@ const mapDispatchToProps = {
 @connect(newFormSelector, mapDispatchToProps)
 export default class NewForm extends Component {
   static propTypes = {
-    questions: PropTypes.array,
-    notifications: PropTypes.array,
-    addChoice: PropTypes.func.isRequired,
-    description: PropTypes.string,
-    route: PropTypes.object,
-    params: PropTypes.object,
-    deleteChoice: PropTypes.func.isRequired,
-    addQuestion: PropTypes.func.isRequired,
-    changeDescription: PropTypes.func.isRequired,
-    changeChoice: PropTypes.func.isRequired,
-    changeRequired: PropTypes.func.isRequired,
-    editTitleQuestion: PropTypes.func.isRequired,
-    deleteQuestion: PropTypes.func.isRequired,
-    dragQuestion: PropTypes.func.isRequired,
-    saveForm: PropTypes.func.isRequired,
-    validation: PropTypes.func.isRequired,
-    fetchForms: PropTypes.func.isRequired,
-    getForm: PropTypes.func.isRequired,
-    cleanFields: PropTypes.func.isRequired,
-    clearNotifications: PropTypes.func.isRequired
+    questions: array,
+    notifications: array,
+    addChoice: func.isRequired,
+    description: string,
+    route: object,
+    params: object,
+    deleteChoice: func.isRequired,
+    addQuestion: func.isRequired,
+    changeDescription: func.isRequired,
+    changeChoice: func.isRequired,
+    changeRequired: func.isRequired,
+    editTitleQuestion: func.isRequired,
+    deleteQuestion: func.isRequired,
+    dragQuestion: func.isRequired,
+    saveForm: func.isRequired,
+    validation: func.isRequired,
+    fetchForms: func.isRequired,
+    getForm: func.isRequired,
+    cleanFields: func.isRequired,
+    clearNotifications: func.isRequired
   };
 
   componentDidMount() {

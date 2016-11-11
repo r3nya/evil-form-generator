@@ -5,13 +5,15 @@ import ReactTooltip from 'react-tooltip'
 import cx from 'classnames'
 import styles from './QuestionViewer.css'
 
+const { string, bool, array } = PropTypes
+
 
 export default class QuestionViewer extends Component {
   static propTypes = {
-    type: PropTypes.string,
-    title: PropTypes.string,
-    required: PropTypes.bool,
-    choices: PropTypes.array,
+    type: string,
+    title: string,
+    required: bool,
+    choices: array,
   };
 
   state = {

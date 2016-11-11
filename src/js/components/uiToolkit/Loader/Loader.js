@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import styles from './Loader.css'
 
+const { bool } = PropTypes
+
 export default class Loader extends Component {
   static propTypes = {
-    show: PropTypes.bool
+    show: bool
   }
 
   handleClick = event => {

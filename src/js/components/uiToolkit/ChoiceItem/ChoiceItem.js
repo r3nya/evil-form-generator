@@ -4,14 +4,16 @@ import { Input, Button, EditIcon, DeleteIcon } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './ChoiceItem.css'
 
+const { string, number, func } = PropTypes
+
 export default class ChoiceItem extends Component {
   static propTypes = {
-    id: PropTypes.number.isRequired,
-    value: PropTypes.string,
-    type: PropTypes.string,
-    questionId: PropTypes.number.isRequired,
-    onChangeChoice: PropTypes.func.isRequired,
-    onDeleteChoice: PropTypes.func.isRequired,
+    id: number.isRequired,
+    value: string,
+    type: string,
+    questionId: number.isRequired,
+    onChangeChoice: func.isRequired,
+    onDeleteChoice: func.isRequired,
   };
 
   state = {
