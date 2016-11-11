@@ -15,6 +15,7 @@ const common = {
     vendor: [
       'camelcase',
       'classnames',
+      'lodash',
       'react',
       'react-dom',
       'react-redux',
@@ -90,7 +91,7 @@ if (TARGET === 'start') {
 if (TARGET === 'build') {
   module.exports = merge(common, {
     plugins: [
-      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin(),
       new ExtractTextPlugin('app.css', {
         allChunks: true
       }),
