@@ -58,6 +58,7 @@
     "postcss-apply": "0.4.0",
     "postcss-css-variables": "0.6.0",
     "postcss-custom-media": "^5.0.1",
+    "postcss-fixes": "^1.4.2",
     "postcss-focus": "^1.0.0",
     "postcss-for": "^2.1.1",
     "postcss-import": "^8.1.2",

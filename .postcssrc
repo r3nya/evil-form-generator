@@ -12,6 +12,7 @@
         "postcss-mixins": {},
         "postcss-custom-media": {},
         "postcss-focus": {},
+        "postcss-fixes": {},
         "css-mqpacker": {}
     }
 }
