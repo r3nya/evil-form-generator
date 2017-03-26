@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { BackBtn } from 'components/uiToolkit'
 import styles from './Header.css'
 
+const { bool, string } = PropTypes
+
 export const Header = props => {
   const { backBtn, backUrlType } = props
 
@@ -28,6 +30,6 @@ export const Header = props => {
 }
 
 Header.propTypes = {
-  backBtn: PropTypes.bool,
-  backUrlType: PropTypes.string,
+  backBtn: bool,
+  backUrlType: string,
 }

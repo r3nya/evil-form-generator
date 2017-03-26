@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import cx from 'classnames'
 import styles from './Button.css'
 
+const { node, string, bool, oneOf } = PropTypes
+
 export const Button = props => {
   const { children, className, size, button, disabled, to, style, ...rest } = props
   const Element = to ? Link : 'button'
@@ -32,14 +34,14 @@ export const Button = props => {
 }
 
 Button.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  active: PropTypes.bool,
-  size: PropTypes.oneOf(['large', 'small']),
-  button: PropTypes.bool,
-  disabled: PropTypes.bool,
-  to: PropTypes.string,
-  style: PropTypes.oneOf([
+  children: node,
+  className: string,
+  active: bool,
+  size: oneOf(['large', 'small']),
+  button: bool,
+  disabled: bool,
+  to: string,
+  style: oneOf([
     'outline', 'primary', 'transparent', 'delete', 'transparent-primary'
   ])
 }

@@ -5,21 +5,18 @@ import { browserSelector } from 'selectors'
 import { Loader, Button } from 'components/uiToolkit'
 import { Header, QuestionViewer } from './views'
 import styles from './Browser.css'
-// import cx from 'classnames'
 
-const mapDispatchToProps = {
-  fetchItem
-}
+const { array, object, bool, string, func } = PropTypes
 
-@connect(browserSelector, mapDispatchToProps)
+@connect(browserSelector, { fetchItem })
 export default class Browser extends Component {
   static propTypes = {
-    questions: PropTypes.array,
-    params: PropTypes.object,
-    loading: PropTypes.bool,
-    description: PropTypes.string,
-    createdAt: PropTypes.string,
-    fetchItem: PropTypes.func.isRequired,
+    questions: array,
+    params: object,
+    loading: bool,
+    description: string,
+    createdAt: string,
+    fetchItem: func.isRequired,
   };
 
   componentDidMount() {

@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { CloseIcon } from 'components/uiToolkit'
 import styles from './Modal.css'
 
+const { node, func } = PropTypes
+
 export const Modal = props => {
   const { children, onClose } = props
 
@@ -16,6 +18,6 @@ export const Modal = props => {
 }
 
 Modal.propTypes = {
-  children: PropTypes.node,
-  onClose: PropTypes.func.isRequired
+  children: node,
+  onClose: func.isRequired
 }

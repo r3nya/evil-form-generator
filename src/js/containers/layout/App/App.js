@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { Header, Footer } from 'containers/layout'
 import styles from './App.css'
 
+const { element, object } = PropTypes
+
 export const App = props => {
   const { children, params, route: { backUrlType } } = props
 
@@ -22,7 +24,7 @@ export const App = props => {
 }
 
 App.propTypes = {
-  children: PropTypes.element.isRequired,
-  params: PropTypes.object,
-  route: PropTypes.object,
+  children: element.isRequired,
+  params: object,
+  route: object,
 }

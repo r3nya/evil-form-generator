@@ -3,6 +3,8 @@ import cx from 'classnames'
 import { Button } from 'components/uiToolkit'
 import styles from './FieldButtons.css'
 
+const { func } = PropTypes
+
 
 export const FieldButtons = props => {
   const { onBtnClick } = props
@@ -66,5 +68,5 @@ export const FieldButtons = props => {
 }
 
 FieldButtons.propTypes = {
-  onBtnClick: PropTypes.func.isRequired
+  onBtnClick: func.isRequired
 }

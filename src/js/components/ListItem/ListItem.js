@@ -4,6 +4,8 @@ import { Button, DeleteIcon, EditIcon } from 'components/uiToolkit'
 import cx from 'classnames'
 import styles from './ListItem.css'
 
+const { number, string, func } = PropTypes
+
 export const ListItem = props => {
   const { id, number, description, createdAt, onDeleteForm } = props
 
@@ -36,9 +38,9 @@ export const ListItem = props => {
 }
 
 ListItem.propTypes = {
-  id: PropTypes.number,
-  number: PropTypes.number,
-  description: PropTypes.string,
-  createdAt: PropTypes.string,
-  onDeleteForm: PropTypes.func.isRequired,
+  id: number,
+  number,
+  description: string,
+  createdAt: string,
+  onDeleteForm: func.isRequired,
 }

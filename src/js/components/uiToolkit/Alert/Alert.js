@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import cx from 'classnames'
 import styles from './Alert.css'
 
+const { string, oneOf, func } = PropTypes
+
 export const Alert = ({ message, className, type, onCloseClick, ...rest }) => {
   const classes = cx(styles.alert, className, {
     [styles.success]: type === 'success',
@@ -21,8 +23,8 @@ export const Alert = ({ message, className, type, onCloseClick, ...rest }) => {
 }
 
 Alert.propTypes = {
-  message: PropTypes.string,
-  className: PropTypes.string,
-  type: PropTypes.oneOf(['success', 'danger']),
-  onCloseClick: PropTypes.func
+  message: string,
+  className: string,
+  type: oneOf(['success', 'danger']),
+  onCloseClick: func
 }

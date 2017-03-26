@@ -2,10 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import cx from 'classnames'
 import styles from './Input.css'
 
+const { string } = PropTypes
+
 export default class Input extends Component {
   static propTypes = {
-    className: PropTypes.string,
-    status: PropTypes.string,
+    className: string,
+    status: string,
   };
 
   componentDidMount() {
